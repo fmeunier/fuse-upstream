@@ -1,21 +1,29 @@
 {
-  "last_run": "2026-04-06T21:44:00Z",
-  "last_run_id": "24052667280",
+  "last_run": "2026-04-07T00:00:00Z",
+  "last_run_id": "24105877778",
   "comments_made": {},
-  "fix_attempts": {},
+  "fix_attempts": {
+    "rectangle-merge-same-y": {
+      "issue": "code audit (no issue filed)",
+      "pr_branch": "repo-assist/fix-rect-merge-same-y-2026-04",
+      "status": "open",
+      "note": "Bug in compare_and_merge_rectangles: strict < missed same-y case. Fixed to <=. Added rectangle unit tests."
+    }
+  },
   "improvement_ideas": [
     "upgrade-checkout-v4: PENDING as issue #2 (protected files, needs manual PR)",
     "upgrade-artifact-v4: PENDING - needs coordination with arki55/fuse-libspectrum (both repos must change upload+download together)",
     "agents-md: DONE (PR merged as #5)",
     "mempool-strdup-tests: DONE (commit a70bb5df merged into master)",
     "utils-safe-strdup-test-and-style: DONE (PR #9 closed, commits cherry-picked to master by maintainer)",
-    "display-dirty-scan-ctz: PENDING (PR created 2026-04-06, run 24052667280)"
+    "display-dirty-scan-ctz: DONE (PR #10 closed, cherry-picked as 7d39defd)",
+    "rectangle-merge-bugfix: PENDING (PR created 2026-04-07, run 24105877778)"
   ],
   "open_prs": [
     {
-      "title": "[Repo Assist] perf: use __builtin_ctz to speed up display dirty-bit scanning",
-      "branch": "repo-assist/perf-display-dirty-scan-2026-04-06",
-      "note": "Created 2026-04-06 run 24052667280. Uses __builtin_ctz in update_dirty_rects and copy_critical_region_line."
+      "title": "[Repo Assist] fix: rectangle merge misses same-y overlap when frame skip enabled",
+      "branch": "repo-assist/fix-rect-merge-same-y-2026-04",
+      "note": "Created 2026-04-07 run 24105877778. Fixes < vs <= bug in compare_and_merge_rectangles. Adds rectangle_test unit tests."
     }
   ],
   "pending_issues": [
@@ -28,7 +36,8 @@
   "monthly_activity_issue": "[Repo Assist] Monthly Activity 2026-04",
   "checked_off_by_maintainer": [
     "AGENTS.md PR (merged as #5)",
-    "utils_safe_strdup test PR #9 (closed, commits cherry-picked directly)"
+    "utils_safe_strdup test PR #9 (closed, commits cherry-picked directly)",
+    "display-dirty-scan PR #10 (closed, cherry-picked as 7d39defd)"
   ],
-  "notes": "PR #9 closed by maintainer, who cherry-picked commits directly to master. Task 2: no open issues to investigate (only #2 checkout and #4 monthly activity). Next: check if display-dirty-scan PR is merged; continue looking for performance improvements."
+  "notes": "PR #10 was closed by maintainer (commits cherry-picked directly). rectangle-merge-same-y bug found via code audit: in compare_and_merge_rectangles, the y-overlap guard used strict < missing same-y case. Fixed to <=. Added comprehensive rectangle unit tests. Next run: check if rectangle PR was merged; look for more bugs or improvements."
 }
