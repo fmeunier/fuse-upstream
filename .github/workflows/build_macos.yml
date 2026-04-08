@@ -79,18 +79,3 @@ jobs:
       verify_ui: "sdl"
       verify_audio: "sdl"
       verify_other: "SDL 2 not supported for the UI, using SDL 1 instead"
-
-##########################################
-### DEPRECATED MacOS UI configurations ###
-##########################################
-
-  # XLIB UI (deprecated)
-  xlib-ui:
-    name: "Fuse X-lib UI (MacOS) (deprecated)"
-    needs: [libspectrum]
-    uses: ./.github/workflows/build_macos_sub.yml
-    with:
-      name: X-lib UI (deprecated)
-      dependencies: "libpng libx11 libxext libxrender xorgproto"
-      configure_params: "--with-x"
-      verify_ui: "xlib"
