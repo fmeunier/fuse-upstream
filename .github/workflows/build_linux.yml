@@ -12,6 +12,7 @@ jobs:
     with:
       key: fuse-app
       libspectrum_ref: master
+      use_fake_glib: true
 
   # Default build without any configure params (xlib)
   default-ui:

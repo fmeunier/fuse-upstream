@@ -99,6 +99,7 @@ jobs:
           --target=powerpc-eabi \
           --host=powerpc-eabi \
           --prefix=$DEVKITPPC \
+          --disable-sockets \
           --without-gpm \
           --without-libxml2 \
           --without-x \
