@@ -143,6 +143,15 @@ CPPFLAGS="$CPPFLAGS $LIBSPECTRUM_CFLAGS"
 AC_COMPILE_IFELSE(
   [AC_LANG_PROGRAM([[
 #include <libspectrum.h>
+  ]], [[
+    return 0;
+  ]])],
+  [],
+  [AC_MSG_FAILURE([unable to compile with libspectrum headers; install any host headers required by libspectrum, such as libgcrypt])]
+)
+AC_COMPILE_IFELSE(
+  [AC_LANG_PROGRAM([[
+#include <libspectrum.h>
 #ifndef LIBSPECTRUM_HAS_GLIB_REPLACEMENT
 #error "GLib replacement macro not found"
 #endif

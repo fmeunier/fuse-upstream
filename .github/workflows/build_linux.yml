@@ -36,7 +36,7 @@ jobs:
     uses: ./.github/workflows/build_linux_sub.yml
     with:
       name: "NULL UI"
-      dependencies: "libaudiofile-dev"
+      dependencies: "libaudiofile-dev libgcrypt-dev"
       configure_params: "--with-null-ui"
       verify_ui: "null"
 
