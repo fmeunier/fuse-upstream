@@ -140,13 +140,30 @@ dnl Check if supplied libspectrum has its own internal GLib replacement
 AC_MSG_CHECKING(whether libspectrum has its own internal GLib replacement)
 ac_save_CPPFLAGS="$CPPFLAGS"
 CPPFLAGS="$CPPFLAGS $LIBSPECTRUM_CFLAGS"
-AC_PREPROC_IFELSE(
-  [AC_LANG_SOURCE([
+AC_COMPILE_IFELSE(
+  [AC_LANG_PROGRAM([[
 #include <libspectrum.h>
-#if LIBSPECTRUM_HAS_GLIB_REPLACEMENT == 0
-#error "GLib replacement not found"
+  ]], [[
+    return 0;
+  ]])],
+  [],
+  [AC_MSG_FAILURE([unable to compile with libspectrum headers; install any host headers required by libspectrum, such as libgcrypt])]
+)
+AC_COMPILE_IFELSE(
+  [AC_LANG_PROGRAM([[
+#include <libspectrum.h>
+#ifndef LIBSPECTRUM_HAS_GLIB_REPLACEMENT
+#error "GLib replacement macro not found"
 #endif
-  ])],
+#if LIBSPECTRUM_HAS_GLIB_REPLACEMENT == 0
+#error "GLib replacement not enabled"
+#endif
+  ]], [[
+    GSList *list = NULL;
+    gboolean enabled = TRUE;
+
+    return list == NULL && enabled;
+  ]])],
   [fakeglib=yes; AC_MSG_RESULT(yes)],
   [fakeglib=no; AC_MSG_RESULT(no)]
 )
