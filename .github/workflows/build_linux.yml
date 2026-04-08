@@ -14,6 +14,14 @@ jobs:
       libspectrum_ref: master
       use_fake_glib: true
 
+  libspectrum-gtk:
+    name: "Libspectrum lib for GTK (Linux)"
+    uses: ./.github/workflows/build_libspectrum_linux_sub.yml
+    with:
+      key: fuse-app-gtk
+      libspectrum_ref: master
+      use_fake_glib: false
+
   # Default build without any configure params (xlib)
   default-ui:
     name: "Fuse Default UI (Linux)"
@@ -43,12 +51,13 @@ jobs:
   # GTK 3 UI
   gtk3-ui:
     name: "Fuse GTK 3 UI (Linux)"
-    needs: [libspectrum]
+    needs: [libspectrum-gtk]
     uses: ./.github/workflows/build_linux_sub.yml
     with:
       name: GTK3 UI
       dependencies: "libaudiofile-dev libgcrypt-dev gtk3.0 libgtk-3-dev"
       configure_params: "--with-gtk"
+      libspectrum_key: fuse-app-gtk
       verify_ui: "gtk"
       verify_other: "Using GTK 3: yes"
 
