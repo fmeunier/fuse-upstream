@@ -1,43 +1,51 @@
 {
-  "last_run": "2026-04-07T00:00:00Z",
-  "last_run_id": "24105877778",
+  "last_run": "2026-04-08T21:44:31Z",
+  "last_run_id": "24160246642",
   "comments_made": {},
   "fix_attempts": {
     "rectangle-merge-same-y": {
       "issue": "code audit (no issue filed)",
       "pr_branch": "repo-assist/fix-rect-merge-same-y-2026-04",
+      "status": "closed",
+      "note": "Cherry-picked to master as 09cc84f9 by maintainer on 2026-04-07."
+    },
+    "rectangle-merge-same-x": {
+      "issue": "code audit (no issue filed)",
+      "pr_branch": "repo-assist/fix-rect-x-merge-same-x-2026-04",
       "status": "open",
-      "note": "Bug in compare_and_merge_rectangles: strict < missed same-y case. Fixed to <=. Added rectangle unit tests."
+      "note": "Bug in compare_and_merge_rectangles: x-dimension guard used strict < missing same-x case. Fixed to <=. Added Test 9 to rectangle_test unit suite. PR created 2026-04-08 run 24160246642."
     }
   },
   "improvement_ideas": [
-    "upgrade-checkout-v4: PENDING as issue #2 (protected files, needs manual PR)",
-    "upgrade-artifact-v4: PENDING - needs coordination with arki55/fuse-libspectrum (both repos must change upload+download together)",
+    "upgrade-checkout-v4: PENDING as issue #2 (protected files, needs manual PR) - may be partially addressed by maintainer's PR #12",
+    "upgrade-artifact-v4: PENDING - maintainer's PR #12 already upgrades download-artifact to v4 in build_linux_sub.yml",
     "agents-md: DONE (PR merged as #5)",
     "mempool-strdup-tests: DONE (commit a70bb5df merged into master)",
     "utils-safe-strdup-test-and-style: DONE (PR #9 closed, commits cherry-picked to master by maintainer)",
     "display-dirty-scan-ctz: DONE (PR #10 closed, cherry-picked as 7d39defd)",
-    "rectangle-merge-bugfix: PENDING (PR created 2026-04-07, run 24105877778)"
+    "rectangle-merge-same-y-bugfix: DONE (PR #11 closed, cherry-picked as 09cc84f9)",
+    "rectangle-merge-same-x-bugfix: PENDING (PR created 2026-04-08, run 24160246642)"
   ],
   "open_prs": [
     {
-      "title": "[Repo Assist] fix: rectangle merge misses same-y overlap when frame skip enabled",
-      "branch": "repo-assist/fix-rect-merge-same-y-2026-04",
-      "note": "Created 2026-04-07 run 24105877778. Fixes < vs <= bug in compare_and_merge_rectangles. Adds rectangle_test unit tests."
+      "title": "[Repo Assist] fix: rectangle x-dimension merge misses same-x overlap when frame skip enabled",
+      "branch": "repo-assist/fix-rect-x-merge-same-x-2026-04",
+      "note": "Created 2026-04-08 run 24160246642. Fixes < vs <= bug in x-dimension of compare_and_merge_rectangles. Adds Test 9 to rectangle_test unit suite."
     }
   ],
   "pending_issues": [
     {
       "number": 2,
       "title": "ci: upgrade actions/checkout from v3 to v4",
-      "note": "Filed as issue because protected files. Needs manual PR by maintainer."
+      "note": "Filed as issue because protected files. Maintainer working on CI differently via PR #12. May close this once PR #12 is merged."
     }
   ],
   "monthly_activity_issue": "[Repo Assist] Monthly Activity 2026-04",
   "checked_off_by_maintainer": [
     "AGENTS.md PR (merged as #5)",
     "utils_safe_strdup test PR #9 (closed, commits cherry-picked directly)",
-    "display-dirty-scan PR #10 (closed, cherry-picked as 7d39defd)"
+    "display-dirty-scan PR #10 (closed, cherry-picked as 7d39defd)",
+    "rectangle-merge-same-y PR #11 (closed, cherry-picked as 09cc84f9)"
   ],
-  "notes": "PR #10 was closed by maintainer (commits cherry-picked directly). rectangle-merge-same-y bug found via code audit: in compare_and_merge_rectangles, the y-overlap guard used strict < missing same-y case. Fixed to <=. Added comprehensive rectangle unit tests. Next run: check if rectangle PR was merged; look for more bugs or improvements."
+  "notes": "Maintainer's PR #12 switches CI to build libspectrum locally from Sourceforge source rather than from external repo artifacts. This also upgrades download-artifact to v4. The checkout action is still v3 in existing workflows. Next run: check if rectangle x-fix PR was merged; check if PR #12 was merged (and potentially close issue #2 if appropriate)."
 }
