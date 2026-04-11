@@ -1,57 +1,50 @@
 {
-  "last_run": "2026-04-11T00:00:00Z",
-  "last_run_id": "24269852131",
+  "last_run": "2026-04-11T21:43:22Z",
+  "last_run_id": "24292231755",
   "comments_made": {},
   "fix_attempts": {
     "rectangle-merge-same-y": {
       "status": "closed",
-      "note": "Cherry-picked to master as 09cc84f9 by maintainer on 2026-04-07."
+      "note": "Cherry-picked to master as 09cc84f9."
     },
     "rectangle-merge-same-x": {
       "status": "closed",
-      "note": "Cherry-picked to master as 1d1ee0c0 by maintainer on 2026-04-09."
+      "note": "Cherry-picked to master as 1d1ee0c0."
     },
     "bitmap-ops-test": {
       "status": "closed",
-      "note": "Cherry-picked to master as f843d32e by maintainer. Confirmed in git log 2026-04-11."
+      "note": "Cherry-picked to master as f843d32e."
     },
     "displaytest-in-check-local": {
-      "issue": "code audit (no issue filed)",
-      "pr_branch": "repo-assist/improve-check-local-displaytest",
+      "status": "closed",
+      "note": "PR #18 closed; commits cherry-picked to master (77fe695a + f6000e05) by maintainer on 2026-04-11."
+    },
+    "ci-make-check-null-ui": {
+      "pr_branch": "repo-assist/eng-ci-make-check-2026-04-11",
       "status": "open",
-      "note": "Add displaytest to make check + mempool_strdup NULL guard + test. PR created 2026-04-11 run 24269852131."
+      "note": "Add run_check param to build_linux_sub.yml; enable make check for null-UI job. PR created 2026-04-11 run 24292231755."
     }
   },
   "improvement_ideas": [
-    "upgrade-checkout-v4: Maintainer applied as commit 7b87c257 on 2026-04-09. Issue #2 still open but can be closed.",
-    "agents-md: DONE (PR merged as #5)",
+    "upgrade-checkout-v4: DONE (commit 7b87c257)",
+    "agents-md: DONE (PR #5 merged)",
     "mempool-strdup-tests: DONE (commit a70bb5df merged into master)",
     "utils-safe-strdup-test-and-style: DONE (PR #9 closed, commits cherry-picked to master)",
     "display-dirty-scan-ctz: DONE (cherry-picked as 7d39defd)",
     "rectangle-merge-same-y-bugfix: DONE (cherry-picked as 09cc84f9)",
     "rectangle-merge-same-x-bugfix: DONE (cherry-picked as 1d1ee0c0)",
     "bitmap-ops-test: DONE (cherry-picked as f843d32e)",
-    "displaytest-in-check-local: PENDING (PR created 2026-04-11 run 24269852131)"
+    "displaytest-in-check-local: DONE (PR #18 cherry-picked to master)",
+    "ci-make-check-null-ui: PENDING (PR created 2026-04-11 run 24292231755)"
   ],
   "open_prs": [
     {
-      "title": "[Repo Assist] Improve make check: run displaytest and guard mempool_strdup against NULL",
-      "branch": "repo-assist/improve-check-local-displaytest",
-      "note": "Created 2026-04-11 run 24269852131. Adds displaytest to check-local and mempool_strdup NULL guard with test."
+      "title": "[Repo Assist] ci: run make check in the null-UI Linux build",
+      "branch": "repo-assist/eng-ci-make-check-2026-04-11",
+      "note": "Created 2026-04-11 run 24292231755. Adds run_check param to build_linux_sub.yml; enables make check for null-UI job."
     }
   ],
-  "pending_issues": [
-    {
-      "number": 2,
-      "title": "ci: upgrade actions/checkout from v3 to v4",
-      "note": "Work done by maintainer (commit 7b87c257). Issue still open; can be closed. Do not comment."
-    },
-    {
-      "number": 16,
-      "title": "Repo Assist run failed (auto-filed)",
-      "note": "PR #17 by Copilot SWE agent was created to fix COPILOT_MODEL. Maintainer applied v0.68.1 update (commit 948576d1) which likely fixes the root cause. PR #17 is superseded."
-    }
-  ],
+  "pending_issues": [],
   "monthly_activity_issue": {
     "title": "[Repo Assist] Monthly Activity 2026-04",
     "number": 4
@@ -61,9 +54,12 @@
     "utils_safe_strdup test PR #9 (closed, commits cherry-picked directly)",
     "display-dirty-scan PR #10 (closed, cherry-picked as 7d39defd)",
     "rectangle-merge-same-y PR #11 (closed, cherry-picked as 09cc84f9)",
-    "Manually create PR for checkout v3->v4 upgrade (issue #2) - checked off in monthly activity 2026-04",
-    "Review PR #12 (CI overhaul) - checked off in monthly activity 2026-04",
-    "Review PR for rectangle x-dimension fix - checked off in monthly activity 2026-04"
+    "Manually create PR for checkout v3->v4 upgrade (issue #2)",
+    "Review PR #12 (CI overhaul)",
+    "Review PR #13 for rectangle x-dimension fix",
+    "Close PR #17 (Copilot COPILOT_MODEL fix)",
+    "Close issue #2 (actions/checkout v3->v4)",
+    "Review Repo Assist PR #18 (displaytest + mempool_strdup NULL guard)"
   ],
-  "notes": "Maintainer has been very active: bitmap_ops_test cherry-picked, display unit tests added (displaytest.c), test target moved to top-level Makefile.am (commit b20552d9). PR #17 (Copilot COPILOT_MODEL fix) is superseded by v0.68.1 update. Issue #2 (checkout v3->v4) can be closed. This run: added displaytest to make check + mempool_strdup NULL guard."
+  "notes": "Maintainer has been very active cherry-picking all PRs directly. All previous suggested actions checked off. This run: created CI PR to wire make check into null-UI Linux build. Next: explore event.c scheduler tests, consider enabling make check on macOS."
 }
