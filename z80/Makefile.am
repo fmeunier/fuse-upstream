@@ -82,6 +82,10 @@ z80_coretest_SOURCES = z80/coretest.c z80/z80.c
 z80_coretest_LDADD = z80/z80_coretest.o $(GLIB_LIBS) $(LIBSPECTRUM_LIBS)
 z80_coretest_CPPFLAGS = $(GLIB_CFLAGS) $(LIBSPECTRUM_CFLAGS) -DCORETEST
 
+if COMPAT_WIN32
+z80_coretest_LDFLAGS = -mconsole
+endif
+
 z80/coretest.o: $(srcdir)/z80/coretest.c
 	$(AM_V_CC)$(COMPILE) -DCORETEST -c $(srcdir)/z80/coretest.c -o $@
 
