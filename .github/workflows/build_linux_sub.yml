@@ -31,6 +31,10 @@ on:
         type: string
         required: false
         default: ""
+      run_check:
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   build:
@@ -95,6 +99,10 @@ jobs:
       - name: (8) Install
         run: sudo make install
 
-      - name: (9) Finish
+      - name: (9) Run unit tests
+        if: ${{ inputs.run_check }}
+        run: make check
+
+      - name: (10) Finish
         run: |
           echo "🍏 Finishing with status ${{ job.status }}."

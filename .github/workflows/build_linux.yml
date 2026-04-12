@@ -47,6 +47,7 @@ jobs:
       dependencies: "libaudiofile-dev libgcrypt-dev libpng-dev"
       configure_params: "--with-null-ui"
       verify_ui: "null"
+      run_check: true
 
   # GTK 3 UI
   gtk3-ui:
