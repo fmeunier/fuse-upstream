@@ -186,12 +186,22 @@ jobs:
           .github/scripts/in_config.sh "${{ inputs.verify_other }}"
         shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
+      - name: (6e) Dump key link variables
+        run: |
+          cd ${GITHUB_WORKSPACE}
+
+          echo "Reading generated link variables .."
+          grep '^LIBS = ' Makefile || true
+          grep '^SDL1_LIBS = ' Makefile || true
+          grep '^SDL2_LIBS = ' Makefile || true
+        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+
       - name: (7) Make
         run: |
           cd ${GITHUB_WORKSPACE}
           
           echo "Running make .."
-          make
+          make V=1
         shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (8) Copy dependency dlls
