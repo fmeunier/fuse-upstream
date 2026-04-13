@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-04-12T21:43:32Z",
-  "last_run_id": "24317072283",
+  "last_run": "2026-04-13T21:45:15Z",
+  "last_run_id": "24368444247",
   "comments_made": {},
   "fix_attempts": {
     "rectangle-merge-same-y": {
@@ -35,19 +35,21 @@
     "bitmap-ops-test: DONE (cherry-picked as f843d32e)",
     "displaytest-in-check-local: DONE (PR #18 cherry-picked to master)",
     "ci-make-check-null-ui: DONE (cherry-picked as 4ae7251b)",
-    "sdl2-test-coverage: PENDING (PR created 2026-04-12 run 24317072283)",
-    "ci-macos-make-check: PENDING (PR created 2026-04-12 run 24317072283)"
+    "sdl2-test-coverage: DONE (PR cherry-picked as f23b3dfe on 2026-04-12)",
+    "ci-macos-make-check: DONE (PR cherry-picked as 713e91be on 2026-04-12)",
+    "sdl2-edge-case-tests: PENDING (PR created 2026-04-13 run 24368444247)",
+    "ci-pin-cygwin-action: PENDING (PR created 2026-04-13 run 24368444247)"
   ],
   "open_prs": [
     {
-      "title": "[Repo Assist] tests: add edge-case coverage to sdl2displaytest",
-      "branch": "repo-assist/improve-sdl2-test-coverage",
-      "note": "Created 2026-04-12. Adds 5 new test cases for sdl2_display_internal.c edge cases."
+      "title": "[Repo Assist] tests: add boundary and guard-condition tests for SDL2 joystick and mouse helpers",
+      "branch": "repo-assist/improve-sdl2-edge-case-tests",
+      "note": "Created 2026-04-13. Adds axis threshold boundary tests + mouse guard-condition test."
     },
     {
-      "title": "[Repo Assist] ci: run make check in the null-UI macOS build",
-      "branch": "repo-assist/eng-macos-make-check-2026-04-12",
-      "note": "Created 2026-04-12. Adds run_check param to build_macos_sub.yml; enables make check for null-UI job."
+      "title": "[Repo Assist] ci: pin cygwin/cygwin-install-action to v6 commit hash",
+      "branch": "repo-assist/eng-pin-cygwin-action-2026-04-13",
+      "note": "Created 2026-04-13. Pins @master to 711d29f3 (v6) in both Windows build workflows."
     }
   ],
   "pending_issues": [],
@@ -66,7 +68,9 @@
     "Close PR #17 (Copilot COPILOT_MODEL fix)",
     "Close issue #2 (actions/checkout v3->v4)",
     "Review Repo Assist PR #18 (displaytest + mempool_strdup NULL guard)",
-    "Review CI PR (ci: run make check in null-UI Linux build) — cherry-picked as 4ae7251b"
+    "Review CI PR (ci: run make check in null-UI Linux build) — cherry-picked as 4ae7251b",
+    "Review PR sdl2-test-coverage (cherry-picked as f23b3dfe)",
+    "Review PR ci-macos-make-check (cherry-picked as 713e91be)"
   ],
-  "notes": "Maintainer added SDL2 UI (big feature, commit 61742942). Two PRs created this run: sdl2 test coverage and macOS make check CI. Next: check if SDL2 UI needs any test coverage gaps filled; consider event.c scheduler tests."
+  "notes": "Maintainer continues cherry-picking PRs directly to master. Next: explore event.c scheduler unit tests (requires GLib/libspectrum, tricky standalone); mempool improvements; or further CI hardening."
 }
