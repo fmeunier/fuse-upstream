@@ -1,28 +1,14 @@
 {
-  "last_run": "2026-04-15T21:46:12Z",
-  "last_run_id": "24479986715",
+  "last_run": "2026-04-16T00:00:00Z",
+  "last_run_id": "24535552986",
   "comments_made": {},
   "fix_attempts": {
-    "rectangle-merge-same-y": {
-      "status": "closed",
-      "note": "Cherry-picked to master as 09cc84f9."
-    },
-    "rectangle-merge-same-x": {
-      "status": "closed",
-      "note": "Cherry-picked to master as 1d1ee0c0."
-    },
-    "bitmap-ops-test": {
-      "status": "closed",
-      "note": "Cherry-picked to master as f843d32e."
-    },
-    "displaytest-in-check-local": {
-      "status": "closed",
-      "note": "PR #18 closed; commits cherry-picked to master (77fe695a + f6000e05) by maintainer on 2026-04-11."
-    },
-    "ci-make-check-null-ui": {
-      "status": "closed",
-      "note": "Cherry-picked to master as 4ae7251b on 2026-04-12."
-    }
+    "rectangle-merge-same-y": {"status": "closed", "note": "Cherry-picked to master as 09cc84f9."},
+    "rectangle-merge-same-x": {"status": "closed", "note": "Cherry-picked to master as 1d1ee0c0."},
+    "bitmap-ops-test": {"status": "closed", "note": "Cherry-picked to master as f843d32e."},
+    "displaytest-in-check-local": {"status": "closed", "note": "PR #18 closed; commits cherry-picked to master by maintainer on 2026-04-11."},
+    "ci-make-check-null-ui": {"status": "closed", "note": "Cherry-picked to master as 4ae7251b on 2026-04-12."},
+    "uidisplay-plot16-wrong-type": {"status": "open", "note": "Fixed in PR timex-display-tests-2026-04-16. Stub used libspectrum_byte instead of libspectrum_word."}
   },
   "improvement_ideas": [
     "upgrade-checkout-v4: DONE (commit 7b87c257)",
@@ -40,20 +26,25 @@
     "sdl2-edge-case-tests: DONE (PR #23 cherry-picked to master as 5ab591f6 on 2026-04-15)",
     "ci-pin-cygwin-action: DONE (cherry-picked to master as 440b64c4 on 2026-04-15)",
     "sdl2-display-tiebreaker-tests: DONE (PR cherry-picked to master as 0ae54115 on 2026-04-15)",
-    "rectangle-missing-branch-tests: PENDING (PR created 2026-04-15 run 24479986715)"
+    "rectangle-missing-branch-tests: PENDING (PR #26 created 2026-04-15)",
+    "timex-display-tests: PENDING (PR created 2026-04-16, branch repo-assist/improve-timex-display-tests-2026-04-16)"
   ],
   "open_prs": [
     {
       "title": "[Repo Assist] tests: add missing branch coverage for compare_and_merge_rectangles",
+      "number": 26,
       "branch": "repo-assist/improve-rectangle-missing-branch-tests-2026-04-15",
-      "note": "Created 2026-04-15. Adds 3 tests covering y-above merge, x-left merge, and non-overlapping fallthrough."
+      "note": "Created 2026-04-15. Adds 3 tests for y-above merge, x-left merge, non-overlapping fallthrough."
+    },
+    {
+      "title": "[Repo Assist] tests: add coverage for display_write_if_dirty_timex",
+      "number": null,
+      "branch": "repo-assist/improve-timex-display-tests-2026-04-16",
+      "note": "Created 2026-04-16. 4 Timex display tests + uidisplay_plot16 stub bug fix (libspectrum_byte->libspectrum_word)."
     }
   ],
   "pending_issues": [],
-  "monthly_activity_issue": {
-    "title": "[Repo Assist] Monthly Activity 2026-04",
-    "number": 4
-  },
+  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-04", "number": 4},
   "checked_off_by_maintainer": [
     "AGENTS.md PR (merged as #5)",
     "utils_safe_strdup test PR #9 (closed, commits cherry-picked directly)",
@@ -72,5 +63,5 @@
     "Review PR (sdl2-display-tiebreaker-tests) - cherry-picked as 0ae54115 on 2026-04-15",
     "Check issue #24 (cygwin pin) - applied by maintainer as 440b64c4 on 2026-04-15"
   ],
-  "notes": "All previous open PRs cherry-picked by maintainer on 2026-04-15. New PR: rectangle branch tests (y-above, x-left, non-overlapping). Task 4 scanned: no actionable engineering improvements found beyond what maintainer already applied."
+  "notes": "2026-04-16: Created PR for Timex display tests (4 new tests for display_write_if_dirty_timex + uidisplay_plot16 stub signature fix). PR #26 (rectangle branch tests) still open. Next area to explore: event.c scheduler tests."
 }
