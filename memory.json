@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-04-17T00:00:00Z",
-  "last_run_id": "24587969096",
+  "last_run": "2026-04-18T21:43:00Z",
+  "last_run_id": "24614519163",
   "comments_made": {},
   "fix_attempts": {
     "rectangle-merge-same-y": {"status": "closed", "note": "Cherry-picked to master as 09cc84f9."},
@@ -9,7 +9,8 @@
     "displaytest-in-check-local": {"status": "closed", "note": "PR #18 closed; commits cherry-picked to master."},
     "ci-make-check-null-ui": {"status": "closed", "note": "Cherry-picked to master as 4ae7251b."},
     "uidisplay-plot16-wrong-type": {"status": "open", "note": "Fixed in PR #27 (timex-display-tests-2026-04-16)."},
-    "flash-sinclair-tests": {"status": "open", "note": "PR created 2026-04-17. Adds 3 tests for display_dirty_flashing_sinclair + display_get_maybe_dirty helper."}
+    "flash-sinclair-tests": {"status": "open", "note": "PR #28. Adds 3 tests for display_dirty_flashing_sinclair + display_get_maybe_dirty helper."},
+    "pentagon-display-tests": {"status": "open", "note": "PR #29 (2026-04-18). Adds 3 tests for display_write_if_dirty_pentagon_16_col + putpixel tracking."}
   },
   "improvement_ideas": [
     "upgrade-checkout-v4: DONE",
@@ -29,7 +30,8 @@
     "sdl2-display-tiebreaker-tests: DONE (0ae54115)",
     "rectangle-missing-branch-tests: PENDING (PR #26)",
     "timex-display-tests: PENDING (PR #27)",
-    "flash-sinclair-tests: PENDING (PR created 2026-04-17)"
+    "flash-sinclair-tests: PENDING (PR #28)",
+    "pentagon-display-tests: PENDING (PR #29)"
   ],
   "open_prs": [
     {
@@ -46,9 +48,15 @@
     },
     {
       "title": "[Repo Assist] tests: add coverage for display_dirty_flashing_sinclair",
-      "number": null,
+      "number": 28,
       "branch": "repo-assist/improve-flash-sinclair-tests-2026-04-17",
       "note": "Created 2026-04-17. Adds display_get_maybe_dirty helper + 3 flash tests."
+    },
+    {
+      "title": "[Repo Assist] tests: add coverage for display_write_if_dirty_pentagon_16_col",
+      "number": 29,
+      "branch": "repo-assist/improve-pentagon-display-tests-2026-04-18",
+      "note": "Created 2026-04-18. Adds putpixel tracking + 3 pentagon 16-col tests."
     }
   ],
   "pending_issues": [],
@@ -71,5 +79,5 @@
     "Review PR (sdl2-display-tiebreaker-tests, 0ae54115)",
     "Check issue #24 (cygwin pin, 440b64c4)"
   ],
-  "notes": "2026-04-17: Created PR for display_dirty_flashing_sinclair tests (3 new tests + display_get_maybe_dirty helper). PRs #26, #27 still open pending maintainer review. event.c scheduler is too GLib-dependent for standalone unit tests."
+  "notes": "2026-04-18: Created PR #29 for display_write_if_dirty_pentagon_16_col tests (3 tests + putpixel tracking). PRs #26, #27, #28, #29 open pending maintainer review. No CI failures on existing PRs. event.c scheduler is too GLib-dependent for standalone unit tests."
 }
