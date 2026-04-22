@@ -17,6 +17,10 @@ on:
         type: string
         required: false
         default: ""
+      fuse_ref:
+        type: string
+        required: false
+        default: ""
       fuse_version:
         type: string
         required: false
@@ -73,7 +77,14 @@ jobs:
         shell: bash
 
       - name: (2) Check out repository code
+        if: ${{ !inputs.fuse_ref }}
         uses: actions/checkout@v4
+
+      - name: (2b) Check out repository code at requested ref
+        if: ${{ inputs.fuse_ref }}
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.fuse_ref }}
 
       - name: (3) Install Cygwin (32 bit) with libs
         uses: cygwin/cygwin-install-action@711d29f3da23c9f4a1798e369a6f01198c13b11a # v6
