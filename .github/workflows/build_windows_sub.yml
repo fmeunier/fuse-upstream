@@ -298,10 +298,11 @@ jobs:
                   fi
 
                   notice_name="$( normalise_notice_name "$notice_file" )"
-                  notice_target="$NOTICE_DIR/$notice_name"
+                  notice_target="$NOTICE_DIR/${package_label}-${notice_name}"
 
-                  if [[ -e "$notice_target" ]] && ! cmp -s "$notice_file" "$notice_target"; then
-                    notice_target="$NOTICE_DIR/${package_label}-${notice_name}"
+                  if [[ -e "$notice_target" ]] && cmp -s "$notice_file" "$notice_target"; then
+                    found=1
+                    continue
                   fi
 
                   cp "$notice_file" "$notice_target"
