@@ -264,6 +264,7 @@ jobs:
 
           copy_notice_files() {
             package_name="$1"
+            package_label="${package_name#mingw64-i686-}"
             found=0
 
             normalise_notice_name() {
@@ -300,7 +301,7 @@ jobs:
                   notice_target="$NOTICE_DIR/$notice_name"
 
                   if [[ -e "$notice_target" ]] && ! cmp -s "$notice_file" "$notice_target"; then
-                    notice_target="$NOTICE_DIR/${notice_name%.txt}-${package_name}.txt"
+                    notice_target="$NOTICE_DIR/${package_label}-${notice_name}"
                   fi
 
                   cp "$notice_file" "$notice_target"
