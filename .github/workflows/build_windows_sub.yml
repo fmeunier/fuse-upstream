@@ -98,8 +98,12 @@ jobs:
             gcc-core \
             gcc-g++ \
             gettext-devel \
+            ghostscript \
+            groff \
             libtool \
             make \
+            netpbm \
+            psutils \
             zip \
             mingw64-i686-bzip2 \
             mingw64-i686-gcc-core \
