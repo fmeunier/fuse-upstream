@@ -26,6 +26,7 @@ install-win32: all
 	test -n "$(DESTDIR)" || { echo "ERROR: set DESTDIR path"; exit 1; }
 	$(MKDIR_P) $(DESTDIR)/roms/ || exit 1
 	$(MKDIR_P) $(DESTDIR)/lib/ || exit 1
+	$(MKDIR_P) $(DESTDIR)/3rd-party/ || exit 1
 	test "$(UI)" != "sdl" || $(MKDIR_P) $(DESTDIR)/ui/widget/ || exit 1
 	cp $(top_srcdir)/roms/*.rom $(DESTDIR)/roms
 	cp $(top_srcdir)/roms/README.copyright $(DESTDIR)/roms
@@ -40,6 +41,8 @@ install-win32: all
 	for file in AUTHORS ChangeLog COPYING README; \
 	  do cp "$(top_srcdir)/$$file" "$(DESTDIR)/$$file.txt"; \
 	done
+	cp "$(top_srcdir)/data/win32/README-win32.txt" "$(DESTDIR)/README-win32.txt"
+	cp "$(top_srcdir)/data/win32/LICENSES.txt" "$(DESTDIR)/LICENSES.txt"
 #	Get manuals
 	if test -n "$(GROFF)"; then \
 	  sed ':a;N;$$!ba;s/\.PP\n\.TS/\.bp\n&/g' $(top_srcdir)/man/fuse.1 | \

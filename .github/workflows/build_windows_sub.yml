@@ -253,6 +253,62 @@ jobs:
           cp ${CYGWIN_LIBDIR}libxml2-2.dll $DEST_DIR || true
           cp ${CYGWIN_LIBDIR}iconv.dll $DEST_DIR || true
           cp ${CYGWIN_LIBDIR}liblzma-5.dll $DEST_DIR || true
+
+          echo "Copying third-party notices .."
+          NOTICE_DIR="${DEST_DIR}/3rd-party"
+          mkdir -p "$NOTICE_DIR"
+
+          copy_notice_files() {
+            package_name="$1"
+            found=0
+
+            for base_dir in \
+              "/usr/share/doc" \
+              "/usr/share/licenses" \
+              "/usr/i686-w64-mingw32/sys-root/mingw/share/doc" \
+              "/usr/i686-w64-mingw32/sys-root/mingw/share/licenses" \
+              "/usr/local/i686-w64-mingw32/share/doc" \
+              "/usr/local/i686-w64-mingw32/share/licenses"; do
+              package_dir="${base_dir}/${package_name}"
+
+              if [[ ! -d "$package_dir" ]]; then
+                continue
+              fi
+
+              for pattern in COPYING* LICENSE* AUTHORS* README*; do
+                for notice_file in "$package_dir"/$pattern; do
+                  if [[ ! -f "$notice_file" ]]; then
+                    continue
+                  fi
+
+                  cp "$notice_file" "$NOTICE_DIR/${package_name}-$( basename "$notice_file" )"
+                  found=1
+                done
+              done
+            done
+
+            if [[ "$found" -eq 0 ]]; then
+              echo "Notice files not found for ${package_name}"
+            fi
+          }
+
+          copy_notice_files libspectrum
+          copy_notice_files mingw64-i686-gcc-core
+          copy_notice_files mingw64-i686-gcc-g++
+          copy_notice_files mingw64-i686-winpthreads
+          copy_notice_files mingw64-i686-libgpg-error
+          copy_notice_files mingw64-i686-libgcrypt
+          copy_notice_files mingw64-i686-libpng
+          copy_notice_files mingw64-i686-zlib
+          copy_notice_files mingw64-i686-bzip2
+          copy_notice_files mingw64-i686-audiofile
+          copy_notice_files mingw64-i686-flac
+          copy_notice_files mingw64-i686-libogg
+          copy_notice_files mingw64-i686-libxml2
+          copy_notice_files mingw64-i686-win-iconv
+          copy_notice_files mingw64-i686-xz
+          copy_notice_files mingw64-i686-SDL
+          copy_notice_files mingw64-i686-SDL2
           
           echo "Copying libspectrum dll .."
           cp /usr/local/i686-w64-mingw32/bin/libspectrum-*.dll $DEST_DIR
