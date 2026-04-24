@@ -266,6 +266,17 @@ jobs:
             package_name="$1"
             found=0
 
+            normalise_notice_name() {
+              notice_name="$( basename "$1" )"
+
+              case "$notice_name" in
+                *.txt|*.TXT) ;;
+                *) notice_name="${notice_name}.txt" ;;
+              esac
+
+              printf '%s\n' "$notice_name"
+            }
+
             for base_dir in \
               "/usr/share/doc" \
               "/usr/share/licenses" \
@@ -285,7 +296,14 @@ jobs:
                     continue
                   fi
 
-                  cp "$notice_file" "$NOTICE_DIR/${package_name}-$( basename "$notice_file" )"
+                  notice_name="$( normalise_notice_name "$notice_file" )"
+                  notice_target="$NOTICE_DIR/$notice_name"
+
+                  if [[ -e "$notice_target" ]] && ! cmp -s "$notice_file" "$notice_target"; then
+                    notice_target="$NOTICE_DIR/${notice_name%.txt}-${package_name}.txt"
+                  fi
+
+                  cp "$notice_file" "$notice_target"
                   found=1
                 done
               done
