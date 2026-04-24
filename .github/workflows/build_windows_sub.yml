@@ -370,19 +370,9 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}
 
-          base_name="fuse-windows-${{ inputs.key }}"
-
-          zip_from=${{ steps.copy-dlls.outputs.FUSE_DISTR_DIR }}.zip
+          base_name=${{ steps.copy-dlls.outputs.FUSE_DISTR_DIR }}
           zip_to="${base_name}.zip"
-
-          echo "Renaming ZIP file from $zip_from to $zip_to"
-          mv $zip_from $zip_to
-
-          sha1_from=${{ steps.copy-dlls.outputs.FUSE_DISTR_DIR }}.zip.sha1
           sha1_to="${base_name}.zip.sha1"
-
-          echo "Renaming SHA1 file from $sha1_from to $sha1_to"
-          mv $sha1_from $sha1_to
 
           echo "Remember new file names"
           echo "FUSE_DISTR_BASE=${base_name}" >> "$GITHUB_OUTPUT"
