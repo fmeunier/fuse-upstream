@@ -43,6 +43,17 @@ install-win32: all
 	done
 	cp "$(top_srcdir)/data/win32/README-win32.txt" "$(DESTDIR)/README-win32.txt"
 	cp "$(top_srcdir)/data/win32/LICENSES.txt" "$(DESTDIR)/LICENSES.txt"
+	@has_sdl=no; \
+	has_sdl2=no; \
+	test -f "$(DESTDIR)/SDL.dll" && has_sdl=yes; \
+	test -f "$(DESTDIR)/SDL2.dll" && has_sdl2=yes; \
+	awk -v has_sdl="$$has_sdl" -v has_sdl2="$$has_sdl2" '\
+	  /^Files: SDL\.dll$$/ { skip = ( has_sdl != "yes" ); } \
+	  /^Files: SDL2\.dll$$/ { skip = ( has_sdl2 != "yes" ); } \
+	  /^Files: / && $$0 != "Files: SDL.dll" && $$0 != "Files: SDL2.dll" { skip = 0; } \
+	  !skip { print }' \
+	  "$(DESTDIR)/LICENSES.txt" > "$(DESTDIR)/LICENSES.txt.tmp" && \
+	mv "$(DESTDIR)/LICENSES.txt.tmp" "$(DESTDIR)/LICENSES.txt"
 #	Get manuals
 	if test -n "$(GROFF)"; then \
 	  sed ':a;N;$$!ba;s/\.PP\n\.TS/\.bp\n&/g' $(top_srcdir)/man/fuse.1 | \

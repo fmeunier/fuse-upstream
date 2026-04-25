@@ -235,9 +235,15 @@ jobs:
           echo "Copying optional dependency dlls .."
           # Don't have logic to check what was enabled, so copying all
           
-          # SDL dlls
-          cp ${CYGWIN_LIBDIR}SDL.dll $DEST_DIR || true
-          cp ${CYGWIN_LIBDIR}SDL2.dll $DEST_DIR || true
+          # SDL runtime selection follows the configured UI variant.
+          case "${{ inputs.verify_ui }}" in
+            sdl)
+              cp ${CYGWIN_LIBDIR}SDL.dll $DEST_DIR || true
+              ;;
+            sdl2)
+              cp ${CYGWIN_LIBDIR}SDL2.dll $DEST_DIR || true
+              ;;
+          esac
 
           # Zlib dlls
           cp ${CYGWIN_LIBDIR}zlib1.dll $DEST_DIR || true
@@ -264,6 +270,7 @@ jobs:
 
           copy_notice_files() {
             package_name="$1"
+            shift
             package_label="${package_name#mingw64-i686-}"
             found=0
 
@@ -285,28 +292,30 @@ jobs:
               "/usr/i686-w64-mingw32/sys-root/mingw/share/licenses" \
               "/usr/local/i686-w64-mingw32/share/doc" \
               "/usr/local/i686-w64-mingw32/share/licenses"; do
-              package_dir="${base_dir}/${package_name}"
+              for dir_name in "$package_name" "$package_label" "$@"; do
+                package_dir="${base_dir}/${dir_name}"
 
-              if [[ ! -d "$package_dir" ]]; then
-                continue
-              fi
+                if [[ ! -d "$package_dir" ]]; then
+                  continue
+                fi
 
-              for pattern in COPYING* LICENSE* AUTHORS* README*; do
-                for notice_file in "$package_dir"/$pattern; do
-                  if [[ ! -f "$notice_file" ]]; then
-                    continue
-                  fi
+                for pattern in COPYING* LICENSE* AUTHORS* README*; do
+                  for notice_file in "$package_dir"/$pattern; do
+                    if [[ ! -f "$notice_file" ]]; then
+                      continue
+                    fi
 
-                  notice_name="$( normalise_notice_name "$notice_file" )"
-                  notice_target="$NOTICE_DIR/${package_label}-${notice_name}"
+                    notice_name="$( normalise_notice_name "$notice_file" )"
+                    notice_target="$NOTICE_DIR/${package_label}-${notice_name}"
 
-                  if [[ -e "$notice_target" ]] && cmp -s "$notice_file" "$notice_target"; then
+                    if [[ -e "$notice_target" ]] && cmp -s "$notice_file" "$notice_target"; then
+                      found=1
+                      continue
+                    fi
+
+                    cp "$notice_file" "$notice_target"
                     found=1
-                    continue
-                  fi
-
-                  cp "$notice_file" "$notice_target"
-                  found=1
+                  done
                 done
               done
             done
@@ -331,8 +340,13 @@ jobs:
           copy_notice_files mingw64-i686-libxml2
           copy_notice_files mingw64-i686-win-iconv
           copy_notice_files mingw64-i686-xz
-          copy_notice_files mingw64-i686-SDL
-          copy_notice_files mingw64-i686-SDL2
+          if [[ -f "$DEST_DIR/SDL.dll" ]]; then
+            copy_notice_files mingw64-i686-SDL SDL
+          fi
+
+          if [[ -f "$DEST_DIR/SDL2.dll" ]]; then
+            copy_notice_files mingw64-i686-SDL2 SDL2
+          fi
           
           echo "Copying libspectrum dll .."
           cp /usr/local/i686-w64-mingw32/bin/libspectrum-*.dll $DEST_DIR
