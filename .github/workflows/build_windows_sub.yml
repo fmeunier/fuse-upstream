@@ -325,6 +325,15 @@ jobs:
             fi
           }
 
+          copy_fallback_notice_file() {
+            notice_file="$1"
+            notice_target="$NOTICE_DIR/$( basename "$notice_file" )"
+
+            if [[ -f "$notice_file" ]]; then
+              cp "$notice_file" "$notice_target"
+            fi
+          }
+
           copy_notice_files libspectrum
           copy_notice_files mingw64-i686-gcc-core
           copy_notice_files mingw64-i686-gcc-g++
@@ -346,6 +355,10 @@ jobs:
 
           if [[ -f "$DEST_DIR/SDL2.dll" ]]; then
             copy_notice_files mingw64-i686-SDL2 SDL2
+
+            if ! compgen -G "$NOTICE_DIR/SDL2-*" > /dev/null; then
+              copy_fallback_notice_file "${GITHUB_WORKSPACE}/data/win32/3rd-party/SDL2-LICENSE.txt"
+            fi
           fi
           
           echo "Copying libspectrum dll .."
