@@ -68,8 +68,14 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}
 
+          workspace_drive="$( printf '%s' "$GITHUB_WORKSPACE" | cut -d: -f1 | tr 'A-Z' 'a-z' )"
+          workspace_suffix="$( printf '%s' "$GITHUB_WORKSPACE" | cut -d: -f2- | tr '\\' '/' )"
+          workspace_cygwin="/cygdrive/${workspace_drive}${workspace_suffix}"
+
           echo "Adjust autocrlf in git.."
           git config --global core.autocrlf input
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global --add safe.directory "$workspace_cygwin"
 
           echo -n "Current directory: "
           pwd
