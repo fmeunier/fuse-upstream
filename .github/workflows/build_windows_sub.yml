@@ -132,6 +132,10 @@ jobs:
         if: ${{ inputs.build_setup }}
         run: |
           choco install nsis --no-progress -y
+          if [ -x "/cygdrive/c/ProgramData/chocolatey/bin/makensis.exe" ]; then
+            ln -sf /cygdrive/c/ProgramData/chocolatey/bin/makensis.exe /usr/local/bin/makensis
+          fi
+        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (4) Download libspectrum artefact
         uses: actions/download-artifact@v4
