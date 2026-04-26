@@ -136,9 +136,21 @@ jobs:
       - name: (3c) Expose NSIS to Cygwin
         if: ${{ inputs.build_setup }}
         run: |
-          if [ -x "/cygdrive/c/ProgramData/chocolatey/bin/makensis.exe" ]; then
-            ln -sf /cygdrive/c/ProgramData/chocolatey/bin/makensis.exe /usr/local/bin/makensis
-          fi
+          cat > /usr/local/bin/makensis <<'EOF'
+          #!/bin/sh
+          for candidate in \
+            "/cygdrive/c/ProgramData/chocolatey/bin/makensis.exe" \
+            "/cygdrive/c/Program Files (x86)/NSIS/makensis.exe" \
+            "/cygdrive/c/Program Files/NSIS/makensis.exe"; do
+            if [ -x "$candidate" ]; then
+              exec "$candidate" "$@"
+            fi
+          done
+
+          echo "makensis executable not found" >&2
+          exit 1
+          EOF
+          chmod +x /usr/local/bin/makensis
         shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (4) Download libspectrum artefact
