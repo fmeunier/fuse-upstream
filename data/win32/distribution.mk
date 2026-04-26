@@ -27,13 +27,13 @@ install-win32: all
 	$(MKDIR_P) $(DESTDIR)/roms/ || exit 1
 	$(MKDIR_P) $(DESTDIR)/lib/ || exit 1
 	$(MKDIR_P) $(DESTDIR)/3rd-party/ || exit 1
-	test "$(UI)" != "sdl" || $(MKDIR_P) $(DESTDIR)/ui/widget/ || exit 1
+	test "$(UI)" != "sdl" -a "$(UI)" != "sdl2" || $(MKDIR_P) $(DESTDIR)/ui/widget/ || exit 1
 	cp $(top_srcdir)/roms/*.rom $(DESTDIR)/roms
 	cp $(top_srcdir)/roms/README.copyright $(DESTDIR)/roms
 	cp $(top_srcdir)/lib/*.bmp $(DESTDIR)/lib
 	cp $(top_srcdir)/lib/*.png $(DESTDIR)/lib
 	cp $(top_srcdir)/lib/*.scr $(DESTDIR)/lib
-	test "$(UI)" != "sdl" || cp $(top_builddir)/ui/widget/fuse.font $(DESTDIR)/ui/widget
+	test "$(UI)" != "sdl" -a "$(UI)" != "sdl2" || cp $(top_builddir)/ui/widget/fuse.font $(DESTDIR)/ui/widget
 #	Copy fuse executable (we should manually copy the required libraries)
 	cp $(top_builddir)/.libs/fuse$(EXEEXT) $(DESTDIR) || \
 	cp $(top_builddir)/fuse$(EXEEXT) $(DESTDIR)
