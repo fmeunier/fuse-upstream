@@ -132,6 +132,10 @@ jobs:
         if: ${{ inputs.build_setup }}
         run: |
           choco install nsis --no-progress -y
+
+      - name: (3c) Expose NSIS to Cygwin
+        if: ${{ inputs.build_setup }}
+        run: |
           if [ -x "/cygdrive/c/ProgramData/chocolatey/bin/makensis.exe" ]; then
             ln -sf /cygdrive/c/ProgramData/chocolatey/bin/makensis.exe /usr/local/bin/makensis
           fi
@@ -184,8 +188,8 @@ jobs:
           |& tee ./configure.out
         shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
-      - name: (6b) Check config.log (on failure)
-        if: failure() && steps.run-configure.outcome != 'success'
+      - name: (6b) Check config.log (on configure failure)
+        if: ${{ steps.run-configure.outcome == 'failure' }}
         run: |
           cd ${GITHUB_WORKSPACE}
 
