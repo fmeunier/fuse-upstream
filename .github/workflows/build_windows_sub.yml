@@ -104,6 +104,7 @@ jobs:
             autoconf \
             automake \
             bison \
+            dos2unix \
             flex \
             gcc-core \
             gcc-g++ \
