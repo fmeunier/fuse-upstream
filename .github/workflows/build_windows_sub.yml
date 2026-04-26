@@ -44,6 +44,10 @@ on:
         type: boolean
         required: false
         default: true
+      build_setup:
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   build:
@@ -123,6 +127,11 @@ jobs:
             mingw64-i686-audiofile \
             pkg-config \
             ${{ inputs.dependencies }}
+
+      - name: (3b) Install NSIS
+        if: ${{ inputs.build_setup }}
+        run: |
+          choco install nsis --no-progress -y
 
       - name: (4) Download libspectrum artefact
         uses: actions/download-artifact@v4
@@ -398,6 +407,11 @@ jobs:
           
           echo "Running make dist-win32-zip .."
           make dist-win32-zip
+
+          if [ "${{ inputs.build_setup }}" = "true" ]; then
+            echo "Running make dist-win32-exe .."
+            make dist-win32-exe
+          fi
         shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (10b) Rename distribution files, patch SHA1 file
@@ -408,11 +422,18 @@ jobs:
           base_name=${{ steps.copy-dlls.outputs.FUSE_DISTR_DIR }}
           zip_to="${base_name}.zip"
           sha1_to="${base_name}.zip.sha1"
+          setup_to="${base_name}-setup.exe"
+          setup_sha1_to="${base_name}-setup.exe.sha1"
 
           echo "Remember new file names"
           echo "FUSE_DISTR_BASE=${base_name}" >> "$GITHUB_OUTPUT"
           echo "FUSE_DISTR_ZIP=${zip_to}" >> "$GITHUB_OUTPUT"
           echo "FUSE_DISTR_SHA1=${sha1_to}" >> "$GITHUB_OUTPUT"
+
+          if [ "${{ inputs.build_setup }}" = "true" ]; then
+            echo "FUSE_DISTR_SETUP=${setup_to}" >> "$GITHUB_OUTPUT"
+            echo "FUSE_DISTR_SETUP_SHA1=${setup_sha1_to}" >> "$GITHUB_OUTPUT"
+          fi
 
         shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
@@ -425,6 +446,8 @@ jobs:
           path: |
             ${{ steps.rename-files.outputs.FUSE_DISTR_ZIP }}
             ${{ steps.rename-files.outputs.FUSE_DISTR_SHA1 }}
+            ${{ steps.rename-files.outputs.FUSE_DISTR_SETUP }}
+            ${{ steps.rename-files.outputs.FUSE_DISTR_SETUP_SHA1 }}
 
       - name: (12) Finish
         run: |

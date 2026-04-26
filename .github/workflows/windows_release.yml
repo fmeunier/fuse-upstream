@@ -99,3 +99,4 @@ jobs:
       verify_audio: ${{ matrix.build.verify_audio }}
       verify_other: ${{ matrix.build.verify_other }}
       upload_artifacts: true
+      build_setup: true
