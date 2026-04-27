@@ -164,13 +164,13 @@ jobs:
 
       - name: (3a) Mark Cygwin workspace as safe for git
         run: |
-          workspace_drive="$( printf '%s' "$GITHUB_WORKSPACE" | cut -d: -f1 | tr 'A-Z' 'a-z' )"
-          workspace_suffix="$( printf '%s' "$GITHUB_WORKSPACE" | cut -d: -f2- | tr '\\' '/' )"
-          workspace_cygwin="/cygdrive/${workspace_drive}${workspace_suffix}"
+          $workspaceDrive = $env:GITHUB_WORKSPACE.Substring(0, 1).ToLowerInvariant()
+          $workspaceSuffix = $env:GITHUB_WORKSPACE.Substring(2).Replace('\', '/')
+          $workspaceCygwin = "/cygdrive/$workspaceDrive$workspaceSuffix"
 
-          git config --system --add safe.directory "$GITHUB_WORKSPACE"
-          git config --system --add safe.directory "$workspace_cygwin"
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+          & 'D:\cygwin\bin\git.exe' config --system --add safe.directory "$env:GITHUB_WORKSPACE"
+          & 'D:\cygwin\bin\git.exe' config --system --add safe.directory "$workspaceCygwin"
+        shell: powershell
 
       - name: (3b) Install NSIS
         if: ${{ inputs.build_setup }}
