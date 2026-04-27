@@ -195,7 +195,7 @@ jobs:
           exit 1
           EOF
           chmod +x /usr/local/bin/makensis
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (4) Download libspectrum artefact
         uses: actions/download-artifact@v8
@@ -210,7 +210,7 @@ jobs:
           mkdir /usr/local/i686-w64-mingw32 || true
           tar --directory /usr/local/i686-w64-mingw32 -xvf libspectrum/libspectrum-installed-windows.tar
           echo "Done"
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (5a) Adjust fuse_version
         if: ${{ inputs.fuse_version }}
@@ -221,14 +221,14 @@ jobs:
           content=`cat $file`
           content2=${content//m4_define(\[fuse_version\], \[[0-9].[0-9].[0-9]\])/m4_define(\[fuse_version\], \[$replace\])}
           echo "$content2" > $file
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (5b) Autogen.sh
         run: |
           cd ${GITHUB_WORKSPACE}
           echo "Running autogen.sh .."
           ./autogen.sh
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (6) Configure for Windows
         id: run-configure
@@ -242,7 +242,7 @@ jobs:
           --disable-static \
           ${{ inputs.configure_params }} \
           |& tee ./configure.out
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (6b) Check config.log (on configure failure)
         if: ${{ steps.run-configure.outcome == 'failure' }}
@@ -251,7 +251,7 @@ jobs:
 
           echo "Reading config.log file .."
           cat config.log
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (6c) Verify output from configure
         # Most of the tested strings are common for all Windows builds
@@ -270,7 +270,7 @@ jobs:
           .github/scripts/in_config.sh "User interface: ${{ inputs.verify_ui }}"
           .github/scripts/in_config.sh "libxml2 support: ${{ inputs.verify_libxml2 }}"
           .github/scripts/in_config.sh "Selected audio driver: ${{ inputs.verify_audio }}"
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (6d) Verify optional parameter
         if: ${{ inputs.verify_other }}
@@ -278,7 +278,7 @@ jobs:
           cd ${GITHUB_WORKSPACE}
           
           .github/scripts/in_config.sh "${{ inputs.verify_other }}"
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (7) Make
         run: |
@@ -286,7 +286,7 @@ jobs:
           
           echo "Running make .."
           make
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (8) Copy dependency dlls
         id: copy-dlls
@@ -451,7 +451,7 @@ jobs:
           
           echo "Done."
           
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
           
       - name: (9) Run tests
         id: run-tests
@@ -463,7 +463,7 @@ jobs:
           #./coretest.exe
           echo "(skipped)"
           
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (10) Create distribution file(s)
         run: |
@@ -476,7 +476,7 @@ jobs:
             echo "Running make dist-win32-exe .."
             make dist-win32-exe
           fi
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (10b) Rename distribution files, patch SHA1 file
         id: rename-files
@@ -499,7 +499,7 @@ jobs:
             echo "FUSE_DISTR_SETUP_SHA1=${setup_sha1_to}" >> "$GITHUB_OUTPUT"
           fi
 
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+        shell: bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (11) Upload generated artifact(s)
         if: ${{ inputs.upload_artifacts }}
