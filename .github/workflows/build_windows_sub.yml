@@ -88,13 +88,13 @@ jobs:
 
       - name: (2) Check out repository code
         if: ${{ !inputs.fuse_ref }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           persist-credentials: false
 
       - name: (2b) Check out repository code at requested ref
         if: ${{ inputs.fuse_ref }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ inputs.fuse_ref }}
           persist-credentials: false
@@ -168,7 +168,7 @@ jobs:
         shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
 
       - name: (4) Download libspectrum artefact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: libspectrum-installed-windows-fuse-app
           path: libspectrum
@@ -473,7 +473,7 @@ jobs:
 
       - name: (11) Upload generated artifact(s)
         if: ${{ inputs.upload_artifacts }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with: 
           name: ${{ steps.rename-files.outputs.FUSE_DISTR_BASE }}
           if-no-files-found: error

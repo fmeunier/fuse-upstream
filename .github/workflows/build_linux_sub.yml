@@ -52,10 +52,10 @@ jobs:
           sudo apt-get install -y ${{ inputs.dependencies }}
 
       - name: (2) Check out repository code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: (3) Download libspectrum artefact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: libspectrum-installed-linux-${{ inputs.libspectrum_key }}
           path: libspectrum
