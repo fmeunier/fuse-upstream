@@ -132,6 +132,16 @@ jobs:
             pkg-config \
             ${{ inputs.dependencies }}
 
+      - name: (3a) Mark Cygwin workspace as safe for git
+        run: |
+          workspace_drive="$( printf '%s' "$GITHUB_WORKSPACE" | cut -d: -f1 | tr 'A-Z' 'a-z' )"
+          workspace_suffix="$( printf '%s' "$GITHUB_WORKSPACE" | cut -d: -f2- | tr '\\' '/' )"
+          workspace_cygwin="/cygdrive/${workspace_drive}${workspace_suffix}"
+
+          git config --system --add safe.directory "$GITHUB_WORKSPACE"
+          git config --system --add safe.directory "$workspace_cygwin"
+        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
+
       - name: (3b) Install NSIS
         if: ${{ inputs.build_setup }}
         run: |
