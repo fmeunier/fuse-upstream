@@ -99,9 +99,31 @@ jobs:
           ref: ${{ inputs.fuse_ref }}
           persist-credentials: false
 
+      - name: (2c) Resolve Cygwin package cache path
+        id: cygwin-cache-path
+        run: |
+          if (Test-Path -LiteralPath 'D:\') {
+            $workVol = 'D:'
+          } else {
+            $workVol = 'C:'
+          }
+
+          echo "work-vol=$workVol" >> $env:GITHUB_OUTPUT
+          echo "package-cache=$workVol\cygwin-packages" >> $env:GITHUB_OUTPUT
+        shell: powershell
+
+      - name: (2d) Restore Cygwin packages
+        id: cygwin-cache-load
+        uses: actions/cache/restore@v5
+        with:
+          path: |
+            ${{ steps.cygwin-cache-path.outputs.package-cache }}
+          key: cygwin-packages-fuse-windows-1
+
       - name: (3) Install Cygwin (32 bit) with libs
         uses: cygwin/cygwin-install-action@711d29f3da23c9f4a1798e369a6f01198c13b11a # v6
         with:
+          work-vol: ${{ steps.cygwin-cache-path.outputs.work-vol }}
           platform: x86
           packages: |
             autoconf \
@@ -131,6 +153,14 @@ jobs:
             mingw64-i686-audiofile \
             pkg-config \
             ${{ inputs.dependencies }}
+
+      - name: (3aa) Save Cygwin packages
+        if: steps.cygwin-cache-load.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v5
+        with:
+          path: |
+            ${{ steps.cygwin-cache-path.outputs.package-cache }}
+          key: cygwin-packages-fuse-windows-1
 
       - name: (3a) Mark Cygwin workspace as safe for git
         run: |

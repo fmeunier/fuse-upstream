@@ -70,17 +70,31 @@ jobs:
           git -C "$LIBSPECTRUM_DIR" fetch --depth 1 origin "${{ inputs.libspectrum_ref }}"
           git -C "$LIBSPECTRUM_DIR" checkout FETCH_HEAD
 
+      - name: (2b) Resolve Cygwin package cache path
+        id: cygwin-cache-path
+        run: |
+          if (Test-Path -LiteralPath 'D:\') {
+            $workVol = 'D:'
+          } else {
+            $workVol = 'C:'
+          }
+
+          echo "work-vol=$workVol" >> $env:GITHUB_OUTPUT
+          echo "package-cache=$workVol\cygwin-packages" >> $env:GITHUB_OUTPUT
+        shell: powershell
+
       - name: (3) Restore Cygwin packages
         id: cygwin-cache-load
         uses: actions/cache/restore@v5
         with:
           path: |
-            C:\cygwin-packages
+            ${{ steps.cygwin-cache-path.outputs.package-cache }}
           key: cygwin-packages-libspectrum-1
 
       - name: (4) Install Cygwin (32 bit) with libs
         uses: cygwin/cygwin-install-action@711d29f3da23c9f4a1798e369a6f01198c13b11a # v6
         with:
+          work-vol: ${{ steps.cygwin-cache-path.outputs.work-vol }}
           platform: x86
           packages: |
             audiofile \
@@ -111,7 +125,7 @@ jobs:
         uses: actions/cache/save@v5
         with:
           path: |
-            C:\cygwin-packages
+            ${{ steps.cygwin-cache-path.outputs.package-cache }}
           key: cygwin-packages-libspectrum-1
 
       - name: (6) Autogen.sh
