@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-04-18T21:43:00Z",
-  "last_run_id": "24614519163",
+  "last_run": "2026-05-01T21:46:00Z",
+  "last_run_id": "25234500615",
   "comments_made": {},
   "fix_attempts": {
     "rectangle-merge-same-y": {"status": "closed", "note": "Cherry-picked to master as 09cc84f9."},
@@ -8,9 +8,9 @@
     "bitmap-ops-test": {"status": "closed", "note": "Cherry-picked as f843d32e."},
     "displaytest-in-check-local": {"status": "closed", "note": "PR #18 closed; commits cherry-picked to master."},
     "ci-make-check-null-ui": {"status": "closed", "note": "Cherry-picked to master as 4ae7251b."},
-    "uidisplay-plot16-wrong-type": {"status": "open", "note": "Fixed in PR #27 (timex-display-tests-2026-04-16)."},
     "flash-sinclair-tests": {"status": "open", "note": "PR #28. Adds 3 tests for display_dirty_flashing_sinclair + display_get_maybe_dirty helper."},
-    "pentagon-display-tests": {"status": "open", "note": "PR #29 (2026-04-18). Adds 3 tests for display_write_if_dirty_pentagon_16_col + putpixel tracking."}
+    "pentagon-display-tests": {"status": "open", "note": "PR #29 (2026-04-18). Adds 3 tests for display_write_if_dirty_pentagon_16_col + putpixel tracking."},
+    "disasm-bit-tests": {"status": "open", "note": "PR #31 (2026-05-01). 9 regression tests for CB/DD-CB/FD-CB BIT/RES/SET; fixes run_test buffer 16->40 bytes."}
   },
   "improvement_ideas": [
     "upgrade-checkout-v4: DONE",
@@ -28,39 +28,34 @@
     "sdl2-edge-case-tests: DONE (PR #23, 5ab591f6)",
     "ci-pin-cygwin-action: DONE (440b64c4)",
     "sdl2-display-tiebreaker-tests: DONE (0ae54115)",
-    "rectangle-missing-branch-tests: PENDING (PR #26)",
-    "timex-display-tests: PENDING (PR #27)",
+    "rectangle-missing-branch-tests: DONE (PR #26 closed, cherry-picked 3dd07e28)",
+    "timex-display-tests: DONE (PR #27 closed, cherry-picked 19739378)",
     "flash-sinclair-tests: PENDING (PR #28)",
-    "pentagon-display-tests: PENDING (PR #29)"
+    "pentagon-display-tests: PENDING (PR #29)",
+    "disasm-bit-tests: PENDING (PR #31)"
   ],
   "open_prs": [
     {
-      "title": "[Repo Assist] tests: add missing branch coverage for compare_and_merge_rectangles",
-      "number": 26,
-      "branch": "repo-assist/improve-rectangle-missing-branch-tests-2026-04-15",
-      "note": "Created 2026-04-15."
-    },
-    {
-      "title": "[Repo Assist] tests: add coverage for display_write_if_dirty_timex",
-      "number": 27,
-      "branch": "repo-assist/improve-timex-display-tests-2026-04-16",
-      "note": "Created 2026-04-16. Also fixes uidisplay_plot16 stub type."
-    },
-    {
       "title": "[Repo Assist] tests: add coverage for display_dirty_flashing_sinclair",
       "number": 28,
-      "branch": "repo-assist/improve-flash-sinclair-tests-2026-04-17",
+      "branch": "repo-assist/improve-flash-sinclair-tests-2026-04-17-8b957ad83406f5a1",
       "note": "Created 2026-04-17. Adds display_get_maybe_dirty helper + 3 flash tests."
     },
     {
       "title": "[Repo Assist] tests: add coverage for display_write_if_dirty_pentagon_16_col",
       "number": 29,
-      "branch": "repo-assist/improve-pentagon-display-tests-2026-04-18",
+      "branch": "repo-assist/improve-pentagon-display-tests-2026-04-18-1cb8c0939f1e64a2",
       "note": "Created 2026-04-18. Adds putpixel tracking + 3 pentagon 16-col tests."
+    },
+    {
+      "title": "[Repo Assist] tests: add BIT/RES/SET disassembler regression tests",
+      "number": 31,
+      "branch": "repo-assist/fix-disasm-bit-tests-2026-05-01",
+      "note": "Created 2026-05-01. 9 regression tests for CB/DD-CB/FD-CB BIT/RES/SET. Fixes run_test buffer 16->40 bytes. Regression for bug #515 fix (7be9ae54)."
     }
   ],
   "pending_issues": [],
-  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-04", "number": 4},
+  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": null, "note": "Created 2026-05-01 run. April issue #4 closed."},
   "checked_off_by_maintainer": [
     "AGENTS.md PR (merged as #5)",
     "utils_safe_strdup test PR #9 (closed, commits cherry-picked)",
@@ -77,7 +72,9 @@
     "Review PR ci-macos-make-check",
     "Review PR #23 (SDL2 edge-case tests, 5ab591f6)",
     "Review PR (sdl2-display-tiebreaker-tests, 0ae54115)",
-    "Check issue #24 (cygwin pin, 440b64c4)"
+    "Check issue #24 (cygwin pin, 440b64c4)",
+    "Review PR #26 (rectangle branch tests, cherry-picked 3dd07e28)",
+    "Review PR #27 (timex display tests, cherry-picked 19739378)"
   ],
-  "notes": "2026-04-18: Created PR #29 for display_write_if_dirty_pentagon_16_col tests (3 tests + putpixel tracking). PRs #26, #27, #28, #29 open pending maintainer review. No CI failures on existing PRs. event.c scheduler is too GLib-dependent for standalone unit tests."
+  "notes": "2026-05-01: Created PR #31 for BIT/RES/SET disassembler regression tests (9 tests + buffer fix). PRs #28, #29, #31 open pending maintainer review. April monthly activity issue #4 closed; new May issue created. PR #26 closed (cherry-picked 3dd07e28), PR #27 closed (cherry-picked 19739378). display_dirty_flashing_timex untested - future work."
 }
