@@ -65,11 +65,12 @@ Pull requests trigger builds for Linux (multiple UIs), macOS, Windows
 (Cygwin/MinGW), and Wii. The workflows are in `.github/workflows/`.
 
 Key notes:
-- The `libspectrum` library is built by a reusable workflow in the
-  external `arki55/fuse-libspectrum` repository and passed as a build
-  artifact.
-- `upload-artifact` and `download-artifact` versions must match between
-  the libspectrum workflow and the Fuse workflows (currently v3 in both).
+- The `libspectrum` library is built by reusable workflows in this
+  repository, using source fetched from the external libspectrum
+  repository, and then passed to the Fuse build jobs as an artifact.
+- Keep the `upload-artifact` and `download-artifact` versions in the
+  libspectrum and Fuse workflows aligned with the versions currently in
+  use by this repository.
 
 ## Contribution Guidelines
 

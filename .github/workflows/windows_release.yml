@@ -4,194 +4,99 @@ run-name: Build Windows release / ${{ github.actor }} /
 on:
   workflow_dispatch:
     inputs:
-      tag_name:
+      fuse_tag:
         type: string
-        required: true
-        description: Fuse tag to build, e.g. fuse-1.7.0
-      libspectrum_url:
+        required: false
+        default: ""
+        description: Fuse tag to build. Leave empty to use the current workflow revision.
+      libspectrum_tag:
         type: string
-        required: true
-        description: URL of a released libspectrum source tarball
+        required: false
+        default: ""
+        description: Libspectrum tag to build. Leave empty to use master from the canonical SourceForge repository.
 
 jobs:
+  resolve-refs:
+    name: "Resolve source refs"
+    runs-on: ubuntu-latest
+    outputs:
+      fuse_ref: ${{ steps.resolve.outputs.fuse_ref }}
+      libspectrum_ref: ${{ steps.resolve.outputs.libspectrum_ref }}
+    steps:
+      - name: Resolve selected refs
+        id: resolve
+        run: |
+          if [ -n "${{ inputs.fuse_tag }}" ]; then
+            fuse_ref="refs/tags/${{ inputs.fuse_tag }}"
+          else
+            fuse_ref="current workflow revision (${{ github.sha }})"
+          fi
+
+          if [ -n "${{ inputs.libspectrum_tag }}" ]; then
+            libspectrum_ref="refs/tags/${{ inputs.libspectrum_tag }}"
+          else
+            libspectrum_ref="master"
+          fi
+
+          echo "Fuse ref: ${fuse_ref}"
+          echo "Libspectrum ref: ${libspectrum_ref}"
+
+          if [ -n "${{ inputs.fuse_tag }}" ]; then
+            echo "fuse_ref=${fuse_ref}" >> "$GITHUB_OUTPUT"
+          else
+            echo "fuse_ref=" >> "$GITHUB_OUTPUT"
+          fi
+
+          echo "libspectrum_ref=${libspectrum_ref}" >> "$GITHUB_OUTPUT"
+
   libspectrum:
     name: "Libspectrum (Windows)"
-    runs-on: windows-latest
-    timeout-minutes: 20
-    env:
-      CYGWIN_NOWINPATH: 1
-      CPPFLAGS: "-I/usr/local/i686-w64-mingw32/include"
-      LDFLAGS: "-L/usr/local/i686-w64-mingw32/lib"
-      PKG_CONFIG_LIBDIR: "/usr/local/i686-w64-mingw32/lib/pkgconfig:/usr/i686-w64-mingw32/sys-root/mingw/lib/pkgconfig"
-      CYGWIN_LIBDIR: "/usr/i686-w64-mingw32/sys-root/mingw/bin/"
-    steps:
-      - name: (1) Prepare environment
-        run: |
-          cd ${GITHUB_WORKSPACE}
-
-          echo "Adjust autocrlf in git.."
-          git config --global core.autocrlf input
-
-          echo -n "Current directory: "
-          pwd
-          ls -la
-        shell: bash
-
-      - name: (2) Install Cygwin (32 bit) with libs
-        uses: cygwin/cygwin-install-action@master
-        with:
-          platform: x86
-          packages: |
-            audiofile \
-            autoconf \
-            automake \
-            bison \
-            curl \
-            flex \
-            gcc-core \
-            gcc-g++ \
-            gettext-devel \
-            libtool \
-            libaudiofile-devel \
-            make \
-            mingw64-i686-audiofile \
-            mingw64-i686-bzip2 \
-            mingw64-i686-gcc-core \
-            mingw64-i686-gcc-g++ \
-            mingw64-i686-libgcrypt \
-            mingw64-i686-libgpg-error \
-            mingw64-i686-libpng \
-            mingw64-i686-win-iconv \
-            mingw64-i686-winpthread \
-            mingw64-i686-zlib \
-            pkg-config
-
-      - name: (3) Download libspectrum source tarball
-        run: |
-          cd ${GITHUB_WORKSPACE}
-
-          curl -L "${{ inputs.libspectrum_url }}" -o libspectrum.tar.gz
-          mkdir libspectrum-src
-          tar -xzf libspectrum.tar.gz -C libspectrum-src --strip-components=1
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
-
-      - name: (4) Configure libspectrum
-        run: |
-          cd ${GITHUB_WORKSPACE}/libspectrum-src
-
-          echo "Running configure .."
-          if [ -x ./configure ]; then
-            ./configure \
-            --build=i686-pc-cygwin \
-            --host=i686-w64-mingw32 \
-            --prefix=/usr/local/i686-w64-mingw32 \
-            --disable-static \
-            --with-fake-glib \
-            |& tee ./configure.out
-          else
-            ./autogen.sh
-            ./configure \
-            --build=i686-pc-cygwin \
-            --host=i686-w64-mingw32 \
-            --prefix=/usr/local/i686-w64-mingw32 \
-            --disable-static \
-            --with-fake-glib \
-            |& tee ./configure.out
-          fi
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
-
-      - name: (5) Verify output from configure
-        run: |
-          cd ${GITHUB_WORKSPACE}/libspectrum-src
-
-          grep -q "libspectrum is ready to be compiled" configure.out
-          grep -q "zlib support: yes" configure.out
-          grep -q "bzip2 support: yes" configure.out
-          grep -q "libgcrypt support: yes" configure.out
-          grep -q "libaudiofile support: yes" configure.out
-          grep -q "Internal GLib replacement: yes" configure.out
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
-
-      - name: (6) Make
-        run: |
-          cd ${GITHUB_WORKSPACE}/libspectrum-src
-
-          echo "Running make .."
-          make
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
-
-      - name: (7) Install
-        run: |
-          cd ${GITHUB_WORKSPACE}/libspectrum-src
-
-          echo "Running make install-strip .."
-          make install-strip
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
-
-      - name: (8) Copy dependency dlls
-        run: |
-          cd ${GITHUB_WORKSPACE}/libspectrum-src
-
-          echo "Copying mandatory dependency dlls.."
-          cp -f ${CYGWIN_LIBDIR}libgcc_s_sjlj-1.dll .
-          cp -f ${CYGWIN_LIBDIR}libwinpthread-1.dll .
-          cp -f ${CYGWIN_LIBDIR}libgpg-error-0.dll .
-          cp -f ${CYGWIN_LIBDIR}libstdc++-6.dll .
-          cp -f ${CYGWIN_LIBDIR}libgcc_s_sjlj-1.dll /usr/local/i686-w64-mingw32/bin/
-          cp -f ${CYGWIN_LIBDIR}libwinpthread-1.dll /usr/local/i686-w64-mingw32/bin/
-          cp -f ${CYGWIN_LIBDIR}libgpg-error-0.dll /usr/local/i686-w64-mingw32/bin/
-          cp -f ${CYGWIN_LIBDIR}libstdc++-6.dll /usr/local/i686-w64-mingw32/bin/
-
-          echo "Copying optional dependency dlls.."
-          cp -f ${CYGWIN_LIBDIR}zlib1.dll . || true
-          cp -f ${CYGWIN_LIBDIR}libbz2-1.dll . || true
-          cp -f ${CYGWIN_LIBDIR}libgcrypt-20.dll . || true
-          cp -f ${CYGWIN_LIBDIR}libaudiofile-1.dll . || true
-          cp -f ${CYGWIN_LIBDIR}libFLAC-8.dll . || true
-          cp -f ${CYGWIN_LIBDIR}libOGG-0.dll . || true
-          cp -f ${CYGWIN_LIBDIR}zlib1.dll /usr/local/i686-w64-mingw32/bin/ || true
-          cp -f ${CYGWIN_LIBDIR}libbz2-1.dll /usr/local/i686-w64-mingw32/bin/ || true
-          cp -f ${CYGWIN_LIBDIR}libgcrypt-20.dll /usr/local/i686-w64-mingw32/bin/ || true
-          cp -f ${CYGWIN_LIBDIR}libaudiofile-1.dll /usr/local/i686-w64-mingw32/bin/ || true
-          cp -f ${CYGWIN_LIBDIR}libFLAC-8.dll /usr/local/i686-w64-mingw32/bin/ || true
-          cp -f ${CYGWIN_LIBDIR}libOGG-0.dll /usr/local/i686-w64-mingw32/bin/ || true
-
-          echo "Copying own dll.."
-          cp -f .libs/libspectrum-*.dll /usr/local/i686-w64-mingw32/bin/
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
-
-      - name: (9) Run tests
-        run: |
-          cd ${GITHUB_WORKSPACE}/libspectrum-src
-
-          echo "Bulding and running tests .."
-          make check
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
-
-      - name: (10) Pack installed library files
-        run: |
-          cd ${GITHUB_WORKSPACE}
-
-          tar -cvf libspectrum-installed-windows.tar -C /usr/local/i686-w64-mingw32/ .
-        shell: C:\cygwin\bin\bash.exe --login --norc -eo pipefail -o igncr '{0}'
-
-      - name: (11) Upload libspectrum artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: libspectrum-installed-windows-fuse-app
-          path: libspectrum-installed-windows.tar
+    needs: [resolve-refs]
+    uses: ./.github/workflows/build_libspectrum_windows_sub.yml
+    with:
+      key: fuse-app
+      libspectrum_ref: ${{ needs.resolve-refs.outputs.libspectrum_ref }}
 
   fuse:
-    name: "Fuse Win32 installer"
-    needs: [libspectrum]
+    name: "${{ matrix.build.name }}"
+    needs: [resolve-refs, libspectrum]
+    strategy:
+      fail-fast: false
+      matrix:
+        build:
+          - name: "Fuse Win32 build"
+            key: "win32-ui-default"
+            dependencies: "mingw64-i686-libxml2"
+            configure_params: "--with-win32"
+            verify_ui: "win32"
+            verify_libxml2: "yes"
+            verify_audio: "directsound"
+            verify_other: ""
+          - name: "Fuse SDL 1 build"
+            key: "sdl1-ui-sdl1-sound"
+            dependencies: "mingw64-i686-SDL"
+            configure_params: "--without-win32 --with-sdl --disable-sdl2 --with-audio-driver=sdl"
+            verify_ui: "sdl"
+            verify_libxml2: "no"
+            verify_audio: "sdl"
+            verify_other: "Using SDL 1: yes"
+          - name: "Fuse SDL 2 build"
+            key: "sdl2-ui-sdl2-sound"
+            dependencies: "mingw64-i686-SDL2"
+            configure_params: "--without-win32 --with-sdl2 --with-audio-driver=sdl2"
+            verify_ui: "sdl2"
+            verify_libxml2: "no"
+            verify_audio: "sdl2"
+            verify_other: "Using SDL 2: yes"
     uses: ./.github/workflows/build_windows_sub.yml
     with:
-      key: "win32-installer"
-      ref: "refs/tags/${{ inputs.tag_name }}"
-      dependencies: "mingw64-i686-libxml2"
-      configure_params: "--with-win32"
-      package_target: "dist-win32-exe"
-      verify_ui: "win32"
-      verify_libxml2: "yes"
-      verify_audio: "directsound"
+      key: ${{ matrix.build.key }}
+      fuse_ref: ${{ needs.resolve-refs.outputs.fuse_ref }}
+      dependencies: ${{ matrix.build.dependencies }}
+      configure_params: ${{ matrix.build.configure_params }}
+      verify_ui: ${{ matrix.build.verify_ui }}
+      verify_libxml2: ${{ matrix.build.verify_libxml2 }}
+      verify_audio: ${{ matrix.build.verify_audio }}
+      verify_other: ${{ matrix.build.verify_other }}
       upload_artifacts: true
+      build_setup: true
