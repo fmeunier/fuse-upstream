@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-01T21:46:00Z",
-  "last_run_id": "25234500615",
+  "last_run": "2026-05-02T21:44:19Z",
+  "last_run_id": "25262595366",
   "comments_made": {},
   "fix_attempts": {
     "rectangle-merge-same-y": {"status": "closed", "note": "Cherry-picked to master as 09cc84f9."},
@@ -8,9 +8,11 @@
     "bitmap-ops-test": {"status": "closed", "note": "Cherry-picked as f843d32e."},
     "displaytest-in-check-local": {"status": "closed", "note": "PR #18 closed; commits cherry-picked to master."},
     "ci-make-check-null-ui": {"status": "closed", "note": "Cherry-picked to master as 4ae7251b."},
-    "flash-sinclair-tests": {"status": "open", "note": "PR #28. Adds 3 tests for display_dirty_flashing_sinclair + display_get_maybe_dirty helper."},
-    "pentagon-display-tests": {"status": "open", "note": "PR #29 (2026-04-18). Adds 3 tests for display_write_if_dirty_pentagon_16_col + putpixel tracking."},
-    "disasm-bit-tests": {"status": "open", "note": "PR #31 (2026-05-01). 9 regression tests for CB/DD-CB/FD-CB BIT/RES/SET; fixes run_test buffer 16->40 bytes."}
+    "flash-sinclair-tests": {"status": "closed", "note": "PR #28 closed; cherry-picked to master as 988711323d11."},
+    "pentagon-display-tests": {"status": "closed", "note": "PR #29 closed; cherry-picked to master as 678b4d0e."},
+    "disasm-bit-tests": {"status": "closed", "note": "PR #31 closed; cherry-picked to master as 19675c8c."},
+    "ci-align-artifact-v8": {"status": "open", "note": "PR #33 (2026-05-02). Aligns upload-artifact@v7->v8 in 4 sub-workflows."},
+    "timex-flashing-tests": {"status": "open", "note": "PR #34 (2026-05-02). 5 tests for display_dirty_flashing_timex hires/b1/altdfile/standard paths. All pass with make check."}
   },
   "improvement_ideas": [
     "upgrade-checkout-v4: DONE",
@@ -30,32 +32,28 @@
     "sdl2-display-tiebreaker-tests: DONE (0ae54115)",
     "rectangle-missing-branch-tests: DONE (PR #26 closed, cherry-picked 3dd07e28)",
     "timex-display-tests: DONE (PR #27 closed, cherry-picked 19739378)",
-    "flash-sinclair-tests: PENDING (PR #28)",
-    "pentagon-display-tests: PENDING (PR #29)",
-    "disasm-bit-tests: PENDING (PR #31)"
+    "flash-sinclair-tests: DONE (PR #28 closed, cherry-picked 988711323d11)",
+    "pentagon-display-tests: DONE (PR #29 closed, cherry-picked 678b4d0e)",
+    "disasm-bit-tests: DONE (PR #31 closed, cherry-picked 19675c8c)",
+    "ci-align-artifact-v8: PENDING (PR #33)",
+    "timex-flashing-tests: PENDING (PR #34)"
   ],
   "open_prs": [
     {
-      "title": "[Repo Assist] tests: add coverage for display_dirty_flashing_sinclair",
-      "number": 28,
-      "branch": "repo-assist/improve-flash-sinclair-tests-2026-04-17-8b957ad83406f5a1",
-      "note": "Created 2026-04-17. Adds display_get_maybe_dirty helper + 3 flash tests."
+      "title": "[Repo Assist] ci: align upload-artifact to v8 across all workflows",
+      "number": 33,
+      "branch": "repo-assist/eng-align-artifact-versions-2026-05-02",
+      "note": "Created 2026-05-02. Aligns upload-artifact@v7->v8 in build_libspectrum_{linux,macos,windows}_sub.yml and build_windows_sub.yml."
     },
     {
-      "title": "[Repo Assist] tests: add coverage for display_write_if_dirty_pentagon_16_col",
-      "number": 29,
-      "branch": "repo-assist/improve-pentagon-display-tests-2026-04-18-1cb8c0939f1e64a2",
-      "note": "Created 2026-04-18. Adds putpixel tracking + 3 pentagon 16-col tests."
-    },
-    {
-      "title": "[Repo Assist] tests: add BIT/RES/SET disassembler regression tests",
-      "number": 31,
-      "branch": "repo-assist/fix-disasm-bit-tests-2026-05-01",
-      "note": "Created 2026-05-01. 9 regression tests for CB/DD-CB/FD-CB BIT/RES/SET. Fixes run_test buffer 16->40 bytes. Regression for bug #515 fix (7be9ae54)."
+      "title": "[Repo Assist] tests: add coverage for display_dirty_flashing_timex",
+      "number": 34,
+      "branch": "repo-assist/improve-timex-flashing-tests-2026-05-02",
+      "note": "Created 2026-05-02. 5 tests for hires/b1/altdfile/standard paths. All pass with make check locally."
     }
   ],
   "pending_issues": [],
-  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": null, "note": "Created 2026-05-01 run. April issue #4 closed."},
+  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
   "checked_off_by_maintainer": [
     "AGENTS.md PR (merged as #5)",
     "utils_safe_strdup test PR #9 (closed, commits cherry-picked)",
@@ -74,7 +72,10 @@
     "Review PR (sdl2-display-tiebreaker-tests, 0ae54115)",
     "Check issue #24 (cygwin pin, 440b64c4)",
     "Review PR #26 (rectangle branch tests, cherry-picked 3dd07e28)",
-    "Review PR #27 (timex display tests, cherry-picked 19739378)"
+    "Review PR #27 (timex display tests, cherry-picked 19739378)",
+    "Review PR #28 (flash sinclair tests, cherry-picked 988711323d11)",
+    "Review PR #29 (pentagon display tests, cherry-picked 678b4d0e)",
+    "Review PR #31 (disasm BIT/RES/SET tests, cherry-picked 19675c8c)"
   ],
-  "notes": "2026-05-01: Created PR #31 for BIT/RES/SET disassembler regression tests (9 tests + buffer fix). PRs #28, #29, #31 open pending maintainer review. April monthly activity issue #4 closed; new May issue created. PR #26 closed (cherry-picked 3dd07e28), PR #27 closed (cherry-picked 19739378). display_dirty_flashing_timex untested - future work."
+  "notes": "2026-05-02: PRs #28, #29, #31 all cherry-picked to master and closed. Created PR #33 (upload-artifact v7->v8 alignment) and PR #34 (display_dirty_flashing_timex tests, 5 tests, all pass). Monthly activity issue #32 updated. display_dirty_flashing_pentagon_16_col is a known no-op with no body - future work for coverage if it ever gets logic."
 }
