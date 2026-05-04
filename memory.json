@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-03T21:44:19Z",
-  "last_run_id": "25291627638",
+  "last_run": "2026-05-04T21:50:58Z",
+  "last_run_id": "25345304826",
   "comments_made": {},
   "fix_attempts": {
     "rectangle-merge-same-y": {"status": "closed", "note": "Cherry-picked to master as 09cc84f9."},
@@ -11,9 +11,11 @@
     "flash-sinclair-tests": {"status": "closed", "note": "PR #28 closed; cherry-picked to master as 988711323d11."},
     "pentagon-display-tests": {"status": "closed", "note": "PR #29 closed; cherry-picked to master as 678b4d0e."},
     "disasm-bit-tests": {"status": "closed", "note": "PR #31 closed; cherry-picked to master as 19675c8c."},
-    "ci-align-artifact-v8": {"status": "open", "note": "PR #33 (2026-05-02). Aligns upload-artifact@v7->v8 in 4 sub-workflows. Workflow files protected - issue created with patch instructions."},
-    "timex-flashing-tests": {"status": "open", "note": "PR #34 (2026-05-02). 5 tests for hires/b1/altdfile/standard paths. All pass with make check."},
-    "disasm-fdcb-negoffset-tests": {"status": "open", "note": "PR #35 (2026-05-03). 11 tests: FD CB RES/SET, FD CB undocumented, negative IX/IY offsets, JR/DJNZ. All pass with make check."}
+    "ci-align-artifact-v8": {"status": "closed", "note": "PR #33 closed; cherry-picked to master as a4544355."},
+    "timex-flashing-tests": {"status": "closed", "note": "PR #34 closed; cherry-picked to master as 4629364a."},
+    "disasm-fdcb-negoffset-tests": {"status": "closed", "note": "PR #35 closed; cherry-picked to master as a84ccc0b."},
+    "disasm-ed-prefix-tests": {"status": "open", "note": "PR #36 (2026-05-04). 20 tests: IN/OUT, SBC/ADC HL, LD(nn)/rr, NEG, RETI/RETN, IM 0/1/2, LD I,A/LD A,I, LDI/LDIR/LDD/LDDR."},
+    "run-test-diagnostics": {"status": "open", "note": "PR #37 (2026-05-04). Adds printf in run_test() to show expected vs actual on failure."}
   },
   "improvement_ideas": [
     "upgrade-checkout-v4: DONE",
@@ -36,28 +38,24 @@
     "flash-sinclair-tests: DONE (PR #28 closed, cherry-picked 988711323d11)",
     "pentagon-display-tests: DONE (PR #29 closed, cherry-picked 678b4d0e)",
     "disasm-bit-tests: DONE (PR #31 closed, cherry-picked 19675c8c)",
-    "ci-align-artifact-v8: PENDING (PR #33 - issue with patch, workflow files protected)",
-    "timex-flashing-tests: PENDING (PR #34)",
-    "disasm-fdcb-negoffset-tests: PENDING (PR #35, 2026-05-03, 11 tests)"
+    "ci-align-artifact-v8: DONE (PR #33 closed, cherry-picked a4544355)",
+    "timex-flashing-tests: DONE (PR #34 closed, cherry-picked 4629364a)",
+    "disasm-fdcb-negoffset-tests: DONE (PR #35 closed, cherry-picked a84ccc0b)",
+    "disasm-ed-prefix-tests: PENDING (PR #36)",
+    "run-test-diagnostics: PENDING (PR #37)"
   ],
   "open_prs": [
     {
-      "title": "[Repo Assist] ci: align upload-artifact to v8 across all workflows",
-      "number": 33,
-      "branch": "repo-assist/eng-align-artifact-versions-2026-05-02",
-      "note": "Created 2026-05-02. Workflow files protected - patch issue created. Needs manual PR creation."
+      "title": "[Repo Assist] tests: add ED-prefix disassembler coverage",
+      "number": 36,
+      "branch": "repo-assist/test-disasm-ed-prefix-2026-05-04",
+      "note": "Created 2026-05-04. 20 tests for ED-prefix instructions. Awaiting CI verification."
     },
     {
-      "title": "[Repo Assist] tests: add coverage for display_dirty_flashing_timex",
-      "number": 34,
-      "branch": "repo-assist/improve-timex-flashing-tests-2026-05-02-c1efc269f9d6aa1b",
-      "note": "Created 2026-05-02. 5 tests for hires/b1/altdfile/standard paths. All pass with make check locally."
-    },
-    {
-      "title": "[Repo Assist] tests: extend disassembler coverage for FD CB and negative offsets",
-      "number": 35,
-      "branch": "repo-assist/test-disasm-fdcb-negoffset-2026-05-03",
-      "note": "Created 2026-05-03. 11 tests: FD CB RES/SET IY, undocumented IY, negative IX/IY offsets, JR/DJNZ. All pass."
+      "title": "[Repo Assist] debugger: print expected vs actual in failing disassembler tests",
+      "number": 37,
+      "branch": "repo-assist/eng-improve-run-test-diagnostics-2026-05-04",
+      "note": "Created 2026-05-04. Adds diagnostic printf to run_test() for clearer CI failure messages."
     }
   ],
   "pending_issues": [],
@@ -83,7 +81,10 @@
     "Review PR #27 (timex display tests, cherry-picked 19739378)",
     "Review PR #28 (flash sinclair tests, cherry-picked 988711323d11)",
     "Review PR #29 (pentagon display tests, cherry-picked 678b4d0e)",
-    "Review PR #31 (disasm BIT/RES/SET tests, cherry-picked 19675c8c)"
+    "Review PR #31 (disasm BIT/RES/SET tests, cherry-picked 19675c8c)",
+    "Review PR #33 (ci align artifact v8, cherry-picked a4544355)",
+    "Review PR #34 (timex flashing tests, cherry-picked 4629364a)",
+    "Review PR #35 (disasm FD CB tests, cherry-picked a84ccc0b)"
   ],
-  "notes": "2026-05-03: Added PR #35 with 11 disassembler tests (FD CB RES/SET, undocumented IY variants, negative IX/IY offsets, JR/DJNZ). All pass with make check. PRs #33 and #34 still pending review. PR #33 is an issue (workflow files protected). display_dirty_flashing_pentagon_16_col is a known no-op - future work."
+  "notes": "2026-05-04: PRs #33, #34, #35 all cherry-picked to master. Created PR #36 (20 ED-prefix disassembler tests) and PR #37 (run_test diagnostics). Monthly activity issue updated."
 }
