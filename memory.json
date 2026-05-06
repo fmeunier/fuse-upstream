@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-05T00:00:00Z",
-  "last_run_id": "25404096138",
+  "last_run": "2026-05-06T00:00:00Z",
+  "last_run_id": "25463002362",
   "comments_made": {},
   "fix_attempts": {
     "rectangle-merge-same-y": {"status": "closed", "note": "Cherry-picked to master as 09cc84f9."},
@@ -16,25 +16,41 @@
     "disasm-fdcb-negoffset-tests": {"status": "closed", "note": "PR #35 closed; cherry-picked to master as a84ccc0b."},
     "disasm-ed-prefix-tests": {"status": "closed", "note": "PR #36 closed; cherry-picked to master as 9164a1d6."},
     "run-test-diagnostics": {"status": "closed", "note": "PR #37 closed; cherry-picked to master as 0a617a0b."},
-    "disasm-ed-remaining-tests": {"status": "open", "note": "PR pending (run 25404096138). 16 tests: LD R/A, RRD/RLD, CPI/CPD/CPIR/CPDR, INI/IND/INIR/INDR, OUTI/OUTD/OTIR/OTDR. Branch: repo-assist/test-disasm-ed-remaining-2026-05-05."},
-    "disasm-cb-regpairs-tests": {"status": "open", "note": "PR pending (run 25404096138). 26 tests: CB rotations, all DE/HL/SP variants of SBC HL/ADC HL and LD (nn)/LD rr. Branch: repo-assist/test-disasm-cb-regpairs-2026-05-05."}
+    "disasm-ed-remaining-tests": {"status": "open", "pr": 38, "note": "PR #38 (run 25404096138). 16 tests: LD R/A, RRD/RLD, CPI/CPD/CPIR/CPDR, INI/IND/INIR/INDR, OUTI/OUTD/OTIR/OTDR. NOTE: PR #40 is an identical duplicate — should be closed."},
+    "disasm-cb-regpairs-tests": {"status": "open", "pr": 39, "note": "PR #39 (run 25404096138). 26 tests: CB rotations, all DE/HL/SP variants of SBC HL/ADC HL and LD (nn)/LD rr."},
+    "disasm-ixiy-instrs-tests": {"status": "open", "pr": 41, "note": "PR #41 (run 25463002362). 36 tests (93-128): ADD IX/IY,rr completeness, LD IX/IY,nn, INC/DEC IX/IY, store/load (nn), PUSH/POP, JP/EX/LD SP, undocumented IXh/IXl/IYh/IYl, LD r/(IX+d), LD (IX+d)/r, LD (IX+d)/n."}
   },
   "improvement_ideas": [
     "disasm-ed-prefix-tests: DONE (PR #36, cherry-picked 9164a1d6)",
     "run-test-diagnostics: DONE (PR #37, cherry-picked 0a617a0b)",
-    "disasm-ed-remaining-tests: PENDING (PR in run 25404096138)",
-    "disasm-cb-regpairs-tests: PENDING (PR in run 25404096138)"
+    "disasm-ed-remaining-tests: PENDING (PR #38 open; PR #40 is duplicate, should be closed)",
+    "disasm-cb-regpairs-tests: PENDING (PR #39 open)",
+    "disasm-ixiy-instrs-tests: PENDING (PR #41 open, run 25463002362)"
   ],
   "open_prs": [
     {
+      "number": 38,
       "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage",
-      "branch": "repo-assist/test-disasm-ed-remaining-2026-05-05",
+      "branch": "repo-assist/test-disasm-ed-remaining-2026-05-05-0abdedf138919d16",
       "note": "Created 2026-05-05. 16 tests: LD R/A, RRD/RLD, CPI/CPD/CPIR/CPDR, INI/IND/INIR/INDR, OUTI/OUTD/OTIR/OTDR."
     },
     {
+      "number": 39,
       "title": "[Repo Assist] tests: extend disassembler coverage for CB rotations and register pairs",
-      "branch": "repo-assist/test-disasm-cb-regpairs-2026-05-05",
+      "branch": "repo-assist/test-disasm-cb-regpairs-2026-05-05-a985f5c0d3f2bdce",
       "note": "Created 2026-05-05. 26 tests: all CB rotate/shift ops + DE/HL/SP variants of SBC HL/ADC HL and LD (nn)/LD rr."
+    },
+    {
+      "number": 40,
+      "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage",
+      "branch": "repo-assist/test-disasm-ed-remaining-2026-05-05-897691dfbdb80275",
+      "note": "DUPLICATE of PR #38 from same run 25404096138. Should be closed."
+    },
+    {
+      "number": 41,
+      "title": "[Repo Assist] tests: add DD/FD prefix (IX/IY) disassembler coverage",
+      "branch": "repo-assist/test-disasm-ixiy-instrs-2026-05-06",
+      "note": "Created 2026-05-06 (run 25463002362). 36 tests (93-128) for all IX/IY instruction families."
     }
   ],
   "pending_issues": [],
@@ -67,5 +83,5 @@
     "Review PR #36 (disasm ED-prefix tests, cherry-picked 9164a1d6)",
     "Review PR #37 (run_test diagnostics, cherry-picked 0a617a0b)"
   ],
-  "notes": "2026-05-05: PRs #36 and #37 cherry-picked to master. Created two new PRs: (1) ED remaining 16 tests (LD R/A, RRD/RLD, CPI/CPD blocks, IN/OUT blocks); (2) CB rotations + register pair completeness 26 tests. Monthly activity issue #32 updated."
+  "notes": "2026-05-06 (run 25463002362): Task 8 (perf) — no compelling hotspot found without profiling data (display.c uses __builtin_ctzll, Z80 core uses computed-goto, contend_delay_common reorder saves ~11% for ~38% of calls — marginal). Task 3 — created PR #41 with 36 IX/IY disassembler tests (93-128). Confirmed PRs #38/#40 are duplicates. Monthly activity issue #32 updated."
 }
