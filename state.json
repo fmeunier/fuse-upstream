@@ -1,0 +1,44 @@
+{
+  "last_run": "2026-05-08",
+  "last_run_id": "25581082591",
+  "monthly_activity_issue": 32,
+  "comments_made": {
+    "30": "2026-05-07"
+  },
+  "fix_attempts": {
+    "repo-assist/test-disasm-main-opcodes-2026-05-08": {
+      "status": "open",
+      "description": "54 new tests (test129-test182) for main unprefixed Z80 opcodes",
+      "created": "2026-05-08"
+    },
+    "repo-assist/test-disasm-ixiy-instrs-2026-05-06": {
+      "pr": 41,
+      "status": "open",
+      "description": "DD/FD IX/IY disassembler coverage tests 93-128",
+      "created": "2026-05-06"
+    },
+    "repo-assist/test-disasm-cb-regpairs-2026-05-05": {
+      "pr": 39,
+      "status": "open",
+      "description": "CB rotations and SBC/ADC HL reg-pair variants tests 72-92",
+      "created": "2026-05-05"
+    },
+    "repo-assist/test-disasm-ed-remaining-2026-05-05": {
+      "pr": 38,
+      "status": "open",
+      "description": "Remaining ED-prefix disassembler tests 56-71",
+      "created": "2026-05-05"
+    }
+  },
+  "backlog_cursor": {
+    "issues": 42,
+    "note": "Only 2 issues open: #32 (monthly activity) and #42 (blocked CI fix info). No user-filed issues."
+  },
+  "checked_off_by_maintainer": ["close_issue_30", "close_pr_40"],
+  "notes": [
+    "PRs #38, #39, #41 are all open and clean (no CI failures, no merge conflicts). Pending review.",
+    "Issue #42 is a blocked CI fix (workflows permission denied); contains manual apply instructions for maintainer.",
+    "PR for main opcode tests (branch repo-assist/test-disasm-main-opcodes-2026-05-08) was submitted this run - PR number TBD.",
+    "Next task: check if new PR number is assigned, update monthly activity with it. Also 0xED NOP-equivalent range (0x00-0x3F) remains untested."
+  ]
+}
