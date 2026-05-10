@@ -248,7 +248,7 @@ sdl2display_add_scaled_rect( int x, int y, int w, int h )
   if( sdl2display_force_full_refresh ) return;
 
   if( num_rects ==
-      (int)( sizeof( updated_rects ) / sizeof( updated_rects[0] ) ) ){
+      (int)ARRAY_SIZE( updated_rects ) ){
     sdl2display_force_full_refresh = 1;
     return;
   }
@@ -766,7 +766,7 @@ uidisplay_area( int x, int y, int width, int height )
   if( sdl2display_force_full_refresh ) return;
 
   if( num_rects ==
-      (int)( sizeof( updated_rects ) / sizeof( updated_rects[0] ) ) ){
+      (int)ARRAY_SIZE( updated_rects ) ){
     sdl2display_force_full_refresh = 1;
     return;
   }
