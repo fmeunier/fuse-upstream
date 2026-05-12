@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-11T21:53:00Z",
-  "last_run_id": "25699498096",
+  "last_run": "2026-05-12T22:02:00Z",
+  "last_run_id": "25764423612",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
@@ -25,7 +25,8 @@
     "disasm-decimal-mode-tests": {"status": "open", "pr": 44, "note": "PR #44. 6 decimal-mode tests."},
     "build-remove-ac-c-const": {"status": "open", "pr": 45, "note": "PR #45. Removes deprecated AC_C_CONST from configure.ac."},
     "improve-array-size-sdl2": {"status": "open", "pr": 46, "note": "PR #46. Replaces sizeof(arr)/sizeof(arr[0]) with ARRAY_SIZE in sdl2_display.c."},
-    "disasm-ed-nopd-boundary-tests": {"status": "open", "pr": 47, "note": "PR #47. 6 NOPD boundary tests (test183-test188) for 3 NOPD code paths in disassemble_ed: 0x00-0x3F, 0x80-0x9F, 0xBC-0xFF."}
+    "disasm-ed-nopd-boundary-tests": {"status": "open", "pr": 47, "note": "PR #47. 6 NOPD boundary tests (test183-test188) for 3 NOPD code paths in disassemble_ed: 0x00-0x3F, 0x80-0x9F, 0xBC-0xFF."},
+    "scaler-state-missing-path-tests": {"status": "open", "pr": "aw_pr48", "note": "PR aw_pr48. 6 missing path tests: startup windowed, leave native, leave auto no restore, user select windowed, reevaluate windowed, reevaluate native fits."}
   },
   "open_prs": [
     {"number": 38, "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"},
@@ -35,7 +36,8 @@
     {"number": 44, "title": "[Repo Assist] tests: add decimal output mode disassembler tests"},
     {"number": 45, "title": "[Repo Assist] ui/sdl2: use ARRAY_SIZE macro instead of manual sizeof division"},
     {"number": 46, "title": "[Repo Assist] build: remove deprecated AC_C_CONST macro from configure.ac"},
-    {"number": 47, "title": "[Repo Assist] debugger: add NOPD boundary tests for ED-prefix disassembler"}
+    {"number": 47, "title": "[Repo Assist] debugger: add NOPD boundary tests for ED-prefix disassembler"},
+    {"number": "aw_pr48", "title": "[Repo Assist] tests: add missing path coverage for sdl2_scaler_state"}
   ],
   "pending_issues": [],
   "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
@@ -69,5 +71,5 @@
     "Close issue #30",
     "Close PR #40"
   ],
-  "notes": "2026-05-11 (run 25699498096): Task 6 — verified all 7 open PRs (#38,#39,#41,#43,#44,#45,#46) clean; no CI failures, no merge conflicts. Task 4 — created PR #47 with 6 NOPD boundary tests for disassemble_ed() covering 3 code paths: 0x00-0x3F (b<0x40), 0x80-0x9F (inner else-if b<0xa0), 0xBC-0xFF (b>0xBB). Previous run's TBD PRs confirmed as #45 (ARRAY_SIZE) and #46 (AC_C_CONST). All disassembler NOPD ranges are now covered."
+  "notes": "2026-05-12 (run 25764423612): Task 5 — created PR aw_pr48 with 6 missing path tests for sdl2_scaler_state (startup windowed, leave native, leave auto no restore, user select windowed, reevaluate windowed, reevaluate native fits). Task 3 — no fixable bug issues exist; effort merged into Task 5 as testing improvement. Note: recent master commits (868adec2) introduced sdl2_scaler_state module with 14 tests; this PR brings it to 20 by covering the untested windowed/native branches."
 }
