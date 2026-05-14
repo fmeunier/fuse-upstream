@@ -1,48 +1,171 @@
 {
-  "last_run": "2026-05-13T22:09:00Z",
-  "last_run_id": "25828694224",
+  "last_run": "2026-05-14",
+  "last_run_id": "25887714126",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
   "fix_attempts": {
-    "rectangle-merge-same-y": {"status": "closed", "note": "Cherry-picked to master as 09cc84f9."},
-    "rectangle-merge-same-x": {"status": "closed", "note": "Cherry-picked to master as 1d1ee0c0."},
-    "bitmap-ops-test": {"status": "closed", "note": "Cherry-picked as f843d32e."},
-    "displaytest-in-check-local": {"status": "closed", "note": "PR #18 closed; commits cherry-picked to master."},
-    "ci-make-check-null-ui": {"status": "closed", "note": "Cherry-picked to master as 4ae7251b."},
-    "flash-sinclair-tests": {"status": "closed", "note": "PR #28 closed; cherry-picked to master as 988711323d11."},
-    "pentagon-display-tests": {"status": "closed", "note": "PR #29 closed; cherry-picked to master as 678b4d0e."},
-    "disasm-bit-tests": {"status": "closed", "note": "PR #31 closed; cherry-picked to master as 19675c8c."},
-    "ci-align-artifact-v8": {"status": "closed", "note": "PR #33 closed; cherry-picked to master as a4544355."},
-    "timex-flashing-tests": {"status": "closed", "note": "PR #34 closed; cherry-picked to master as 4629364a."},
-    "disasm-fdcb-negoffset-tests": {"status": "closed", "note": "PR #35 closed; cherry-picked to master as a84ccc0b."},
-    "disasm-ed-prefix-tests": {"status": "closed", "note": "PR #36, cherry-picked 9164a1d6"},
-    "run-test-diagnostics": {"status": "closed", "note": "PR #37, cherry-picked 0a617a0b"},
-    "disasm-ed-remaining-tests": {"status": "open", "pr": 38, "note": "PR #38. 16 tests: LD R/A, RRD/RLD, CPI/CPD/CPIR/CPDR, INI/IND/INIR/INDR, OUTI/OUTD/OTIR/OTDR."},
-    "disasm-cb-regpairs-tests": {"status": "open", "pr": 39, "note": "PR #39. 26 tests: CB rotations, all DE/HL/SP variants of SBC HL/ADC HL and LD (nn)/LD rr."},
-    "disasm-ixiy-instrs-tests": {"status": "open", "pr": 41, "note": "PR #41. 36 tests (93-128)."},
-    "disasm-main-opcodes-tests": {"status": "open", "pr": 43, "note": "PR #43. 54 tests (129-182) for main unprefixed Z80 opcodes."},
-    "disasm-decimal-mode-tests": {"status": "open", "pr": 44, "note": "PR #44. 6 decimal-mode tests."},
-    "build-remove-ac-c-const": {"status": "open", "pr": 45, "note": "PR #45. Removes deprecated AC_C_CONST from configure.ac."},
-    "improve-array-size-sdl2": {"status": "open", "pr": 46, "note": "PR #46. Replaces sizeof(arr)/sizeof(arr[0]) with ARRAY_SIZE in sdl2_display.c."},
-    "disasm-ed-nopd-boundary-tests": {"status": "open", "pr": 47, "note": "PR #47. 6 NOPD boundary tests (test183-test188) for 3 NOPD code paths in disassemble_ed."},
-    "scaler-state-missing-path-tests": {"status": "open", "pr": 48, "note": "PR #48. 6 missing path tests for sdl2_scaler_state."},
-    "build-update-pkg-m4": {"status": "open", "pr": 49, "note": "PR #49. Updates m4/pkg.m4 from serial 1 (pkg-config 0.24) to serial 12 (0.29.2). Adds PKG_PREREQ and other new macros, fully backward-compatible."}
+    "rectangle-merge-same-y": {
+      "status": "closed",
+      "note": "Cherry-picked to master as 09cc84f9."
+    },
+    "rectangle-merge-same-x": {
+      "status": "closed",
+      "note": "Cherry-picked to master as 1d1ee0c0."
+    },
+    "bitmap-ops-test": {
+      "status": "closed",
+      "note": "Cherry-picked as f843d32e."
+    },
+    "displaytest-in-check-local": {
+      "status": "closed",
+      "note": "PR #18 closed; commits cherry-picked to master."
+    },
+    "ci-make-check-null-ui": {
+      "status": "closed",
+      "note": "Cherry-picked to master as 4ae7251b."
+    },
+    "flash-sinclair-tests": {
+      "status": "closed",
+      "note": "PR #28 closed; cherry-picked to master as 988711323d11."
+    },
+    "pentagon-display-tests": {
+      "status": "closed",
+      "note": "PR #29 closed; cherry-picked to master as 678b4d0e."
+    },
+    "disasm-bit-tests": {
+      "status": "closed",
+      "note": "PR #31 closed; cherry-picked to master as 19675c8c."
+    },
+    "ci-align-artifact-v8": {
+      "status": "closed",
+      "note": "PR #33 closed; cherry-picked to master as a4544355."
+    },
+    "timex-flashing-tests": {
+      "status": "closed",
+      "note": "PR #34 closed; cherry-picked to master as 4629364a."
+    },
+    "disasm-fdcb-negoffset-tests": {
+      "status": "closed",
+      "note": "PR #35 closed; cherry-picked to master as a84ccc0b."
+    },
+    "disasm-ed-prefix-tests": {
+      "status": "closed",
+      "note": "PR #36, cherry-picked 9164a1d6"
+    },
+    "run-test-diagnostics": {
+      "status": "closed",
+      "note": "PR #37, cherry-picked 0a617a0b"
+    },
+    "disasm-ed-remaining-tests": {
+      "status": "open",
+      "pr": 38,
+      "note": "PR #38. 16 tests: LD R/A, RRD/RLD, CPI/CPD/CPIR/CPDR, INI/IND/INIR/INDR, OUTI/OUTD/OTIR/OTDR."
+    },
+    "disasm-cb-regpairs-tests": {
+      "status": "open",
+      "pr": 39,
+      "note": "PR #39. 26 tests: CB rotations, all DE/HL/SP variants of SBC HL/ADC HL and LD (nn)/LD rr."
+    },
+    "disasm-ixiy-instrs-tests": {
+      "status": "open",
+      "pr": 41,
+      "note": "PR #41. 36 tests (93-128)."
+    },
+    "disasm-main-opcodes-tests": {
+      "status": "open",
+      "pr": 43,
+      "note": "PR #43. 54 tests (129-182) for main unprefixed Z80 opcodes."
+    },
+    "disasm-decimal-mode-tests": {
+      "status": "open",
+      "pr": 44,
+      "note": "PR #44. 6 decimal-mode tests."
+    },
+    "build-remove-ac-c-const": {
+      "status": "open",
+      "pr": 45,
+      "note": "PR #45. Removes deprecated AC_C_CONST from configure.ac."
+    },
+    "improve-array-size-sdl2": {
+      "status": "open",
+      "pr": 46,
+      "note": "PR #46. Replaces sizeof(arr)/sizeof(arr[0]) with ARRAY_SIZE in sdl2_display.c."
+    },
+    "disasm-ed-nopd-boundary-tests": {
+      "status": "open",
+      "pr": 47,
+      "note": "PR #47. 6 NOPD boundary tests (test183-test188) for 3 NOPD code paths in disassemble_ed."
+    },
+    "scaler-state-missing-path-tests": {
+      "status": "open",
+      "pr": 48,
+      "note": "PR #48. 6 missing path tests for sdl2_scaler_state."
+    },
+    "build-update-pkg-m4": {
+      "status": "open",
+      "pr": 49,
+      "note": "PR #49. Updates m4/pkg.m4 from serial 1 (pkg-config 0.24) to serial 12 (0.29.2). Adds PKG_PREREQ and other new macros, fully backward-compatible."
+    },
+    "50": {
+      "description": "2 new sdl2_scaler_state tests: reevaluate_auto when current doesn't fit, and user_select in fullscreen with unfitting scaler",
+      "run": "25887714126",
+      "status": "open"
+    }
   },
   "open_prs": [
-    {"number": 38, "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"},
-    {"number": 39, "title": "[Repo Assist] tests: extend disassembler coverage for CB rotations and register pairs"},
-    {"number": 41, "title": "[Repo Assist] tests: add DD/FD prefix (IX/IY) disassembler coverage"},
-    {"number": 43, "title": "[Repo Assist] debugger: add disassembler unit tests for main (unprefixed) Z80 opcodes"},
-    {"number": 44, "title": "[Repo Assist] tests: add decimal output mode disassembler tests"},
-    {"number": 45, "title": "[Repo Assist] ui/sdl2: use ARRAY_SIZE macro instead of manual sizeof division"},
-    {"number": 46, "title": "[Repo Assist] build: remove deprecated AC_C_CONST macro from configure.ac"},
-    {"number": 47, "title": "[Repo Assist] debugger: add NOPD boundary tests for ED-prefix disassembler"},
-    {"number": 48, "title": "[Repo Assist] tests: add missing path coverage for sdl2_scaler_state"},
-    {"number": 49, "title": "[Repo Assist] build: update m4/pkg.m4 from pkg-config 0.24 to 0.29.2"}
+    {
+      "number": 38,
+      "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"
+    },
+    {
+      "number": 39,
+      "title": "[Repo Assist] tests: extend disassembler coverage for CB rotations and register pairs"
+    },
+    {
+      "number": 41,
+      "title": "[Repo Assist] tests: add DD/FD prefix (IX/IY) disassembler coverage"
+    },
+    {
+      "number": 43,
+      "title": "[Repo Assist] debugger: add disassembler unit tests for main (unprefixed) Z80 opcodes"
+    },
+    {
+      "number": 44,
+      "title": "[Repo Assist] tests: add decimal output mode disassembler tests"
+    },
+    {
+      "number": 45,
+      "title": "[Repo Assist] ui/sdl2: use ARRAY_SIZE macro instead of manual sizeof division"
+    },
+    {
+      "number": 46,
+      "title": "[Repo Assist] build: remove deprecated AC_C_CONST macro from configure.ac"
+    },
+    {
+      "number": 47,
+      "title": "[Repo Assist] debugger: add NOPD boundary tests for ED-prefix disassembler"
+    },
+    {
+      "number": 48,
+      "title": "[Repo Assist] tests: add missing path coverage for sdl2_scaler_state"
+    },
+    {
+      "number": 49,
+      "title": "[Repo Assist] build: update m4/pkg.m4 from pkg-config 0.24 to 0.29.2"
+    },
+    {
+      "number": 50,
+      "title": "[Repo Assist] tests: add reevaluate-auto and user-select-unfitting path coverage for sdl2_scaler_state",
+      "branch": "repo-assist/test-scaler-reevaluate-auto-user-select-2026-05-14",
+      "created_run": "25887714126"
+    }
   ],
   "pending_issues": [],
-  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
+  "monthly_activity_issue": {
+    "title": "[Repo Assist] Monthly Activity 2026-05",
+    "number": 32
+  },
   "checked_off_by_maintainer": [
     "AGENTS.md PR (merged as #5)",
     "utils_safe_strdup test PR #9 (closed, commits cherry-picked)",
@@ -73,5 +196,5 @@
     "Close issue #30",
     "Close PR #40"
   ],
-  "notes": "2026-05-13 (run 25828694224): Task 6 — verified all 9 open PRs (#38, #39, #41, #43, #44, #45, #46, #47, #48) clean — no CI failures, no merge conflicts. Task 4 — created PR #49 updating m4/pkg.m4 from serial 1 (pkg-config 0.24) to serial 12 (0.29.2). New macros: PKG_PREREQ, PKG_CHECK_MODULES_STATIC, PKG_WITH_MODULES, PKG_HAVE_WITH_MODULES, PKG_HAVE_DEFINE_WITH_MODULES. All existing configure.ac macros fully compatible."
+  "notes": "2026-05-13 (run 25828694224): Task 6 \u2014 verified all 9 open PRs (#38, #39, #41, #43, #44, #45, #46, #47, #48) clean \u2014 no CI failures, no merge conflicts. Task 4 \u2014 created PR #49 updating m4/pkg.m4 from serial 1 (pkg-config 0.24) to serial 12 (0.29.2). New macros: PKG_PREREQ, PKG_CHECK_MODULES_STATIC, PKG_WITH_MODULES, PKG_HAVE_WITH_MODULES, PKG_HAVE_DEFINE_WITH_MODULES. All existing configure.ac macros fully compatible."
 }
