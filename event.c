@@ -42,8 +42,12 @@ libspectrum_dword event_next_event;
 /* The actual list of events */
 static GSList *event_list = NULL;
 
-/* An event ready to be reused */
-static event_t *event_free = NULL;
+/* A small pool of recycled event nodes to reduce malloc/free pressure.
+   EVENT_FREE_POOL_SIZE is the number of cached free entries; the pool
+   is deliberately small so it fits in a few cache lines. */
+#define EVENT_FREE_POOL_SIZE 4
+static event_t *event_free_pool[ EVENT_FREE_POOL_SIZE ];
+static int event_free_count = 0;
 
 /* A null event */
 int event_type_null;
@@ -100,9 +104,8 @@ event_add_with_data( libspectrum_dword event_time, int type, void *user_data )
 {
   event_t *ptr;
 
-  if( event_free ) {
-    ptr = event_free;
-    event_free = NULL;
+  if( event_free_count > 0 ) {
+    ptr = event_free_pool[ --event_free_count ];
   } else {
     ptr = libspectrum_new( event_t, 1 );
   }
@@ -127,12 +130,16 @@ event_do_events( void )
 
   while(event_next_event <= tstates) {
     event_descriptor_t descriptor;
+    GSList *old_head;
     ptr = event_list->data;
     descriptor =
       g_array_index( registered_events, event_descriptor_t, ptr->type );
 
-    /* Remove the event from the list *before* processing */
-    event_list = g_slist_remove( event_list, ptr );
+    /* Remove the head directly — ptr is always event_list->data, so
+       there is no need to search the list as g_slist_remove() would. */
+    old_head = event_list;
+    event_list = event_list->next;
+    g_slist_free_1( old_head );
 
     if( event_list == NULL ) {
       event_next_event = event_no_events;
@@ -142,10 +149,10 @@ event_do_events( void )
 
     if( descriptor.fn ) descriptor.fn( ptr->tstates, ptr->type, ptr->user_data );
 
-    if( event_free ) {
-      libspectrum_free( ptr );
+    if( event_free_count < EVENT_FREE_POOL_SIZE ) {
+      event_free_pool[ event_free_count++ ] = ptr;
     } else {
-      event_free = ptr;
+      libspectrum_free( ptr );
     }
   }
 
@@ -242,8 +249,8 @@ event_reset( void )
 
   event_next_event = event_no_events;
 
-  libspectrum_free( event_free );
-  event_free = NULL;
+  while( event_free_count > 0 )
+    libspectrum_free( event_free_pool[ --event_free_count ] );
 }
 
 /* Call a user-supplied function for every event in the current list */
