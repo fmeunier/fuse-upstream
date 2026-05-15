@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-14",
-  "last_run_id": "25887714126",
+  "last_run": "2026-05-15",
+  "last_run_id": "25942923670",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
@@ -111,6 +111,16 @@
       "description": "2 new sdl2_scaler_state tests: reevaluate_auto when current doesn't fit, and user_select in fullscreen with unfitting scaler",
       "run": "25887714126",
       "status": "open"
+    },
+    "display-copy-critical-region-ub": {
+      "status": "open",
+      "pr": 51,
+      "note": "PR #51. Fix UB (shift by 32) in copy_critical_region_line() when end<=x (beam at column 0)."
+    },
+    "perf-event-free-pool": {
+      "status": "open",
+      "pr": 52,
+      "note": "PR #52. Event free-pool 4-slot (was 1-slot) + direct head removal in event_do_events()."
     }
   },
   "open_prs": [
@@ -159,6 +169,18 @@
       "title": "[Repo Assist] tests: add reevaluate-auto and user-select-unfitting path coverage for sdl2_scaler_state",
       "branch": "repo-assist/test-scaler-reevaluate-auto-user-select-2026-05-14",
       "created_run": "25887714126"
+    },
+    {
+      "number": 51,
+      "title": "[Repo Assist] display: guard against undefined behaviour in copy_critical_region_line when end <= x",
+      "branch": "repo-assist/fix-copy-critical-region-line-ub",
+      "created_run": "25942923670"
+    },
+    {
+      "number": 52,
+      "title": "[Repo Assist] event: replace single-slot cache with a small free pool and use direct head removal",
+      "branch": "repo-assist/perf-event-free-pool-2026-05-15",
+      "created_run": "25942923670"
     }
   ],
   "pending_issues": [],
@@ -196,5 +218,5 @@
     "Close issue #30",
     "Close PR #40"
   ],
-  "notes": "2026-05-13 (run 25828694224): Task 6 \u2014 verified all 9 open PRs (#38, #39, #41, #43, #44, #45, #46, #47, #48) clean \u2014 no CI failures, no merge conflicts. Task 4 \u2014 created PR #49 updating m4/pkg.m4 from serial 1 (pkg-config 0.24) to serial 12 (0.29.2). New macros: PKG_PREREQ, PKG_CHECK_MODULES_STATIC, PKG_WITH_MODULES, PKG_HAVE_WITH_MODULES, PKG_HAVE_DEFINE_WITH_MODULES. All existing configure.ac macros fully compatible."
+  "notes": "2026-05-15 (run 25942923670): Task 3 \u2014 fixed UB in copy_critical_region_line() when end==x==0 (shift by 32), PR #51. Task 8 \u2014 extended event free-pool from 1 to 4 slots and replaced g_slist_remove() with direct head removal in event_do_events(), PR #52."
 }
