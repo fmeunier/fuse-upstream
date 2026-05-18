@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-17",
-  "last_run_id": "26003578721",
+  "last_run": "2026-05-18",
+  "last_run_id": "26062554158",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
@@ -18,22 +18,23 @@
     "disasm-fdcb-negoffset-tests": {"status": "closed", "note": "PR #35 closed; cherry-picked to master as a84ccc0b."},
     "disasm-ed-prefix-tests": {"status": "closed", "note": "PR #36, cherry-picked 9164a1d6"},
     "run-test-diagnostics": {"status": "closed", "note": "PR #37, cherry-picked 0a617a0b"},
+    "improve-array-size-sdl2": {"status": "closed", "note": "PR #45 merged as 93ee0224."},
+    "build-update-pkg-m4": {"status": "closed", "note": "PR #49 merged as 09585b00."},
+    "build-fix-ac-prog-lex-noyywrap": {"status": "closed", "note": "PR #55 merged as 128c86aa."},
     "disasm-ed-remaining-tests": {"status": "open", "pr": 38, "note": "16 tests: LD R/A, RRD/RLD, CPI/CPD/CPIR/CPDR, INI/IND/INIR/INDR, OUTI/OUTD/OTIR/OTDR."},
     "disasm-cb-regpairs-tests": {"status": "open", "pr": 39, "note": "26 tests: CB rotations, all DE/HL/SP variants of SBC HL/ADC HL and LD (nn)/LD rr."},
     "disasm-ixiy-instrs-tests": {"status": "open", "pr": 41, "note": "36 tests (93-128)."},
     "disasm-main-opcodes-tests": {"status": "open", "pr": 43, "note": "54 tests (129-182) for main unprefixed Z80 opcodes."},
     "disasm-decimal-mode-tests": {"status": "open", "pr": 44, "note": "6 decimal-mode tests."},
-    "build-remove-ac-c-const": {"status": "open", "pr": 45, "note": "Removes deprecated AC_C_CONST from configure.ac."},
-    "improve-array-size-sdl2": {"status": "open", "pr": 46, "note": "Replaces sizeof(arr)/sizeof(arr[0]) with ARRAY_SIZE in sdl2_display.c."},
+    "build-remove-ac-c-const": {"status": "open", "pr": 46, "note": "Removes deprecated AC_C_CONST from configure.ac."},
     "disasm-ed-nopd-boundary-tests": {"status": "open", "pr": 47, "note": "6 NOPD boundary tests (test183-test188)."},
     "scaler-state-missing-path-tests": {"status": "open", "pr": 48, "note": "6 missing path tests for sdl2_scaler_state."},
-    "build-update-pkg-m4": {"status": "open", "pr": 49, "note": "Updates m4/pkg.m4 from serial 1 (pkg-config 0.24) to serial 12 (0.29.2)."},
     "scaler-reevaluate-auto-tests": {"status": "open", "pr": 50, "note": "2 new sdl2_scaler_state tests."},
     "display-copy-critical-region-ub": {"status": "open", "pr": 51, "note": "Fix UB (shift by 32) in copy_critical_region_line() when end<=x."},
     "perf-event-free-pool": {"status": "open", "pr": 52, "note": "Event free-pool 4-slot + direct head removal in event_do_events()."},
-    "ci-nightly-broken-if-condition": {"status": "issue-only", "issue": 53, "note": "Issue #53: nightly build fails nightly; catchup job if: condition truthy when PARENT_FUSE_REPO unset; needs workflows permission to fix."},
-    "build-remove-ax-create-stdint-h": {"status": "open", "pr": 54, "branch": "repo-assist/build-remove-unused-ax-create-stdint-h-2026-05-16", "note": "PR #54: removes 727-line unused m4 macro file ax_create_stdint_h.m4 added in 2015 but never called from configure.ac."},
-    "build-fix-ac-prog-lex-noyywrap": {"status": "open", "pr": "~55", "branch": "repo-assist/build-fix-ac-prog-lex-noyywrap-2026-05-17", "note": "PR ~#55: silences autoconf 2.71 AC_PROG_LEX deprecation warning; adds %option noyywrap to commandl.l, removes manual yywrap() from command.c, adds AC_PROG_LEX([noyywrap]) to configure.ac."}
+    "build-remove-ax-create-stdint-h": {"status": "open", "pr": 54, "note": "PR #54: removes 727-line unused m4 macro file ax_create_stdint_h.m4 added in 2015 but never called from configure.ac."},
+    "test-sdl2-joystick-missing-cases": {"status": "open", "pr": "~56", "branch": "repo-assist/test-sdl2-joystick-missing-cases-2026-05-18", "note": "PR ~#56: 3 boundary tests: button 0->FIRE_1, NUM_JOY_BUTTONS-1->FIRE_15, axis -16385 presses negative direction."},
+    "update-ax-pthread-m4": {"status": "open", "pr": "~57", "branch": "repo-assist/update-ax-pthread-2026-05-18", "note": "PR ~#57: updates m4/ax_pthread.m4 from serial 21 to serial 31 (upstream autoconf-archive)."}
   },
   "open_prs": [
     {"number": 38, "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"},
@@ -41,20 +42,17 @@
     {"number": 41, "title": "[Repo Assist] tests: add DD/FD prefix (IX/IY) disassembler coverage"},
     {"number": 43, "title": "[Repo Assist] debugger: add disassembler unit tests for main (unprefixed) Z80 opcodes"},
     {"number": 44, "title": "[Repo Assist] tests: add decimal output mode disassembler tests"},
-    {"number": 45, "title": "[Repo Assist] ui/sdl2: use ARRAY_SIZE macro instead of manual sizeof division"},
     {"number": 46, "title": "[Repo Assist] build: remove deprecated AC_C_CONST macro from configure.ac"},
     {"number": 47, "title": "[Repo Assist] debugger: add NOPD boundary tests for ED-prefix disassembler"},
     {"number": 48, "title": "[Repo Assist] tests: add missing path coverage for sdl2_scaler_state"},
-    {"number": 49, "title": "[Repo Assist] build: update m4/pkg.m4 from pkg-config 0.24 to 0.29.2"},
     {"number": 50, "title": "[Repo Assist] tests: add reevaluate-auto and user-select-unfitting path coverage for sdl2_scaler_state"},
     {"number": 51, "title": "[Repo Assist] display: guard against undefined behaviour in copy_critical_region_line when end <= x"},
     {"number": 52, "title": "[Repo Assist] event: replace single-slot cache with a small free pool and use direct head removal"},
     {"number": 54, "title": "[Repo Assist] build: remove unused AX_CREATE_STDINT_H macro file"},
-    {"number": "~55", "title": "[Repo Assist] build: suppress AC_PROG_LEX deprecation warning with noyywrap", "branch": "repo-assist/build-fix-ac-prog-lex-noyywrap-2026-05-17"}
+    {"number": "~56", "title": "[Repo Assist] tests: add missing boundary-condition tests to sdl2joysticktest", "branch": "repo-assist/test-sdl2-joystick-missing-cases-2026-05-18"},
+    {"number": "~57", "title": "[Repo Assist] build: update m4/ax_pthread.m4 from serial 21 to serial 31", "branch": "repo-assist/update-ax-pthread-2026-05-18"}
   ],
-  "pending_issues": [
-    {"number": 53, "title": "ci: nightly build fails every night due to broken if: condition in catchup job"}
-  ],
+  "pending_issues": [],
   "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
   "checked_off_by_maintainer": [
     "AGENTS.md PR (merged as #5)",
@@ -84,7 +82,12 @@
     "Review PR #36 (disasm ED-prefix tests, cherry-picked 9164a1d6)",
     "Review PR #37 (run_test diagnostics, cherry-picked 0a617a0b)",
     "Close issue #30",
-    "Close PR #40"
+    "Close PR #40",
+    "Review PR #45 (ARRAY_SIZE macro, merged 93ee0224)",
+    "Review PR #49 (pkg.m4 update, merged 09585b00)",
+    "Review PR #55 (noyywrap, merged 128c86aa)",
+    "Fix nightly build issue #53 (nightly build deleted)",
+    "Manual action issue #42 (duplicate step fixed manually as 1ce9930b)"
   ],
-  "notes": "2026-05-17 (run 26003578721): Task 2 — no human issues to comment on (all 3 open issues are Repo Assist issues #32/#42/#53). Task 4 — fixed autoconf 2.71 AC_PROG_LEX deprecation warning: added AC_PROG_LEX([noyywrap]) to configure.ac, %option noyywrap to commandl.l, removed yywrap() stub from command.c; PR ~#55."
+  "notes": "2026-05-18 (run 26062554158): Task 10 — added 3 missing boundary tests to sdl2joysticktest.c (button 0->FIRE_1, NUM_JOY_BUTTONS-1->FIRE_15, axis -16385 presses negative); PR ~#56. Task 4 — updated m4/ax_pthread.m4 from serial 21 to serial 31 (upstream autoconf-archive); PR ~#57. Maintainer merged PRs #45/#49/#55 and fixed issues #42/#53 since last run."
 }
