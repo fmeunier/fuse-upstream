@@ -289,6 +289,7 @@ jobs:
           {{/if}}
           - **checkouts**: The following repositories have been checked out and are available in the workspace:
             - `$GITHUB_WORKSPACE` → `__GH_AW_GITHUB_REPOSITORY__` (cwd) [full history, all branches available as remote-tracking refs] [additional refs fetched: *]
+            - `$GITHUB_WORKSPACE/libs/libspectrum` → `fuse-emulator/libspectrum` [default checkout]
             - **Note**: If a branch you need is not in the list above and is not listed as an additional fetched ref, it has NOT been checked out. For private repositories you cannot fetch it without proper authentication. If the branch is required and not available, exit with an error and ask the user to add it to the `fetch:` option of the `checkout:` configuration (e.g., `fetch: ["refs/pulls/open/*"]` for all open PR refs, or `fetch: ["main", "feature/my-branch"]` for specific branches).
           </github-context>
           
@@ -435,6 +436,12 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+      - name: Checkout libspectrum repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+          repository: fuse-emulator/libspectrum
+          path: ./libs/libspectrum
       - name: Fetch additional refs
         env:
           GH_AW_FETCH_TOKEN: ${{ secrets.GH_AW_GITHUB_MCP_SERVER_TOKEN || secrets.GH_AW_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}

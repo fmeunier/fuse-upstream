@@ -34,8 +34,14 @@ network:
   - java
 
 checkout:
-  fetch: ["*"]     # fetch all remote branches to allow working on PR branches
-  fetch-depth: 0   # fetch full history
+  - fetch: ["*"]     # fetch all remote branches to allow working on PR branches
+    fetch-depth: 0    # fetch full history
+  - repository: fuse-emulator/libspectrum
+    path: ./libs/libspectrum
+    # Public repo: token is usually unnecessary.
+    # If cross-repo checkout/API/code-search hits auth or rate-limit problems,
+    # reuse the existing read-only PAT:
+    # token: ${{ secrets.CROSS_REPO_PAT }}
 
 tools:
   web-fetch:

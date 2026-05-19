@@ -21,8 +21,27 @@ sudo make install     # Install
 make check            # Run unit tests
 ```
 
-A `libspectrum` library (from `arki55/fuse-libspectrum`) must be installed
-before building Fuse. See `INSTALL` for details.
+A `libspectrum` library must be installed before building Fuse. See
+`INSTALL` for details.
+
+## Fuse and libspectrum
+
+Fuse depends on `libspectrum`.
+
+When analysing issues involving:
+- snapshots
+- tape/disk formats
+- compression
+- serialization
+- build/link integration
+
+inspect:
+- the local `libspectrum` checkout when one is available (for example
+  Repo Assist checks out `./libs/libspectrum`)
+- Fuse integration points
+- autotools/pkg-config/configure logic
+
+Treat `libspectrum` as read-only unless explicitly asked to modify it.
 
 ## Coding Style
 
