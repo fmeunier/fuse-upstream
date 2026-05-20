@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-19",
-  "last_run_id": "26127783875",
+  "last_run": "2026-05-20",
+  "last_run_id": "26146901786",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
@@ -35,8 +35,8 @@
     "build-remove-ax-create-stdint-h": {"status": "open", "pr": 54, "note": "PR #54: removes 727-line unused m4 macro file ax_create_stdint_h.m4 added in 2015 but never called from configure.ac."},
     "test-sdl2-joystick-missing-cases": {"status": "open", "pr": 56, "note": "PR #56: 3 boundary tests: button 0->FIRE_1, NUM_JOY_BUTTONS-1->FIRE_15, axis -16385 presses negative direction."},
     "update-ax-pthread-m4": {"status": "open", "pr": 57, "note": "PR #57: updates m4/ax_pthread.m4 from serial 21 to serial 31 (upstream autoconf-archive)."},
-    "improve-sdl2-keyboard-dispatch": {"status": "open", "pr": 59, "branch": "repo-assist/improve-sdl2-keyboard-dispatch-2026-05-19", "note": "PR #59: simplify sdl2keyboard_dispatch - remove redundant spectrum_keysym variable and simplify guard after sdl2keyboard_physical_map removal."},
-    "build-remove-ac-c-inline": {"status": "open", "pr": "~60", "branch": "repo-assist/build-remove-ac-c-inline-2026-05-19-2ca4a1fa", "note": "PR ~#60: removes deprecated AC_C_INLINE from configure.ac; companion to PR #46."}
+    "improve-sdl2-keyboard-dispatch": {"status": "open", "pr": 59, "note": "PR #59: simplify sdl2keyboard_dispatch - remove redundant spectrum_keysym variable and simplify guard after sdl2keyboard_physical_map removal."},
+    "build-remove-ac-c-inline": {"status": "open", "pr": 60, "note": "PR #60: removes deprecated AC_C_INLINE from configure.ac; companion to PR #46."}
   },
   "open_prs": [
     {"number": 38, "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"},
@@ -54,7 +54,7 @@
     {"number": 56, "title": "[Repo Assist] Add missing boundary-condition tests to sdl2joysticktest"},
     {"number": 57, "title": "[Repo Assist] Update m4/ax_pthread.m4 from serial 21 to serial 31"},
     {"number": 59, "title": "[Repo Assist] ui/sdl2: simplify sdl2keyboard_dispatch after removal of physical map"},
-    {"number": "~60", "title": "[Repo Assist] build: remove deprecated AC_C_INLINE macro from configure.ac", "branch": "repo-assist/build-remove-ac-c-inline-2026-05-19-2ca4a1fa"}
+    {"number": 60, "title": "[Repo Assist] build: remove deprecated AC_C_INLINE macro from configure.ac"}
   ],
   "pending_issues": [],
   "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
@@ -93,5 +93,5 @@
     "Fix nightly build issue #53 (nightly build deleted)",
     "Manual action issue #42 (duplicate step fixed manually as 1ce9930b)"
   ],
-  "notes": "2026-05-19 (run 26127783875): Task 6 — verified all 15 open PRs, no conflicts, no CI failures. Task 4 — removed AC_C_INLINE from configure.ac (deprecated in autoconf 2.70, companion to PR #46); PR ~#60. Previous run (26126656196): Task 5 — simplified sdl2keyboard_dispatch PR #59."
+  "notes": "2026-05-20 (run 26146901786): Tasks 2 and 4 selected. No open issues needing comment (only automated #58 and own monthly activity #32). No new engineering PRs created — 16 Repo Assist PRs already open; restraint is appropriate until maintainer reviews some. PR #60 confirmed as actual number (was ~#60)."
 }
