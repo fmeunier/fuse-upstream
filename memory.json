@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-20",
-  "last_run_id": "26146901786",
+  "last_run": "2026-05-21",
+  "last_run_id": "26210986093",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
@@ -21,6 +21,8 @@
     "improve-array-size-sdl2": {"status": "closed", "note": "PR #45 merged as 93ee0224."},
     "build-update-pkg-m4": {"status": "closed", "note": "PR #49 merged as 09585b00."},
     "build-fix-ac-prog-lex-noyywrap": {"status": "closed", "note": "PR #55 merged as 128c86aa."},
+    "improve-sdl2-keyboard-dispatch": {"status": "closed", "note": "PR #59 closed/cherry-picked as 86791a2e."},
+    "perf-event-free-pool": {"status": "closed", "note": "PR #52 closed/cherry-picked to master."},
     "disasm-ed-remaining-tests": {"status": "open", "pr": 38, "note": "16 tests: LD R/A, RRD/RLD, CPI/CPD/CPIR/CPDR, INI/IND/INIR/INDR, OUTI/OUTD/OTIR/OTDR."},
     "disasm-cb-regpairs-tests": {"status": "open", "pr": 39, "note": "26 tests: CB rotations, all DE/HL/SP variants of SBC HL/ADC HL and LD (nn)/LD rr."},
     "disasm-ixiy-instrs-tests": {"status": "open", "pr": 41, "note": "36 tests (93-128)."},
@@ -31,12 +33,11 @@
     "scaler-state-missing-path-tests": {"status": "open", "pr": 48, "note": "6 missing path tests for sdl2_scaler_state."},
     "scaler-reevaluate-auto-tests": {"status": "open", "pr": 50, "note": "2 new sdl2_scaler_state tests."},
     "display-copy-critical-region-ub": {"status": "open", "pr": 51, "note": "Fix UB (shift by 32) in copy_critical_region_line() when end<=x."},
-    "perf-event-free-pool": {"status": "open", "pr": 52, "note": "Event free-pool 4-slot + direct head removal in event_do_events()."},
     "build-remove-ax-create-stdint-h": {"status": "open", "pr": 54, "note": "PR #54: removes 727-line unused m4 macro file ax_create_stdint_h.m4 added in 2015 but never called from configure.ac."},
     "test-sdl2-joystick-missing-cases": {"status": "open", "pr": 56, "note": "PR #56: 3 boundary tests: button 0->FIRE_1, NUM_JOY_BUTTONS-1->FIRE_15, axis -16385 presses negative direction."},
     "update-ax-pthread-m4": {"status": "open", "pr": 57, "note": "PR #57: updates m4/ax_pthread.m4 from serial 21 to serial 31 (upstream autoconf-archive)."},
-    "improve-sdl2-keyboard-dispatch": {"status": "open", "pr": 59, "note": "PR #59: simplify sdl2keyboard_dispatch - remove redundant spectrum_keysym variable and simplify guard after sdl2keyboard_physical_map removal."},
-    "build-remove-ac-c-inline": {"status": "open", "pr": 60, "note": "PR #60: removes deprecated AC_C_INLINE from configure.ac; companion to PR #46."}
+    "build-remove-ac-c-inline": {"status": "open", "pr": 60, "note": "PR #60: removes deprecated AC_C_INLINE from configure.ac; companion to PR #46."},
+    "test-keyboard-read-simulate": {"status": "open", "pr": "~62", "note": "PR ~#62: 13 assertions for keyboard_read and keyboard_simulate_keypress."}
   },
   "open_prs": [
     {"number": 38, "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"},
@@ -49,12 +50,11 @@
     {"number": 48, "title": "[Repo Assist] tests: add missing path coverage for sdl2_scaler_state"},
     {"number": 50, "title": "[Repo Assist] tests: add reevaluate-auto and user-select-unfitting path coverage for sdl2_scaler_state"},
     {"number": 51, "title": "[Repo Assist] display: guard against undefined behaviour in copy_critical_region_line when end <= x"},
-    {"number": 52, "title": "[Repo Assist] event: replace single-slot cache with a small free pool and use direct head removal"},
     {"number": 54, "title": "[Repo Assist] build: remove unused AX_CREATE_STDINT_H macro file"},
     {"number": 56, "title": "[Repo Assist] Add missing boundary-condition tests to sdl2joysticktest"},
     {"number": 57, "title": "[Repo Assist] Update m4/ax_pthread.m4 from serial 21 to serial 31"},
-    {"number": 59, "title": "[Repo Assist] ui/sdl2: simplify sdl2keyboard_dispatch after removal of physical map"},
-    {"number": 60, "title": "[Repo Assist] build: remove deprecated AC_C_INLINE macro from configure.ac"}
+    {"number": 60, "title": "[Repo Assist] build: remove deprecated AC_C_INLINE macro from configure.ac"},
+    {"number": "~62", "title": "[Repo Assist] tests: add unit tests for keyboard_read and keyboard_simulate_keypress"}
   ],
   "pending_issues": [],
   "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
@@ -91,7 +91,9 @@
     "Review PR #49 (pkg.m4 update, merged 09585b00)",
     "Review PR #55 (noyywrap, merged 128c86aa)",
     "Fix nightly build issue #53 (nightly build deleted)",
-    "Manual action issue #42 (duplicate step fixed manually as 1ce9930b)"
+    "Manual action issue #42 (duplicate step fixed manually as 1ce9930b)",
+    "Review PR #52 (event free pool, cherry-picked to master)",
+    "Review PR #59 (sdl2keyboard_dispatch simplification, cherry-picked as 86791a2e)"
   ],
-  "notes": "2026-05-20 (run 26146901786): Tasks 2 and 4 selected. No open issues needing comment (only automated #58 and own monthly activity #32). No new engineering PRs created — 16 Repo Assist PRs already open; restraint is appropriate until maintainer reviews some. PR #60 confirmed as actual number (was ~#60)."
+  "notes": "2026-05-21 (run 26210986093): Tasks 10 and 6 selected. Task 6: all 14 open Repo Assist PRs verified clean — PRs #52 and #59 confirmed closed/cherry-picked. Task 10: created PR ~#62 adding unit tests for keyboard_read() and keyboard_simulate_keypress() — core keyboard functions with no prior dedicated tests. 15 open Repo Assist PRs now."
 }
