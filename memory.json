@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-25",
-  "last_run_id": "26388604647",
+  "last_run": "2026-05-26",
+  "last_run_id": "26437472933",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
@@ -38,7 +38,8 @@
     "update-ax-pthread-m4": {"status": "open", "pr": 57, "note": "PR #57: updates m4/ax_pthread.m4 from serial 21 to serial 31 (upstream autoconf-archive)."},
     "build-remove-ac-c-inline": {"status": "open", "pr": 60, "note": "PR #60: removes deprecated AC_C_INLINE from configure.ac; companion to PR #46."},
     "test-keyboard-read-simulate": {"status": "open", "pr": 62, "note": "PR #62: 13 assertions for keyboard_read and keyboard_simulate_keypress."},
-    "improve-mempool-untracked-tests": {"status": "open", "pr": 63, "note": "PR #63: 3 new assertions verifying MEMPOOL_UNTRACKED (-1) allocation contract in mempool_test."}
+    "improve-mempool-untracked-tests": {"status": "open", "pr": 63, "note": "PR #63: 3 new assertions verifying MEMPOOL_UNTRACKED (-1) allocation contract in mempool_test."},
+    "build-add-ax-strings-strcasecmp": {"status": "open", "pr": "pending", "note": "PR created 2026-05-26: adds missing m4/ax_strings_strcasecmp.m4 companion macro. AX_STRINGS_STRCASECMP was called in configure.ac but not defined anywhere."}
   },
   "open_prs": [
     {"number": 38, "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"},
@@ -56,7 +57,8 @@
     {"number": 57, "title": "[Repo Assist] Update m4/ax_pthread.m4 from serial 21 to serial 31"},
     {"number": 60, "title": "[Repo Assist] build: remove deprecated AC_C_INLINE macro from configure.ac"},
     {"number": 62, "title": "[Repo Assist] tests: add unit tests for keyboard_read and keyboard_simulate_keypress"},
-    {"number": 63, "title": "[Repo Assist] tests: add MEMPOOL_UNTRACKED coverage to mempool_test"}
+    {"number": 63, "title": "[Repo Assist] tests: add MEMPOOL_UNTRACKED coverage to mempool_test"},
+    {"number": "pending", "title": "[Repo Assist] build: add missing m4/ax_strings_strcasecmp.m4 companion macro"}
   ],
   "pending_issues": [],
   "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
@@ -97,5 +99,5 @@
     "Review PR #52 (event free pool, cherry-picked to master)",
     "Review PR #59 (sdl2keyboard_dispatch simplification, cherry-picked as 86791a2e)"
   ],
-  "notes": "2026-05-25 (run 26388604647): Tasks 6 and 5 selected. Task 6: all 15 open Repo Assist PRs verified clean — no merge conflicts (most behind master but no actual conflicts). Task 5: Created PR #63 adding MEMPOOL_UNTRACKED test coverage to mempool_test in unittests.c. Monthly activity issue #32 updated."
+  "notes": "2026-05-26 (run 26437472933): Tasks 4 and 6 selected. Task 6: all 16 open Repo Assist PRs verified clean - no merge conflicts. Task 4: Created PR for missing m4/ax_strings_strcasecmp.m4 companion macro (AX_STRINGS_STRCASECMP was called in configure.ac but never defined, causing configure failure on systems where strcasecmp is only in <strings.h>). Monthly activity issue #32 updated."
 }
