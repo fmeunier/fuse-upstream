@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-27",
-  "last_run_id": "26496649894",
+  "last_run": "2026-05-28",
+  "last_run_id": "26560170719",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
@@ -40,7 +40,8 @@
     "test-keyboard-read-simulate": {"status": "open", "pr": 62, "note": "PR #62: 13 assertions for keyboard_read and keyboard_simulate_keypress."},
     "improve-mempool-untracked-tests": {"status": "open", "pr": 63, "note": "PR #63: 3 new assertions verifying MEMPOOL_UNTRACKED (-1) allocation contract in mempool_test."},
     "build-add-ax-strings-strcasecmp": {"status": "open", "pr": 64, "note": "PR #64: adds missing m4/ax_strings_strcasecmp.m4 companion macro. AX_STRINGS_STRCASECMP was called in configure.ac but not defined anywhere."},
-    "improve-psg-named-constant": {"status": "open", "pr": "pending-65", "note": "PR created 2026-05-27: replaces magic number 14 with PSG_REGISTERS constant in psg.c/psg.h. No functional change, clarity improvement."}
+    "improve-psg-named-constant": {"status": "open", "pr": 65, "note": "PR #65: replaces magic number 14 with PSG_REGISTERS constant in psg.c/psg.h. No functional change, clarity improvement."},
+    "eng-remove-redundant-autoreconf-macos": {"status": "open", "pr": 66, "note": "PR #66: removes redundant autoreconf -i from macOS CI step 3 (step 6 already runs autogen.sh with autoreconf -f -i -I m4). Also names anonymous verify_other steps in Linux and macOS sub-workflows."}
   },
   "open_prs": [
     {"number": 38, "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"},
@@ -60,7 +61,8 @@
     {"number": 62, "title": "[Repo Assist] tests: add unit tests for keyboard_read and keyboard_simulate_keypress"},
     {"number": 63, "title": "[Repo Assist] tests: add MEMPOOL_UNTRACKED coverage to mempool_test"},
     {"number": 64, "title": "[Repo Assist] build: add missing m4/ax_strings_strcasecmp.m4 companion macro"},
-    {"number": "pending-65", "title": "[Repo Assist] psg: replace magic number 14 with PSG_REGISTERS constant"}
+    {"number": 65, "title": "[Repo Assist] psg: replace magic number 14 with PSG_REGISTERS constant"},
+    {"number": 66, "title": "[Repo Assist] ci: remove redundant autoreconf and name anonymous workflow steps"}
   ],
   "pending_issues": [],
   "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
@@ -101,5 +103,5 @@
     "Review PR #52 (event free pool, cherry-picked to master)",
     "Review PR #59 (sdl2keyboard_dispatch simplification, cherry-picked as 86791a2e)"
   ],
-  "notes": "2026-05-27 (run 26496649894): Tasks 6 and 5 selected. Task 6: master unchanged since last run (86791a2e), all 17 PRs conflict-free. Task 5: Created PR for psg.c clarity improvement - PSG_REGISTERS named constant replaces magic number 14. Monthly activity issue #32 updated."
+  "notes": "2026-05-28 (run 26560170719): Tasks 4 and 6 selected. Task 6: all 18 PRs conflict-free (master unchanged). Task 4: Created PR #66 - removes redundant autoreconf -i from macOS CI step 3 and names anonymous verify_other steps in Linux/macOS sub-workflows. Monthly activity issue #32 updated."
 }
