@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-05-29",
-  "last_run_id": "26623441470",
+  "last_run": "2026-05-30",
+  "last_run_id": "26677321815",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved (Claude engine active since May 1); suggested closing"
   },
@@ -42,7 +42,8 @@
     "build-add-ax-strings-strcasecmp": {"status": "open", "pr": 64, "note": "PR #64: adds missing m4/ax_strings_strcasecmp.m4 companion macro. AX_STRINGS_STRCASECMP was called in configure.ac but not defined anywhere."},
     "improve-psg-named-constant": {"status": "open", "pr": 65, "note": "PR #65: replaces magic number 14 with PSG_REGISTERS constant in psg.c/psg.h. No functional change, clarity improvement."},
     "eng-remove-redundant-autoreconf-macos": {"status": "open-issue", "pr": 66, "note": "Issue #66: PR couldn't be pushed (protected workflow files). Manual PR creation instructions in issue body."},
-    "improve-timer-history-samples": {"status": "open", "note": "PR (new, ~#67): replaces magic number 10 with TIMER_SPEED_HISTORY_SAMPLES in timer/timer.c. Build+tests pass. No functional change, clarity improvement."}
+    "improve-timer-history-samples": {"status": "open", "pr": 67, "note": "PR #67: replaces magic number 10 with TIMER_SPEED_HISTORY_SAMPLES in timer/timer.c. Build+tests pass. No functional change, clarity improvement."},
+    "eng-ntsc-scaler-test-coverage": {"status": "open", "pr": 68, "note": "PR #68: adds SCALER_NTSC2X/3X/4X entries to fill_test_scales() in sdl2scalerstatetest.c. Follow-up to NTSC TV addition (commit 605a27db). make check passes."}
   },
   "open_prs": [
     {"number": 38, "title": "[Repo Assist] tests: add remaining ED-prefix disassembler coverage"},
@@ -63,7 +64,8 @@
     {"number": 63, "title": "[Repo Assist] tests: add MEMPOOL_UNTRACKED coverage to mempool_test"},
     {"number": 64, "title": "[Repo Assist] build: add missing m4/ax_strings_strcasecmp.m4 companion macro"},
     {"number": 65, "title": "[Repo Assist] psg: replace magic number 14 with PSG_REGISTERS constant"},
-    {"number": "new", "title": "[Repo Assist] timer: replace magic number 10 with TIMER_SPEED_HISTORY_SAMPLES"}
+    {"number": 67, "title": "[Repo Assist] timer: replace magic number 10 with TIMER_SPEED_HISTORY_SAMPLES"},
+    {"number": 68, "title": "[Repo Assist] tests: add NTSC scaler entries to fill_test_scales() helper"}
   ],
   "pending_issues": [],
   "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-05", "number": 32},
@@ -104,5 +106,5 @@
     "Review PR #52 (event free pool, cherry-picked to master)",
     "Review PR #59 (sdl2keyboard_dispatch simplification, cherry-picked as 86791a2e)"
   ],
-  "notes": "2026-05-29 (run 26623441470): Tasks 3 and 6 selected. No user bugs to fix (Task 3 substituted with Task 5). Task 6: master unchanged at 86791a2e; all 18 PRs remain conflict-free. Task 5: Created new PR for timer/timer.c - introduces TIMER_SPEED_HISTORY_SAMPLES=10 named constant, replacing 3 bare magic-number occurrences. Build+tests pass (make check). Monthly activity issue #32 updated."
+  "notes": "2026-05-30 (run 26677321815): Tasks 6 and 4 selected. Task 6: master advanced by 5 commits (gtk3 Wayland fixes, SDL autoconf CI fix, NTSC TV filter addition). All 19 open PRs verified conflict-free. Task 4: Created PR #68 - adds SCALER_NTSC2X/3X/4X to fill_test_scales() in sdl2scalerstatetest.c, a follow-up to the NTSC TV commit (605a27db) that added these scalers. make check passes. Monthly activity issue #32 updated."
 }
