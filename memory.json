@@ -1,14 +1,14 @@
 {
-  "last_run": "2026-06-01",
-  "last_run_id": "26741392008",
+  "last_run": "2026-06-02",
+  "last_run_id": "26804880584",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved; suggested closing"
   },
   "fix_attempts": {
-    "disasm-ed-remaining-tests": {"status": "open", "pr": 38},
-    "disasm-cb-regpairs-tests": {"status": "open", "pr": 39},
-    "disasm-ixiy-instrs-tests": {"status": "open", "pr": 41},
-    "disasm-main-opcodes-tests": {"status": "open", "pr": 43},
+    "disasm-ed-remaining-tests": {"status": "merged", "pr": 38},
+    "disasm-cb-regpairs-tests": {"status": "merged", "pr": 39},
+    "disasm-ixiy-instrs-tests": {"status": "merged", "pr": 41},
+    "disasm-main-opcodes-tests": {"status": "merged", "pr": 43},
     "disasm-decimal-mode-tests": {"status": "open", "pr": 44},
     "build-remove-ac-c-const": {"status": "open", "pr": 46},
     "disasm-ed-nopd-boundary-tests": {"status": "open", "pr": 47},
@@ -27,10 +27,11 @@
     "improve-timer-history-samples": {"status": "open", "pr": 67},
     "eng-ntsc-scaler-test-coverage": {"status": "open", "pr": 68},
     "test-rectangle-realloc-paths": {"status": "open", "pr": 69},
-    "improve-sound-ay-named-constants": {"status": "open", "pr": "TBD", "note": "Created 2026-06-01: AY_CHANNELS + AY_REGISTERS in sound.c"}
+    "improve-sound-ay-named-constants": {"status": "open", "pr": 70},
+    "eng-configure-cleanup-urls-am-prog-cc": {"status": "open", "pr": "TBD", "note": "Created 2026-06-02: HTTPS URLs + remove AM_PROG_CC_C_O in configure.ac; autogen.sh validated"}
   },
-  "open_prs": [38,39,41,43,44,46,47,48,50,51,54,56,57,60,62,63,64,65,67,68,69,"TBD(sound-ay)"],
-  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-06", "number": "TBD"},
+  "open_prs": [44,46,47,48,50,51,54,56,57,60,62,63,64,65,67,68,69,70,"TBD(configure-cleanup)"],
+  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-06", "number": 71},
   "checked_off_by_maintainer": [
     "AGENTS.md PR (#5)", "utils_safe_strdup test PR #9", "display-dirty-scan PR #10",
     "rectangle-merge-same-y PR #11", "Manually create PR checkout v3->v4",
@@ -43,7 +44,9 @@
     "Review PR #35", "Review PR #36", "Review PR #37", "Close issue #30",
     "Close PR #40", "Review PR #45", "Review PR #49", "Review PR #55",
     "Fix nightly build issue #53", "Manual action issue #42",
-    "Review PR #52", "Review PR #59"
+    "Review PR #52", "Review PR #59",
+    "Merge PR #38 (disasm ED tests)", "Merge PR #39 (disasm CB tests)",
+    "Merge PR #41 (disasm IX/IY tests)", "Merge PR #43 (disasm main opcodes tests)"
   ],
-  "notes": "2026-06-01 run 26741392008: Tasks 5+6. Task 5: PR sound AY_CHANNELS+AY_REGISTERS. Task 6: 21 open PRs, no conflicts (master 605a27db). Task 11: closed May #32, created June activity issue."
+  "notes": "2026-06-02 run 26804880584: Tasks 6+4+11. Task 6: all 18 open PRs conflict-free, master at 26e14ca9 (PRs #38/#39/#41/#43 merged). Task 4: configure.ac cleanup PR (HTTPS URLs + remove AM_PROG_CC_C_O). Task 11: updated June activity issue #71."
 }
