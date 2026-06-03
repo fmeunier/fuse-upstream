@@ -1,52 +1,179 @@
 {
-  "last_run": "2026-06-02",
-  "last_run_id": "26804880584",
+  "last_run": "2026-06-03",
+  "last_run_id": "26870143782",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved; suggested closing"
   },
   "fix_attempts": {
-    "disasm-ed-remaining-tests": {"status": "merged", "pr": 38},
-    "disasm-cb-regpairs-tests": {"status": "merged", "pr": 39},
-    "disasm-ixiy-instrs-tests": {"status": "merged", "pr": 41},
-    "disasm-main-opcodes-tests": {"status": "merged", "pr": 43},
-    "disasm-decimal-mode-tests": {"status": "open", "pr": 44},
-    "build-remove-ac-c-const": {"status": "open", "pr": 46},
-    "disasm-ed-nopd-boundary-tests": {"status": "open", "pr": 47},
-    "scaler-state-missing-path-tests": {"status": "open", "pr": 48},
-    "scaler-reevaluate-auto-tests": {"status": "open", "pr": 50},
-    "display-copy-critical-region-ub": {"status": "open", "pr": 51},
-    "build-remove-ax-create-stdint-h": {"status": "open", "pr": 54},
-    "test-sdl2-joystick-missing-cases": {"status": "open", "pr": 56},
-    "update-ax-pthread-m4": {"status": "open", "pr": 57},
-    "build-remove-ac-c-inline": {"status": "open", "pr": 60},
-    "test-keyboard-read-simulate": {"status": "open", "pr": 62},
-    "improve-mempool-untracked-tests": {"status": "open", "pr": 63},
-    "build-add-ax-strings-strcasecmp": {"status": "open", "pr": 64},
-    "improve-psg-named-constant": {"status": "open", "pr": 65},
-    "eng-remove-redundant-autoreconf-macos": {"status": "open-issue", "pr": 66},
-    "improve-timer-history-samples": {"status": "open", "pr": 67},
-    "eng-ntsc-scaler-test-coverage": {"status": "open", "pr": 68},
-    "test-rectangle-realloc-paths": {"status": "open", "pr": 69},
-    "improve-sound-ay-named-constants": {"status": "open", "pr": 70},
-    "eng-configure-cleanup-urls-am-prog-cc": {"status": "open", "pr": "TBD", "note": "Created 2026-06-02: HTTPS URLs + remove AM_PROG_CC_C_O in configure.ac; autogen.sh validated"}
+    "disasm-ed-remaining-tests": {
+      "status": "merged",
+      "pr": 38
+    },
+    "disasm-cb-regpairs-tests": {
+      "status": "merged",
+      "pr": 39
+    },
+    "disasm-ixiy-instrs-tests": {
+      "status": "merged",
+      "pr": 41
+    },
+    "disasm-main-opcodes-tests": {
+      "status": "merged",
+      "pr": 43
+    },
+    "disasm-decimal-mode-tests": {
+      "status": "open",
+      "pr": 44
+    },
+    "build-remove-ac-c-const": {
+      "status": "open",
+      "pr": 46
+    },
+    "disasm-ed-nopd-boundary-tests": {
+      "status": "open",
+      "pr": 47
+    },
+    "scaler-state-missing-path-tests": {
+      "status": "open",
+      "pr": 48
+    },
+    "scaler-reevaluate-auto-tests": {
+      "status": "open",
+      "pr": 50
+    },
+    "display-copy-critical-region-ub": {
+      "status": "open",
+      "pr": 51
+    },
+    "build-remove-ax-create-stdint-h": {
+      "status": "open",
+      "pr": 54
+    },
+    "test-sdl2-joystick-missing-cases": {
+      "status": "open",
+      "pr": 56
+    },
+    "update-ax-pthread-m4": {
+      "status": "open",
+      "pr": 57
+    },
+    "build-remove-ac-c-inline": {
+      "status": "open",
+      "pr": 60
+    },
+    "test-keyboard-read-simulate": {
+      "status": "open",
+      "pr": 62
+    },
+    "improve-mempool-untracked-tests": {
+      "status": "open",
+      "pr": 63
+    },
+    "build-add-ax-strings-strcasecmp": {
+      "status": "open",
+      "pr": 64
+    },
+    "improve-psg-named-constant": {
+      "status": "open",
+      "pr": 65
+    },
+    "eng-remove-redundant-autoreconf-macos": {
+      "status": "open-issue",
+      "pr": 66
+    },
+    "improve-timer-history-samples": {
+      "status": "open",
+      "pr": 67
+    },
+    "eng-ntsc-scaler-test-coverage": {
+      "status": "open",
+      "pr": 68
+    },
+    "test-rectangle-realloc-paths": {
+      "status": "open",
+      "pr": 69
+    },
+    "improve-sound-ay-named-constants": {
+      "status": "open",
+      "pr": 70
+    },
+    "eng-configure-cleanup-urls-am-prog-cc": {
+      "status": "open",
+      "pr": "TBD",
+      "note": "Created 2026-06-02: HTTPS URLs + remove AM_PROG_CC_C_O in configure.ac; autogen.sh validated"
+    },
+    "disasm-conditional-completeness-tests": {
+      "status": "open",
+      "pr": 73,
+      "note": "Created 2026-06-03: 37 new tests for conditional JR/RET/JP/CALL, RST targets, and immediate arithmetic/logic"
+    }
   },
-  "open_prs": [44,46,47,48,50,51,54,56,57,60,62,63,64,65,67,68,69,70,"TBD(configure-cleanup)"],
-  "monthly_activity_issue": {"title": "[Repo Assist] Monthly Activity 2026-06", "number": 71},
-  "checked_off_by_maintainer": [
-    "AGENTS.md PR (#5)", "utils_safe_strdup test PR #9", "display-dirty-scan PR #10",
-    "rectangle-merge-same-y PR #11", "Manually create PR checkout v3->v4",
-    "Review PR #12 CI overhaul", "Review PR #13 rectangle x-fix",
-    "Close PR #17", "Close issue #2", "Review PR #18",
-    "Review CI null-UI PR", "Review sdl2-test-coverage PR",
-    "Review ci-macos-make-check PR", "Review PR #23", "Review sdl2-display-tiebreaker PR",
-    "Check issue #24", "Review PR #26", "Review PR #27", "Review PR #28",
-    "Review PR #29", "Review PR #31", "Review PR #33", "Review PR #34",
-    "Review PR #35", "Review PR #36", "Review PR #37", "Close issue #30",
-    "Close PR #40", "Review PR #45", "Review PR #49", "Review PR #55",
-    "Fix nightly build issue #53", "Manual action issue #42",
-    "Review PR #52", "Review PR #59",
-    "Merge PR #38 (disasm ED tests)", "Merge PR #39 (disasm CB tests)",
-    "Merge PR #41 (disasm IX/IY tests)", "Merge PR #43 (disasm main opcodes tests)"
+  "open_prs": [
+    44,
+    46,
+    47,
+    48,
+    50,
+    51,
+    54,
+    56,
+    57,
+    60,
+    62,
+    63,
+    64,
+    65,
+    67,
+    68,
+    69,
+    70,
+    "TBD(configure-cleanup)",
+    73
   ],
-  "notes": "2026-06-02 run 26804880584: Tasks 6+4+11. Task 6: all 18 open PRs conflict-free, master at 26e14ca9 (PRs #38/#39/#41/#43 merged). Task 4: configure.ac cleanup PR (HTTPS URLs + remove AM_PROG_CC_C_O). Task 11: updated June activity issue #71."
+  "monthly_activity_issue": {
+    "title": "[Repo Assist] Monthly Activity 2026-06",
+    "number": 71
+  },
+  "checked_off_by_maintainer": [
+    "AGENTS.md PR (#5)",
+    "utils_safe_strdup test PR #9",
+    "display-dirty-scan PR #10",
+    "rectangle-merge-same-y PR #11",
+    "Manually create PR checkout v3->v4",
+    "Review PR #12 CI overhaul",
+    "Review PR #13 rectangle x-fix",
+    "Close PR #17",
+    "Close issue #2",
+    "Review PR #18",
+    "Review CI null-UI PR",
+    "Review sdl2-test-coverage PR",
+    "Review ci-macos-make-check PR",
+    "Review PR #23",
+    "Review sdl2-display-tiebreaker PR",
+    "Check issue #24",
+    "Review PR #26",
+    "Review PR #27",
+    "Review PR #28",
+    "Review PR #29",
+    "Review PR #31",
+    "Review PR #33",
+    "Review PR #34",
+    "Review PR #35",
+    "Review PR #36",
+    "Review PR #37",
+    "Close issue #30",
+    "Close PR #40",
+    "Review PR #45",
+    "Review PR #49",
+    "Review PR #55",
+    "Fix nightly build issue #53",
+    "Manual action issue #42",
+    "Review PR #52",
+    "Review PR #59",
+    "Merge PR #38 (disasm ED tests)",
+    "Merge PR #39 (disasm CB tests)",
+    "Merge PR #41 (disasm IX/IY tests)",
+    "Merge PR #43 (disasm main opcodes tests)"
+  ],
+  "notes": "2026-06-03 run 26870143782: Tasks 10+2+11. Task 10: new disassembler completeness PR. Task 2: no user issues (all automated). Task 11: update June activity issue #71."
 }
