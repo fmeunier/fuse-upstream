@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-03",
-  "last_run_id": "26870143782",
+  "last_run": "2026-06-04",
+  "last_run_id": "26937195453",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved; suggested closing"
   },
@@ -99,13 +99,18 @@
     },
     "eng-configure-cleanup-urls-am-prog-cc": {
       "status": "open",
-      "pr": "TBD",
+      "pr": 72,
       "note": "Created 2026-06-02: HTTPS URLs + remove AM_PROG_CC_C_O in configure.ac; autogen.sh validated"
     },
     "disasm-conditional-completeness-tests": {
       "status": "open",
       "pr": 73,
       "note": "Created 2026-06-03: 37 new tests for conditional JR/RET/JP/CALL, RST targets, and immediate arithmetic/logic"
+    },
+    "improve-debugger-modulo-operator": {
+      "status": "open",
+      "pr": 74,
+      "note": "Created 2026-06-04: Add % modulo operator to debugger expression evaluator"
     }
   },
   "open_prs": [
@@ -127,8 +132,9 @@
     68,
     69,
     70,
-    "TBD(configure-cleanup)",
-    73
+    72,
+    73,
+    74
   ],
   "monthly_activity_issue": {
     "title": "[Repo Assist] Monthly Activity 2026-06",
@@ -175,5 +181,5 @@
     "Merge PR #41 (disasm IX/IY tests)",
     "Merge PR #43 (disasm main opcodes tests)"
   ],
-  "notes": "2026-06-03 run 26870143782: Tasks 10+2+11. Task 10: new disassembler completeness PR. Task 2: no user issues (all automated). Task 11: update June activity issue #71."
+  "notes": "2026-06-04 run 26937195453: Tasks 10+3+11. Task 10: Add modulo % operator to debugger expression evaluator (PR #74). Task 3: no user-reported bugs found; skipped. Task 11: update June activity issue #71."
 }
