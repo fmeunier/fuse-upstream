@@ -70,6 +70,10 @@ typedef enum debugger_token {
   /* No real significance to this value */
   DEBUGGER_TOKEN_DEREFERENCE = 0x1000,
 
+  /* Left and right bit shift */
+  DEBUGGER_TOKEN_LEFT_SHIFT = 0x1001,
+  DEBUGGER_TOKEN_RIGHT_SHIFT = 0x1002,
+
 } debugger_token;
 
 /* Numeric expression stuff */
