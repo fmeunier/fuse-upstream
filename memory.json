@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-05",
-  "last_run_id": "27001208823",
+  "last_run": "2026-06-06",
+  "last_run_id": "27055466780",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved; suggested closing"
   },
@@ -22,24 +22,28 @@
       "pr": 43
     },
     "disasm-decimal-mode-tests": {
-      "status": "open",
-      "pr": 44
+      "status": "applied-by-maintainer",
+      "pr": 44,
+      "note": "Closed 2026-06-06; content in master as commit 6dc4f38c"
     },
     "build-remove-ac-c-const": {
       "status": "open",
       "pr": 46
     },
     "disasm-ed-nopd-boundary-tests": {
-      "status": "open",
-      "pr": 47
+      "status": "applied-by-maintainer",
+      "pr": 47,
+      "note": "Closed 2026-06-06; content in master as commit e7441af0"
     },
     "scaler-state-missing-path-tests": {
-      "status": "open",
-      "pr": 48
+      "status": "applied-by-maintainer",
+      "pr": 48,
+      "note": "Closed 2026-06-06; content in master as commit a8ca8390"
     },
     "scaler-reevaluate-auto-tests": {
-      "status": "open",
-      "pr": 50
+      "status": "applied-by-maintainer",
+      "pr": 50,
+      "note": "Closed 2026-06-06; content in master as commit 24414ca0"
     },
     "display-copy-critical-region-ub": {
       "status": "open",
@@ -78,8 +82,9 @@
       "pr": 65
     },
     "eng-remove-redundant-autoreconf-macos": {
-      "status": "open-issue",
-      "pr": 66
+      "status": "applied-by-maintainer",
+      "pr": 66,
+      "note": "CI workflow improvements applied; issue #66 checked off by maintainer 2026-06-06"
     },
     "improve-timer-history-samples": {
       "status": "open",
@@ -100,12 +105,12 @@
     "eng-configure-cleanup-urls-am-prog-cc": {
       "status": "open",
       "pr": 72,
-      "note": "Created 2026-06-02: HTTPS URLs + remove AM_PROG_CC_C_O in configure.ac; autogen.sh validated"
+      "note": "Created 2026-06-02: HTTPS URLs + remove AM_PROG_CC_C_O in configure.ac"
     },
-    "disasm-conditional-completeness-tests": {
-      "status": "open",
+    "disasm-conditional-completeness-tests-original": {
+      "status": "superseded",
       "pr": 73,
-      "note": "Created 2026-06-03: 37 new tests for conditional JR/RET/JP/CALL, RST targets, and immediate arithmetic/logic"
+      "note": "Had conflict with master (NOPD tests PR #47 applied). Superseded by PR #76 (rebased)."
     },
     "improve-debugger-modulo-operator": {
       "status": "open",
@@ -113,13 +118,23 @@
       "note": "Created 2026-06-04: Add % modulo operator to debugger expression evaluator"
     },
     "eng-update-http-urls-readme-fuse-c": {
-      "status": "open",
+      "status": "applied-by-maintainer",
       "pr": 75,
-      "note": "Created 2026-06-05: Update SourceForge HTTP URLs to HTTPS in README (7 URLs) and fuse.c (2 URLs)"
+      "note": "Closed 2026-06-06; content in master as commit 0cf6d7ad"
+    },
+    "disasm-conditional-completeness-tests-rebased": {
+      "status": "open",
+      "pr": 76,
+      "note": "Created 2026-06-06: Rebased replacement for PR #73; tests189-225 after NOPD tests183-188"
+    },
+    "improve-debugger-shift-operators": {
+      "status": "open",
+      "pr": 77,
+      "note": "Created 2026-06-06: Add << and >> bit shift operators to debugger expression evaluator"
     }
   },
   "open_prs": [
-    44, 46, 47, 48, 50, 51, 54, 56, 57, 60, 62, 63, 64, 65, 67, 68, 69, 70, 72, 73, 74, 75
+    46, 51, 54, 56, 57, 60, 62, 63, 64, 65, 67, 68, 69, 70, 72, 73, 74, 76, 77
   ],
   "monthly_activity_issue": {
     "title": "[Repo Assist] Monthly Activity 2026-06",
@@ -164,7 +179,13 @@
     "Merge PR #38 (disasm ED tests)",
     "Merge PR #39 (disasm CB tests)",
     "Merge PR #41 (disasm IX/IY tests)",
-    "Merge PR #43 (disasm main opcodes tests)"
+    "Merge PR #43 (disasm main opcodes tests)",
+    "Review PR #44 (decimal mode tests - applied to master 2026-06-06)",
+    "Review PR #47 (NOPD boundary tests - applied to master 2026-06-06)",
+    "Review PR #48 (sdl2_scaler_state tests - applied to master 2026-06-06)",
+    "Review PR #50 (reevaluate-auto tests - applied to master 2026-06-06)",
+    "Review PR #75 (HTTPS URLs - applied to master 2026-06-06)",
+    "Manual PR issue #66 (CI improvements - applied 2026-06-06)"
   ],
-  "notes": "2026-06-05 run 27001208823: Tasks 6+4+11. Task 6: verified all 21 open PRs - no merge conflicts. Task 4: PR #75 created updating SourceForge HTTP->HTTPS URLs in README (7 URLs) and fuse.c (2 URLs in --help/--copyright output). Complements PR #72 (configure.ac URLs). Task 11: updated June activity issue #71."
+  "notes": "2026-06-06 run 27055466780: Tasks 6+3+11. Task 6: PR #73 had merge conflict (NOPD tests from PR #47 now in master also used test183+); created rebased replacement PR #76 (tests renumbered test189-225). Task 3: added << and >> bit shift operators to debugger expression evaluator (PR #77). Maintainer activity: PRs #44/#47/#48/#50/#75 all closed today (content applied to master via cherry-pick); maintainer uses direct apply + close rather than GitHub merge button. Task 11: updated June activity issue #71 - removed all checked-off items."
 }
