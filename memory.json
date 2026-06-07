@@ -1,191 +1,68 @@
 {
-  "last_run": "2026-06-06",
-  "last_run_id": "27055466780",
+  "last_run": "2026-06-07",
+  "last_run_id": "27085827785",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved; suggested closing"
   },
   "fix_attempts": {
-    "disasm-ed-remaining-tests": {
-      "status": "merged",
-      "pr": 38
-    },
-    "disasm-cb-regpairs-tests": {
-      "status": "merged",
-      "pr": 39
-    },
-    "disasm-ixiy-instrs-tests": {
-      "status": "merged",
-      "pr": 41
-    },
-    "disasm-main-opcodes-tests": {
-      "status": "merged",
-      "pr": 43
-    },
-    "disasm-decimal-mode-tests": {
-      "status": "applied-by-maintainer",
-      "pr": 44,
-      "note": "Closed 2026-06-06; content in master as commit 6dc4f38c"
-    },
-    "build-remove-ac-c-const": {
-      "status": "open",
-      "pr": 46
-    },
-    "disasm-ed-nopd-boundary-tests": {
-      "status": "applied-by-maintainer",
-      "pr": 47,
-      "note": "Closed 2026-06-06; content in master as commit e7441af0"
-    },
-    "scaler-state-missing-path-tests": {
-      "status": "applied-by-maintainer",
-      "pr": 48,
-      "note": "Closed 2026-06-06; content in master as commit a8ca8390"
-    },
-    "scaler-reevaluate-auto-tests": {
-      "status": "applied-by-maintainer",
-      "pr": 50,
-      "note": "Closed 2026-06-06; content in master as commit 24414ca0"
-    },
-    "display-copy-critical-region-ub": {
-      "status": "open",
-      "pr": 51
-    },
-    "build-remove-ax-create-stdint-h": {
-      "status": "open",
-      "pr": 54
-    },
-    "test-sdl2-joystick-missing-cases": {
-      "status": "open",
-      "pr": 56
-    },
-    "update-ax-pthread-m4": {
-      "status": "open",
-      "pr": 57
-    },
-    "build-remove-ac-c-inline": {
-      "status": "open",
-      "pr": 60
-    },
-    "test-keyboard-read-simulate": {
-      "status": "open",
-      "pr": 62
-    },
-    "improve-mempool-untracked-tests": {
-      "status": "open",
-      "pr": 63
-    },
-    "build-add-ax-strings-strcasecmp": {
-      "status": "open",
-      "pr": 64
-    },
-    "improve-psg-named-constant": {
-      "status": "open",
-      "pr": 65
-    },
-    "eng-remove-redundant-autoreconf-macos": {
-      "status": "applied-by-maintainer",
-      "pr": 66,
-      "note": "CI workflow improvements applied; issue #66 checked off by maintainer 2026-06-06"
-    },
-    "improve-timer-history-samples": {
-      "status": "open",
-      "pr": 67
-    },
-    "eng-ntsc-scaler-test-coverage": {
-      "status": "open",
-      "pr": 68
-    },
-    "test-rectangle-realloc-paths": {
-      "status": "open",
-      "pr": 69
-    },
-    "improve-sound-ay-named-constants": {
-      "status": "open",
-      "pr": 70
-    },
-    "eng-configure-cleanup-urls-am-prog-cc": {
-      "status": "open",
-      "pr": 72,
-      "note": "Created 2026-06-02: HTTPS URLs + remove AM_PROG_CC_C_O in configure.ac"
-    },
-    "disasm-conditional-completeness-tests-original": {
-      "status": "superseded",
-      "pr": 73,
-      "note": "Had conflict with master (NOPD tests PR #47 applied). Superseded by PR #76 (rebased)."
-    },
-    "improve-debugger-modulo-operator": {
-      "status": "open",
-      "pr": 74,
-      "note": "Created 2026-06-04: Add % modulo operator to debugger expression evaluator"
-    },
-    "eng-update-http-urls-readme-fuse-c": {
-      "status": "applied-by-maintainer",
-      "pr": 75,
-      "note": "Closed 2026-06-06; content in master as commit 0cf6d7ad"
-    },
-    "disasm-conditional-completeness-tests-rebased": {
-      "status": "open",
-      "pr": 76,
-      "note": "Created 2026-06-06: Rebased replacement for PR #73; tests189-225 after NOPD tests183-188"
-    },
-    "improve-debugger-shift-operators": {
-      "status": "open",
-      "pr": 77,
-      "note": "Created 2026-06-06: Add << and >> bit shift operators to debugger expression evaluator"
-    }
+    "disasm-ed-remaining-tests": { "status": "merged", "pr": 38 },
+    "disasm-cb-regpairs-tests": { "status": "merged", "pr": 39 },
+    "disasm-ixiy-instrs-tests": { "status": "merged", "pr": 41 },
+    "disasm-main-opcodes-tests": { "status": "merged", "pr": 43 },
+    "disasm-decimal-mode-tests": { "status": "applied-by-maintainer", "pr": 44 },
+    "build-remove-ac-c-const": { "status": "open-superseded", "pr": 46, "note": "Superseded by PR #80 (combined AC_C_CONST+AC_C_INLINE)" },
+    "disasm-ed-nopd-boundary-tests": { "status": "applied-by-maintainer", "pr": 47 },
+    "scaler-state-missing-path-tests": { "status": "applied-by-maintainer", "pr": 48 },
+    "scaler-reevaluate-auto-tests": { "status": "applied-by-maintainer", "pr": 50 },
+    "display-copy-critical-region-ub": { "status": "applied-by-maintainer", "pr": 51, "note": "Applied as commit eb53f820" },
+    "build-remove-ax-create-stdint-h": { "status": "open", "pr": 54 },
+    "test-sdl2-joystick-missing-cases": { "status": "applied-by-maintainer", "pr": 56, "note": "Applied as commit 3c7adb3b" },
+    "update-ax-pthread-m4": { "status": "applied-by-maintainer", "pr": 57, "note": "Applied as commit b5930346" },
+    "build-remove-ac-c-inline": { "status": "open-superseded", "pr": 60, "note": "Superseded by PR #80 (combined)" },
+    "test-keyboard-read-simulate": { "status": "applied-by-maintainer", "pr": 62, "note": "Applied as commit a59faf54" },
+    "improve-mempool-untracked-tests": { "status": "applied-by-maintainer", "pr": 63, "note": "Applied as commit 0a6882e8" },
+    "build-add-ax-strings-strcasecmp": { "status": "applied-by-maintainer", "pr": 64, "note": "Applied as commit 80757ea7" },
+    "improve-psg-named-constant": { "status": "open", "pr": 65 },
+    "eng-remove-redundant-autoreconf-macos": { "status": "applied-by-maintainer", "pr": 66 },
+    "improve-timer-history-samples": { "status": "open", "pr": 67 },
+    "eng-ntsc-scaler-test-coverage": { "status": "applied-by-maintainer", "pr": 68, "note": "Applied as commit c3395cb6" },
+    "test-rectangle-realloc-paths": { "status": "applied-by-maintainer", "pr": 69, "note": "Applied as commit 72ffe4e1" },
+    "improve-sound-ay-named-constants": { "status": "open", "pr": 70 },
+    "eng-configure-cleanup-urls-am-prog-cc": { "status": "applied-by-maintainer", "pr": 72, "note": "Applied as commit 3700b056 (AM_PROG_CC_C_O removal)" },
+    "disasm-conditional-completeness-tests-original": { "status": "superseded", "pr": 73 },
+    "improve-debugger-modulo-operator": { "status": "applied-by-maintainer", "pr": 74, "note": "Applied as commit 6d7cea50" },
+    "eng-update-http-urls-readme-fuse-c": { "status": "applied-by-maintainer", "pr": 75 },
+    "disasm-conditional-completeness-tests-rebased": { "status": "applied-by-maintainer", "pr": 76, "note": "Applied as commit 1c499d37" },
+    "improve-debugger-shift-operators": { "status": "open-superseded", "pr": 77, "note": "Superseded by PR #81 (rebased on current master after modulo was applied)" },
+    "improve-debugger-shift-operators-dup79": { "status": "open-superseded", "pr": 79, "note": "Duplicate of #77, both superseded by PR #81" },
+    "build-remove-ac-c-const-and-inline": { "status": "open", "pr": 80, "note": "Created 2026-06-07: Combined removal of AC_C_CONST and AC_C_INLINE; supersedes #46 and #60" },
+    "improve-debugger-shift-operators-rebased": { "status": "open", "pr": 81, "note": "Created 2026-06-07: Rebased shift operators PR on current master (after modulo applied); supersedes #77 and #79" }
   },
-  "open_prs": [
-    46, 51, 54, 56, 57, 60, 62, 63, 64, 65, 67, 68, 69, 70, 72, 73, 74, 76, 77
-  ],
+  "open_prs": [46, 54, 60, 65, 67, 70, 77, 79, 80, 81],
   "monthly_activity_issue": {
     "title": "[Repo Assist] Monthly Activity 2026-06",
     "number": 71
   },
   "checked_off_by_maintainer": [
-    "AGENTS.md PR (#5)",
-    "utils_safe_strdup test PR #9",
-    "display-dirty-scan PR #10",
-    "rectangle-merge-same-y PR #11",
-    "Manually create PR checkout v3->v4",
-    "Review PR #12 CI overhaul",
-    "Review PR #13 rectangle x-fix",
-    "Close PR #17",
-    "Close issue #2",
-    "Review PR #18",
-    "Review CI null-UI PR",
-    "Review sdl2-test-coverage PR",
-    "Review ci-macos-make-check PR",
-    "Review PR #23",
-    "Review sdl2-display-tiebreaker PR",
-    "Check issue #24",
-    "Review PR #26",
-    "Review PR #27",
-    "Review PR #28",
-    "Review PR #29",
-    "Review PR #31",
-    "Review PR #33",
-    "Review PR #34",
-    "Review PR #35",
-    "Review PR #36",
-    "Review PR #37",
-    "Close issue #30",
-    "Close PR #40",
-    "Review PR #45",
-    "Review PR #49",
-    "Review PR #55",
-    "Fix nightly build issue #53",
-    "Manual action issue #42",
-    "Review PR #52",
-    "Review PR #59",
-    "Merge PR #38 (disasm ED tests)",
-    "Merge PR #39 (disasm CB tests)",
-    "Merge PR #41 (disasm IX/IY tests)",
-    "Merge PR #43 (disasm main opcodes tests)",
-    "Review PR #44 (decimal mode tests - applied to master 2026-06-06)",
-    "Review PR #47 (NOPD boundary tests - applied to master 2026-06-06)",
-    "Review PR #48 (sdl2_scaler_state tests - applied to master 2026-06-06)",
-    "Review PR #50 (reevaluate-auto tests - applied to master 2026-06-06)",
-    "Review PR #75 (HTTPS URLs - applied to master 2026-06-06)",
-    "Manual PR issue #66 (CI improvements - applied 2026-06-06)"
+    "AGENTS.md PR (#5)", "utils_safe_strdup test PR #9", "display-dirty-scan PR #10",
+    "rectangle-merge-same-y PR #11", "Manually create PR checkout v3->v4",
+    "Review PR #12 CI overhaul", "Review PR #13 rectangle x-fix", "Close PR #17",
+    "Close issue #2", "Review PR #18", "Review CI null-UI PR", "Review sdl2-test-coverage PR",
+    "Review ci-macos-make-check PR", "Review PR #23", "Review sdl2-display-tiebreaker PR",
+    "Check issue #24", "Review PR #26", "Review PR #27", "Review PR #28", "Review PR #29",
+    "Review PR #31", "Review PR #33", "Review PR #34", "Review PR #35", "Review PR #36",
+    "Review PR #37", "Close issue #30", "Close PR #40", "Review PR #45", "Review PR #49",
+    "Review PR #55", "Fix nightly build issue #53", "Manual action issue #42",
+    "Review PR #52", "Review PR #59", "Merge PR #38", "Merge PR #39", "Merge PR #41",
+    "Merge PR #43", "Review PR #44 (applied to master)", "Review PR #47 (applied)",
+    "Review PR #48 (applied)", "Review PR #50 (applied)", "Review PR #75 (applied)",
+    "Manual PR issue #66 (CI improvements applied)",
+    "Review PR #51 (applied as eb53f820)", "Review PR #56 (applied as 3c7adb3b)",
+    "Review PR #57 (applied as b5930346)", "Review PR #62 (applied as a59faf54)",
+    "Review PR #63 (applied as 0a6882e8)", "Review PR #64 (applied as 80757ea7)",
+    "Review PR #68 (applied as c3395cb6)", "Review PR #69 (applied as 72ffe4e1)",
+    "Review PR #72 (applied as 3700b056)", "Review PR #74 (applied as 6d7cea50)",
+    "Review PR #76 (applied as 1c499d37)", "Close PR #73 (superseded)"
   ],
-  "notes": "2026-06-06 run 27055466780: Tasks 6+3+11. Task 6: PR #73 had merge conflict (NOPD tests from PR #47 now in master also used test183+); created rebased replacement PR #76 (tests renumbered test189-225). Task 3: added << and >> bit shift operators to debugger expression evaluator (PR #77). Maintainer activity: PRs #44/#47/#48/#50/#75 all closed today (content applied to master via cherry-pick); maintainer uses direct apply + close rather than GitHub merge button. Task 11: updated June activity issue #71 - removed all checked-off items."
+  "notes": "2026-06-07 run 27085827785: Tasks 4+3+11. Many PRs applied by maintainer since last run (direct commits). Task 3: created rebased shift operators PR #81 (supersedes conflicting #77 and duplicate #79). Task 4: created combined build PR #80 to remove AC_C_CONST and AC_C_INLINE together (supersedes #46 and #60). Maintainer has been extremely active - 11 PRs applied as direct commits to master. PR #80/#81 numbers are estimated (may be off by 1)."
 }
