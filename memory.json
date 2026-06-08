@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-07",
-  "last_run_id": "27085827785",
+  "last_run": "2026-06-08",
+  "last_run_id": "27140373290",
   "comments_made": {
     "30": "2026-05-07: Noted auth issue resolved; suggested closing"
   },
@@ -33,12 +33,13 @@
     "improve-debugger-modulo-operator": { "status": "applied-by-maintainer", "pr": 74, "note": "Applied as commit 6d7cea50" },
     "eng-update-http-urls-readme-fuse-c": { "status": "applied-by-maintainer", "pr": 75 },
     "disasm-conditional-completeness-tests-rebased": { "status": "applied-by-maintainer", "pr": 76, "note": "Applied as commit 1c499d37" },
-    "improve-debugger-shift-operators": { "status": "open-superseded", "pr": 77, "note": "Superseded by PR #81 (rebased on current master after modulo was applied)" },
-    "improve-debugger-shift-operators-dup79": { "status": "open-superseded", "pr": 79, "note": "Duplicate of #77, both superseded by PR #81" },
-    "build-remove-ac-c-const-and-inline": { "status": "open", "pr": 80, "note": "Created 2026-06-07: Combined removal of AC_C_CONST and AC_C_INLINE; supersedes #46 and #60" },
-    "improve-debugger-shift-operators-rebased": { "status": "open", "pr": 81, "note": "Created 2026-06-07: Rebased shift operators PR on current master (after modulo applied); supersedes #77 and #79" }
+    "improve-debugger-shift-operators": { "status": "open-superseded", "pr": 77, "note": "Superseded by PR #81 (rebased on current master after modulo was applied); closed by maintainer" },
+    "improve-debugger-shift-operators-dup79": { "status": "open-superseded", "pr": 79, "note": "Duplicate of #77, closed by maintainer" },
+    "build-remove-ac-c-const-and-inline": { "status": "open", "pr": 80, "note": "Combined removal of AC_C_CONST and AC_C_INLINE; supersedes #46 and #60" },
+    "improve-debugger-shift-operators-rebased": { "status": "applied-by-maintainer", "pr": 81, "note": "Applied as commit aced0fd4 (Add << and >> bit shift operators to expression evaluator)" },
+    "fix-debugger-modulo-non-associative": { "status": "open", "pr": 82, "note": "Created 2026-06-08: Fix missing % case in is_non_associative() — crash when mixing % with * or / in debugger expressions" }
   },
-  "open_prs": [46, 54, 60, 65, 67, 70, 77, 79, 80, 81],
+  "open_prs": [46, 54, 60, 65, 67, 70, 80, 82],
   "monthly_activity_issue": {
     "title": "[Repo Assist] Monthly Activity 2026-06",
     "number": 71
@@ -62,7 +63,9 @@
     "Review PR #63 (applied as 0a6882e8)", "Review PR #64 (applied as 80757ea7)",
     "Review PR #68 (applied as c3395cb6)", "Review PR #69 (applied as 72ffe4e1)",
     "Review PR #72 (applied as 3700b056)", "Review PR #74 (applied as 6d7cea50)",
-    "Review PR #76 (applied as 1c499d37)", "Close PR #73 (superseded)"
+    "Review PR #76 (applied as 1c499d37)", "Close PR #73 (superseded)",
+    "Close PR #79 (duplicate)", "Close PR #77 (superseded by #81)",
+    "Review PR #81 (applied as aced0fd4)"
   ],
-  "notes": "2026-06-07 run 27085827785: Tasks 4+3+11. Many PRs applied by maintainer since last run (direct commits). Task 3: created rebased shift operators PR #81 (supersedes conflicting #77 and duplicate #79). Task 4: created combined build PR #80 to remove AC_C_CONST and AC_C_INLINE together (supersedes #46 and #60). Maintainer has been extremely active - 11 PRs applied as direct commits to master. PR #80/#81 numbers are estimated (may be off by 1)."
+  "notes": "2026-06-08 run 27140373290: Tasks 2+5+11. No user-filed issues (Task 2: nothing to comment on). Task 5: found and fixed bug in is_non_associative() - missing '%' case causes fuse_abort() when user types expressions mixing % with * or / in debugger. Created PR #82. Maintainer applied #81 (shift operators as aced0fd4) and closed #77/#79 since last run."
 }
