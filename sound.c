@@ -437,13 +437,16 @@ ay_do_tone( int level, unsigned int tone_count, int *var, int chan )
 /* all Spectrum models and clones with an AY seem to count down the
    master clock by 2 to drive the AY */
 #define AY_CLOCK_RATIO 2
+/* the AY envelope generator cycles through 16 amplitude steps per
+   envelope period */
+#define AY_ENV_STEPS 16
 
 static void
 sound_ay_overlay( void )
 {
   static int rng = 1;
   static int noise_toggle = 0;
-  static int env_first = 1, env_rev = 0, env_counter = 15;
+  static int env_first = 1, env_rev = 0, env_counter = AY_ENV_STEPS - 1;
   int tone_level[3];
   int mixer, envshape;
   int g, level;
@@ -497,7 +500,7 @@ sound_ay_overlay( void )
         ay_env_internal_tick = ay_env_tick = ay_env_cycles = 0;
         env_first = 1;
         env_rev = 0;
-        env_counter = ( sound_ay_registers[13] & AY_ENV_ATTACK ) ? 0 : 15;
+        env_counter = ( sound_ay_registers[13] & AY_ENV_ATTACK ) ? 0 : AY_ENV_STEPS - 1;
         break;
       }
     }
@@ -517,8 +520,8 @@ sound_ay_overlay( void )
     /* envelope output counter gets incr'd every 16 AY cycles. */
     ay_env_cycles += AY_CLOCK_DIVISOR;
     noise_count = 0;
-    while( ay_env_cycles >= 16 ) {
-      ay_env_cycles -= 16;
+    while( ay_env_cycles >= AY_CLOCK_DIVISOR ) {
+      ay_env_cycles -= AY_CLOCK_DIVISOR;
       noise_count++;
       ay_env_tick++;
       while( ay_env_tick >= ay_env_period ) {
@@ -533,13 +536,13 @@ sound_ay_overlay( void )
             env_counter += ( envshape & AY_ENV_ATTACK ) ? 1 : -1;
           if( env_counter < 0 )
             env_counter = 0;
-          if( env_counter > 15 )
-            env_counter = 15;
+          if( env_counter > AY_ENV_STEPS - 1 )
+            env_counter = AY_ENV_STEPS - 1;
         }
 
         ay_env_internal_tick++;
-        while( ay_env_internal_tick >= 16 ) {
-          ay_env_internal_tick -= 16;
+        while( ay_env_internal_tick >= AY_ENV_STEPS ) {
+          ay_env_internal_tick -= AY_ENV_STEPS;
 
           /* end of cycle */
           if( !( envshape & AY_ENV_CONT ) )
@@ -547,13 +550,13 @@ sound_ay_overlay( void )
           else {
             if( envshape & AY_ENV_HOLD ) {
               if( env_first && ( envshape & AY_ENV_ALT ) )
-                env_counter = ( env_counter ? 0 : 15 );
+                env_counter = ( env_counter ? 0 : AY_ENV_STEPS - 1 );
             } else {
               /* non-hold */
               if( envshape & AY_ENV_ALT )
                 env_rev = !env_rev;
               else
-                env_counter = ( envshape & AY_ENV_ATTACK ) ? 0 : 15;
+                env_counter = ( envshape & AY_ENV_ATTACK ) ? 0 : AY_ENV_STEPS - 1;
             }
           }
 
