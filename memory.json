@@ -1,74 +1,52 @@
 {
-  "last_run": "2026-06-10",
-  "last_run_id": "27259834481",
-  "comments_made": {
-    "30": "2026-05-07: Noted auth issue resolved; suggested closing"
-  },
-  "fix_attempts": {
-    "disasm-ed-remaining-tests": { "status": "merged", "pr": 38 },
-    "disasm-cb-regpairs-tests": { "status": "merged", "pr": 39 },
-    "disasm-ixiy-instrs-tests": { "status": "merged", "pr": 41 },
-    "disasm-main-opcodes-tests": { "status": "merged", "pr": 43 },
-    "disasm-decimal-mode-tests": { "status": "applied-by-maintainer", "pr": 44 },
-    "build-remove-ac-c-const": { "status": "open-superseded", "pr": 46, "note": "Superseded by PR #80 (combined AC_C_CONST+AC_C_INLINE)" },
-    "disasm-ed-nopd-boundary-tests": { "status": "applied-by-maintainer", "pr": 47 },
-    "scaler-state-missing-path-tests": { "status": "applied-by-maintainer", "pr": 48 },
-    "scaler-reevaluate-auto-tests": { "status": "applied-by-maintainer", "pr": 50 },
-    "display-copy-critical-region-ub": { "status": "applied-by-maintainer", "pr": 51, "note": "Applied as commit eb53f820" },
-    "build-remove-ax-create-stdint-h": { "status": "open", "pr": 54 },
-    "test-sdl2-joystick-missing-cases": { "status": "applied-by-maintainer", "pr": 56, "note": "Applied as commit 3c7adb3b" },
-    "update-ax-pthread-m4": { "status": "applied-by-maintainer", "pr": 57, "note": "Applied as commit b5930346" },
-    "build-remove-ac-c-inline": { "status": "open-superseded", "pr": 60, "note": "Superseded by PR #80 (combined)" },
-    "test-keyboard-read-simulate": { "status": "applied-by-maintainer", "pr": 62, "note": "Applied as commit a59faf54" },
-    "improve-mempool-untracked-tests": { "status": "applied-by-maintainer", "pr": 63, "note": "Applied as commit 0a6882e8" },
-    "build-add-ax-strings-strcasecmp": { "status": "applied-by-maintainer", "pr": 64, "note": "Applied as commit 80757ea7" },
-    "improve-psg-named-constant": { "status": "open", "pr": 65 },
-    "eng-remove-redundant-autoreconf-macos": { "status": "applied-by-maintainer", "pr": 66 },
-    "improve-timer-history-samples": { "status": "open", "pr": 67 },
-    "eng-ntsc-scaler-test-coverage": { "status": "applied-by-maintainer", "pr": 68, "note": "Applied as commit c3395cb6" },
-    "test-rectangle-realloc-paths": { "status": "applied-by-maintainer", "pr": 69, "note": "Applied as commit 72ffe4e1" },
-    "improve-sound-ay-named-constants": { "status": "open", "pr": 70 },
-    "eng-configure-cleanup-urls-am-prog-cc": { "status": "applied-by-maintainer", "pr": 72, "note": "Applied as commit 3700b056 (AM_PROG_CC_C_O removal)" },
-    "disasm-conditional-completeness-tests-original": { "status": "superseded", "pr": 73 },
-    "improve-debugger-modulo-operator": { "status": "applied-by-maintainer", "pr": 74, "note": "Applied as commit 6d7cea50" },
-    "eng-update-http-urls-readme-fuse-c": { "status": "applied-by-maintainer", "pr": 75 },
-    "disasm-conditional-completeness-tests-rebased": { "status": "applied-by-maintainer", "pr": 76, "note": "Applied as commit 1c499d37" },
-    "improve-debugger-shift-operators": { "status": "open-superseded", "pr": 77, "note": "Superseded by PR #81 (rebased on current master after modulo was applied); closed by maintainer" },
-    "improve-debugger-shift-operators-dup79": { "status": "open-superseded", "pr": 79, "note": "Duplicate of #77, closed by maintainer" },
-    "build-remove-ac-c-const-and-inline": { "status": "open", "pr": 80, "note": "Combined removal of AC_C_CONST and AC_C_INLINE; supersedes #46 and #60" },
-    "improve-debugger-shift-operators-rebased": { "status": "applied-by-maintainer", "pr": 81, "note": "Applied as commit aced0fd4 (Add << and >> bit shift operators to expression evaluator)" },
-    "fix-debugger-modulo-non-associative": { "status": "open", "pr": 82, "note": "Created 2026-06-08: Fix missing % case in is_non_associative() -- crash when mixing % with * or / in debugger expressions" },
-    "improve-display-flash-period-constants": { "status": "open", "pr": 83, "note": "Created 2026-06-09: Add DISPLAY_FLASH_HALF_PERIOD (16) and DISPLAY_FLASH_PERIOD (32) to display.h; use in display.c" },
-    "improve-sound-ay-env-steps": { "status": "open", "pr": 84, "note": "Created 2026-06-09: Add AY_ENV_STEPS (16) constant; use AY_CLOCK_DIVISOR consistently in envelope cycle loop. Complements PR #70." },
-    "improve-keyboard-halfrows-constant": { "status": "open", "pr": 85, "note": "Created 2026-06-10: Add KEYBOARD_HALFROWS (8) constant to keyboard.h; replace 3 magic-literal 8s in keyboard.c/keyboard.h" }
-  },
-  "open_prs": [46, 54, 60, 65, 67, 70, 80, 82, 83, 84, 85],
-  "monthly_activity_issue": {
-    "title": "[Repo Assist] Monthly Activity 2026-06",
-    "number": 71
-  },
-  "checked_off_by_maintainer": [
-    "AGENTS.md PR (#5)", "utils_safe_strdup test PR #9", "display-dirty-scan PR #10",
-    "rectangle-merge-same-y PR #11", "Manually create PR checkout v3->v4",
-    "Review PR #12 CI overhaul", "Review PR #13 rectangle x-fix", "Close PR #17",
-    "Close issue #2", "Review PR #18", "Review CI null-UI PR", "Review sdl2-test-coverage PR",
-    "Review ci-macos-make-check PR", "Review PR #23", "Review sdl2-display-tiebreaker PR",
-    "Check issue #24", "Review PR #26", "Review PR #27", "Review PR #28", "Review PR #29",
-    "Review PR #31", "Review PR #33", "Review PR #34", "Review PR #35", "Review PR #36",
-    "Review PR #37", "Close issue #30", "Close PR #40", "Review PR #45", "Review PR #49",
-    "Review PR #55", "Fix nightly build issue #53", "Manual action issue #42",
-    "Review PR #52", "Review PR #59", "Merge PR #38", "Merge PR #39", "Merge PR #41",
-    "Merge PR #43", "Review PR #44 (applied to master)", "Review PR #47 (applied)",
-    "Review PR #48 (applied)", "Review PR #50 (applied)", "Review PR #75 (applied)",
-    "Manual PR issue #66 (CI improvements applied)",
-    "Review PR #51 (applied as eb53f820)", "Review PR #56 (applied as 3c7adb3b)",
-    "Review PR #57 (applied as b5930346)", "Review PR #62 (applied as a59faf54)",
-    "Review PR #63 (applied as 0a6882e8)", "Review PR #64 (applied as 80757ea7)",
-    "Review PR #68 (applied as c3395cb6)", "Review PR #69 (applied as 72ffe4e1)",
-    "Review PR #72 (applied as 3700b056)", "Review PR #74 (applied as 6d7cea50)",
-    "Review PR #76 (applied as 1c499d37)", "Close PR #73 (superseded)",
-    "Close PR #79 (duplicate)", "Close PR #77 (superseded by #81)",
-    "Review PR #81 (applied as aced0fd4)"
+  "last_run": "2026-06-11",
+  "last_run_id": "27330820973",
+  "monthly_issue_number": 71,
+  "monthly_issue_month": "2026-06",
+  "open_prs": [46, 54, 60, 65, 67, 70, 80, 83, 84, 85, 86],
+  "fix_attempts": [
+    {
+      "issue": "debugger-shift-operators",
+      "pr": 81,
+      "branch": "repo-assist/fix-debugger-shift-ops-v2",
+      "status": "applied-by-maintainer",
+      "note": "Applied as commit aced0fd4 (master)"
+    },
+    {
+      "issue": "debugger-modulo-operator",
+      "pr": 74,
+      "branch": "repo-assist/fix-debugger-modulo",
+      "status": "applied-by-maintainer",
+      "note": "Applied to master by maintainer"
+    },
+    {
+      "issue": "debugger-is_non_associative-percent",
+      "pr": 82,
+      "branch": "repo-assist/fix-debugger-percent-case-2026-06-08",
+      "status": "applied-by-maintainer",
+      "note": "Applied as commit 4748449b (master)"
+    },
+    {
+      "issue": "perf-sound-ay-overlay",
+      "pr": 86,
+      "branch": "repo-assist/perf-sound-ay-overlay-2026-06-11",
+      "status": "open",
+      "note": "Merges two 3-iteration tone-level loops into one in sound_ay_overlay()"
+    }
   ],
-  "notes": "2026-06-10 run 27259834481: Tasks 6+5+11. Task 6: All 10 open PRs (#46,54,60,65,67,70,80,82,83,84) verified conflict-free on master aced0fd4. Task 5: created PR #85 (keyboard: add KEYBOARD_HALFROWS constant for half-row count - replaces 3 magic literal 8s in keyboard.c/keyboard.h). Task 11: updated issue #71 with new run entry and PR #85 in Suggested Actions."
+  "checked_off_by_maintainer": [
+    "Review PR #81 (applied as aced0fd4)",
+    "Review PR #74 (applied to master)",
+    "Review PR #82 (applied as 4748449b)"
+  ],
+  "comments_made": {},
+  "labelling_cursor": 0,
+  "issue_cursor": 0,
+  "engineering_checks": {
+    "configure_ac_deprecated_macros": "fixed (PR #80)",
+    "sourceforge_urls": "fixed (PR #75)",
+    "dependabot": "no dependabot PRs open",
+    "last_checked": "2026-06-11"
+  },
+  "notes": "Run 27330820973 (2026-06-11): Task 8 — created PR #86 (sound: merge two-pass AY tone-level loops into one); Task 2 — no user issues open; Task 11 — updated monthly issue #71 (removed merged PR #82 from Suggested Actions, added PR #86). Open Repo Assist PRs: 46,54,60,65,67,70,80,83,84,85,86. PRs 46/60 superseded by 80."
 }
