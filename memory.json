@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-06-11",
-  "last_run_id": "27330820973",
+  "last_run": "2026-06-12",
+  "last_run_id": "27401118694",
   "monthly_issue_number": 71,
   "monthly_issue_month": "2026-06",
-  "open_prs": [46, 54, 60, 65, 67, 70, 80, 83, 84, 85, 86],
+  "open_prs": [46, 54, 60, 80, 84, 86, 87],
   "fix_attempts": [
     {
       "issue": "debugger-shift-operators",
@@ -32,12 +32,24 @@
       "branch": "repo-assist/perf-sound-ay-overlay-2026-06-11",
       "status": "open",
       "note": "Merges two 3-iteration tone-level loops into one in sound_ay_overlay()"
+    },
+    {
+      "issue": "test-expression-evaluator",
+      "pr": 87,
+      "branch": "repo-assist/test-debugger-expression-eval-20260612",
+      "status": "open",
+      "note": "44 unit tests for debugger expression evaluator (%, <<, >>, all operators + deparse)"
     }
   ],
   "checked_off_by_maintainer": [
     "Review PR #81 (applied as aced0fd4)",
     "Review PR #74 (applied to master)",
-    "Review PR #82 (applied as 4748449b)"
+    "Review PR #82 (applied as 4748449b)",
+    "Review PR #85 (merged, KEYBOARD_HALFROWS constant)",
+    "Review PR #83 (merged, flash attribute constants)",
+    "Review PR #70 (merged, AY_CHANNELS/AY_REGISTERS constants)",
+    "Review PR #67 (merged, TIMER_SPEED_HISTORY_SAMPLES constant)",
+    "Review PR #65 (merged, PSG_REGISTERS constant)"
   ],
   "comments_made": {},
   "labelling_cursor": 0,
@@ -46,7 +58,7 @@
     "configure_ac_deprecated_macros": "fixed (PR #80)",
     "sourceforge_urls": "fixed (PR #75)",
     "dependabot": "no dependabot PRs open",
-    "last_checked": "2026-06-11"
+    "last_checked": "2026-06-12"
   },
-  "notes": "Run 27330820973 (2026-06-11): Task 8 — created PR #86 (sound: merge two-pass AY tone-level loops into one); Task 2 — no user issues open; Task 11 — updated monthly issue #71 (removed merged PR #82 from Suggested Actions, added PR #86). Open Repo Assist PRs: 46,54,60,65,67,70,80,83,84,85,86. PRs 46/60 superseded by 80."
+  "notes": "Run 27401118694 (2026-06-12): Task 9 — created PR #87 (debugger: add unit tests for expression evaluator); Task 2 — no user issues open; Task 11 — maintainer merged PRs #85,#83,#70,#67,#65 (removed from Suggested Actions); updated monthly issue #71. Open Repo Assist PRs: 46,54,60,80,84,86,87. PRs 46/60 superseded by 80."
 }
