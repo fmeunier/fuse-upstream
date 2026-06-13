@@ -1,64 +1,39 @@
 {
-  "last_run": "2026-06-12",
-  "last_run_id": "27401118694",
-  "monthly_issue_number": 71,
-  "monthly_issue_month": "2026-06",
-  "open_prs": [46, 54, 60, 80, 84, 86, 87],
-  "fix_attempts": [
-    {
-      "issue": "debugger-shift-operators",
-      "pr": 81,
-      "branch": "repo-assist/fix-debugger-shift-ops-v2",
-      "status": "applied-by-maintainer",
-      "note": "Applied as commit aced0fd4 (master)"
-    },
-    {
-      "issue": "debugger-modulo-operator",
-      "pr": 74,
-      "branch": "repo-assist/fix-debugger-modulo",
-      "status": "applied-by-maintainer",
-      "note": "Applied to master by maintainer"
-    },
-    {
-      "issue": "debugger-is_non_associative-percent",
-      "pr": 82,
-      "branch": "repo-assist/fix-debugger-percent-case-2026-06-08",
-      "status": "applied-by-maintainer",
-      "note": "Applied as commit 4748449b (master)"
-    },
-    {
-      "issue": "perf-sound-ay-overlay",
-      "pr": 86,
-      "branch": "repo-assist/perf-sound-ay-overlay-2026-06-11",
-      "status": "open",
-      "note": "Merges two 3-iteration tone-level loops into one in sound_ay_overlay()"
-    },
-    {
-      "issue": "test-expression-evaluator",
-      "pr": 87,
-      "branch": "repo-assist/test-debugger-expression-eval-20260612",
-      "status": "open",
-      "note": "44 unit tests for debugger expression evaluator (%, <<, >>, all operators + deparse)"
-    }
-  ],
-  "checked_off_by_maintainer": [
-    "Review PR #81 (applied as aced0fd4)",
-    "Review PR #74 (applied to master)",
-    "Review PR #82 (applied as 4748449b)",
-    "Review PR #85 (merged, KEYBOARD_HALFROWS constant)",
-    "Review PR #83 (merged, flash attribute constants)",
-    "Review PR #70 (merged, AY_CHANNELS/AY_REGISTERS constants)",
-    "Review PR #67 (merged, TIMER_SPEED_HISTORY_SAMPLES constant)",
-    "Review PR #65 (merged, PSG_REGISTERS constant)"
-  ],
-  "comments_made": {},
-  "labelling_cursor": 0,
-  "issue_cursor": 0,
-  "engineering_checks": {
-    "configure_ac_deprecated_macros": "fixed (PR #80)",
-    "sourceforge_urls": "fixed (PR #75)",
-    "dependabot": "no dependabot PRs open",
-    "last_checked": "2026-06-12"
+  "last_run": "2026-06-13T07:00:00Z",
+  "last_run_id": "27459935538",
+  "monthly_issue": {
+    "number": 71,
+    "title": "[Repo Assist] Monthly Activity 2026-06",
+    "month": "2026-06"
   },
-  "notes": "Run 27401118694 (2026-06-12): Task 9 — created PR #87 (debugger: add unit tests for expression evaluator); Task 2 — no user issues open; Task 11 — maintainer merged PRs #85,#83,#70,#67,#65 (removed from Suggested Actions); updated monthly issue #71. Open Repo Assist PRs: 46,54,60,80,84,86,87. PRs 46/60 superseded by 80."
+  "open_repo_assist_prs": [46, 54, 60, 80, 84, 86, 87, 88, 89],
+  "pr_details": {
+    "46": {"title": "build: remove deprecated AC_C_CONST macro from configure.ac", "status": "open", "superseded_by": 80},
+    "54": {"title": "build: remove unused AX_CREATE_STDINT_H macro file", "status": "open"},
+    "60": {"title": "build: remove deprecated AC_C_INLINE macro from configure.ac", "status": "open", "superseded_by": 80},
+    "80": {"title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac", "status": "open"},
+    "84": {"title": "sound: add AY_ENV_STEPS constant and use AY_CLOCK_DIVISOR consistently", "status": "open", "has_conflict": true, "superseded_by": 89, "comment_left": "2026-06-13"},
+    "86": {"title": "sound: merge two-pass AY tone-level loops into one", "status": "open"},
+    "87": {"title": "debugger: add unit tests for expression evaluator", "status": "open"},
+    "88": {"title": "psg: name PSG file-format magic numbers as constants", "status": "open", "branch": "repo-assist/improve-psg-format-constants-20260613", "created_run": "27459935538"},
+    "89": {"title": "sound: add AY_ENV_STEPS constant and use AY_CLOCK_DIVISOR consistently", "status": "open", "branch": "repo-assist/improve-sound-ay-env-steps-20260613", "created_run": "27459935538", "supersedes": 84}
+  },
+  "comments_made": {
+    "pr_84": {"date": "2026-06-13", "run": "27459935538", "text": "flagged conflict, linked to replacement PR #89"}
+  },
+  "issue_cursor": null,
+  "pr_cursor": null,
+  "notes": "PR #84 has merge conflict (created before AY_CHANNELS merged). Superseded by #89. PR #46 and #60 superseded by #80. All new PRs (#88, #89) created this run (27459935538) — numbers are estimated as sequential from #87; verify in next run.",
+  "checked_off_by_maintainer": [],
+  "completed_improvements": [
+    "display: DISPLAY_FLASH_HALF_PERIOD / DISPLAY_FLASH_PERIOD (PR #83, merged)",
+    "keyboard: KEYBOARD_HALFROWS (PR #85, merged)",
+    "sound: AY_CHANNELS / AY_REGISTERS (PR #70, merged)",
+    "debugger: bit shift operators (PR #81, merged)",
+    "debugger: fix is_non_associative for % (PR #82, merged)",
+    "sound: merge two-pass AY tone-level loops (PR #86, open)",
+    "debugger: unit tests for expression evaluator (PR #87, open)",
+    "psg: PSG file-format constants (PR #88, open, this run)",
+    "sound: AY_ENV_STEPS constant (PR #89, open, this run, supersedes #84)"
+  ]
 }
