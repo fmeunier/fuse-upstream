@@ -1,39 +1,64 @@
 {
-  "last_run": "2026-06-13T07:00:00Z",
-  "last_run_id": "27459935538",
+  "last_run": "2026-06-15T08:04:00Z",
+  "last_run_id": "27531439880",
   "monthly_issue": {
     "number": 71,
     "title": "[Repo Assist] Monthly Activity 2026-06",
     "month": "2026-06"
   },
-  "open_repo_assist_prs": [46, 54, 60, 80, 84, 86, 87, 88, 89],
+  "checked_off_by_maintainer": [87, 88, 89, 84, 85, 83, 82, 81, 80, 70, 90],
+  "open_repo_assist_prs": [46, 54, 60, 80, 86],
+  "pending_this_run": {
+    "shift_ub_fix": {
+      "branch": "repo-assist/fix-expr-shift-ub",
+      "title": "debugger: guard bit-shift operators against count >= 32 (UB fix)",
+      "description": "Fixes UB when << or >> count >= 32; adds 2 unit tests"
+    },
+    "ddcb_undoc_tests": {
+      "branch": "repo-assist/improve-disasm-ddcb-undoc-tests",
+      "title": "debugger: expand undocumented DDCB/FDCB LD reg,rotate test coverage",
+      "description": "Tests 242-254: remaining dest regs (C/D/E/H/L/A) for RLC IX/IY; SRL verification"
+    }
+  },
   "pr_details": {
-    "46": {"title": "build: remove deprecated AC_C_CONST macro from configure.ac", "status": "open", "superseded_by": 80},
-    "54": {"title": "build: remove unused AX_CREATE_STDINT_H macro file", "status": "open"},
-    "60": {"title": "build: remove deprecated AC_C_INLINE macro from configure.ac", "status": "open", "superseded_by": 80},
-    "80": {"title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac", "status": "open"},
-    "84": {"title": "sound: add AY_ENV_STEPS constant and use AY_CLOCK_DIVISOR consistently", "status": "open", "has_conflict": true, "superseded_by": 89, "comment_left": "2026-06-13"},
-    "86": {"title": "sound: merge two-pass AY tone-level loops into one", "status": "open"},
-    "87": {"title": "debugger: add unit tests for expression evaluator", "status": "open"},
-    "88": {"title": "psg: name PSG file-format magic numbers as constants", "status": "open", "branch": "repo-assist/improve-psg-format-constants-20260613", "created_run": "27459935538"},
-    "89": {"title": "sound: add AY_ENV_STEPS constant and use AY_CLOCK_DIVISOR consistently", "status": "open", "branch": "repo-assist/improve-sound-ay-env-steps-20260613", "created_run": "27459935538", "supersedes": 84}
+    "46": {
+      "title": "build: remove deprecated AC_C_CONST macro from configure.ac",
+      "status": "open",
+      "superseded_by": 80
+    },
+    "54": {
+      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
+      "status": "open"
+    },
+    "60": {
+      "title": "build: remove deprecated AC_C_INLINE macro from configure.ac",
+      "status": "open",
+      "superseded_by": 80
+    },
+    "80": {
+      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
+      "status": "open"
+    },
+    "86": {
+      "title": "sound: merge two-pass AY tone-level loops into one",
+      "status": "open"
+    }
   },
-  "comments_made": {
-    "pr_84": {"date": "2026-06-13", "run": "27459935538", "text": "flagged conflict, linked to replacement PR #89"}
-  },
-  "issue_cursor": null,
-  "pr_cursor": null,
-  "notes": "PR #84 has merge conflict (created before AY_CHANNELS merged). Superseded by #89. PR #46 and #60 superseded by #80. All new PRs (#88, #89) created this run (27459935538) — numbers are estimated as sequential from #87; verify in next run.",
-  "checked_off_by_maintainer": [],
+  "comments_made": {},
   "completed_improvements": [
-    "display: DISPLAY_FLASH_HALF_PERIOD / DISPLAY_FLASH_PERIOD (PR #83, merged)",
-    "keyboard: KEYBOARD_HALFROWS (PR #85, merged)",
-    "sound: AY_CHANNELS / AY_REGISTERS (PR #70, merged)",
-    "debugger: bit shift operators (PR #81, merged)",
-    "debugger: fix is_non_associative for % (PR #82, merged)",
-    "sound: merge two-pass AY tone-level loops (PR #86, open)",
-    "debugger: unit tests for expression evaluator (PR #87, open)",
-    "psg: PSG file-format constants (PR #88, open, this run)",
-    "sound: AY_ENV_STEPS constant (PR #89, open, this run, supersedes #84)"
-  ]
+    "sound: AY_CHANNELS and AY_REGISTERS constants (PR #70, merged)",
+    "keyboard: KEYBOARD_HALFROWS constant (PR #85, merged)",
+    "display: DISPLAY_FLASH_HALF_PERIOD/DISPLAY_FLASH_PERIOD constants (PR #83, merged)",
+    "debugger: fix missing % case in is_non_associative (PR #82, merged)",
+    "debugger: add << and >> bit shift operators (PR #81, merged)",
+    "psg: PSG file-format magic numbers as constants (PR #88, merged)",
+    "sound: AY_ENV_STEPS constant and AY_CLOCK_DIVISOR consistently (PR #89, merged)",
+    "debugger: add unit tests for expression evaluator (PR #87, merged)",
+    "debugger: DDCB/FDCB rotate/shift disassembler tests 226-241 (PR #90, merged)"
+  ],
+  "backlog_cursor": {
+    "issues": "all_processed",
+    "prs": 86
+  },
+  "notes": "PRs #92 and #93 (approx) queued for creation: shift UB fix and DDCB undocumented tests extension. Memory should be updated next run once PR numbers are confirmed. Open PRs #46/#60 should be closed (superseded by #80). PR #80/#54/#86 still need maintainer review."
 }
