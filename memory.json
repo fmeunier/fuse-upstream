@@ -1,70 +1,20 @@
 {
-  "last_run": "2026-06-16T07:45:00Z",
-  "last_run_id": "27602240726",
-  "monthly_issue": {
-    "number": 71,
-    "title": "[Repo Assist] Monthly Activity 2026-06",
-    "month": "2026-06"
-  },
-  "checked_off_by_maintainer": [87, 88, 89, 84, 85, 83, 82, 81, 80, 70, 90, 86],
-  "open_repo_assist_prs": [46, 54, 60, 80],
-  "pending_this_run": {
-    "rebased_ac_c_const_inline": {
-      "branch": "repo-assist/build-remove-ac-c-const-and-ac-c-inline-20260616",
-      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
-      "description": "Rebased on 1.9.0 master; supersedes stale PRs #46, #60, #80; build+tests passed"
-    },
-    "rebased_ax_create_stdint": {
-      "branch": "repo-assist/build-remove-unused-ax-create-stdint-h-20260616",
-      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "description": "Rebased on current master; supersedes stale PR #54; build+tests passed"
-    },
-    "z80_coretest_check": {
-      "branch": "repo-assist/eng-add-z80-coretest-to-check-20260616",
-      "title": "build: include z80/coretest in make check",
-      "description": "Adds Z80 CPU core test suite to check-local; was only in make test; build+tests passed"
-    }
-  },
-  "pr_details": {
-    "46": {
-      "title": "build: remove deprecated AC_C_CONST macro from configure.ac",
-      "status": "open",
-      "superseded_by": "rebased_ac_c_const_inline (this run)"
-    },
-    "54": {
-      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "open",
-      "superseded_by": "rebased_ax_create_stdint (this run)"
-    },
-    "60": {
-      "title": "build: remove deprecated AC_C_INLINE macro from configure.ac",
-      "status": "open",
-      "superseded_by": "rebased_ac_c_const_inline (this run)"
-    },
-    "80": {
-      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
-      "status": "open",
-      "note": "Stale — based on pre-1.9.0 master; superseded by rebased_ac_c_const_inline (this run)"
-    }
-  },
+  "last_run": "2026-06-17T07:00:00Z",
+  "last_run_id": "27673331964",
+  "monthly_activity_issue": 71,
   "comments_made": {},
-  "completed_improvements": [
-    "sound: AY_CHANNELS and AY_REGISTERS constants (PR #70, merged)",
-    "keyboard: KEYBOARD_HALFROWS constant (PR #85, merged)",
-    "display: DISPLAY_FLASH_HALF_PERIOD/DISPLAY_FLASH_PERIOD constants (PR #83, merged)",
-    "debugger: fix missing % case in is_non_associative (PR #82, merged)",
-    "debugger: add << and >> bit shift operators (PR #81, merged)",
-    "psg: PSG file-format magic numbers as constants (PR #88, merged)",
-    "sound: AY_ENV_STEPS constant and AY_CLOCK_DIVISOR consistently (PR #89, merged)",
-    "debugger: add unit tests for expression evaluator (PR #87, merged)",
-    "debugger: DDCB/FDCB rotate/shift disassembler tests 226-241 (PR #90, merged)",
-    "sound: merge two-pass AY tone-level loops (PR #86, merged)",
-    "debugger: guard bit-shift operators against count >= 32 (merged as 9789b41f)",
-    "debugger: expand undocumented DDCB/FDCB LD reg,rotate test coverage (merged as ee41cd7b)"
-  ],
-  "backlog_cursor": {
-    "issues": "all_processed",
-    "prs": "latest_checked_20260616"
+  "open_repo_assist_prs": {
+    "46": {"title": "build: remove deprecated AC_C_CONST macro", "status": "stale — superseded by #94"},
+    "54": {"title": "build: remove unused AX_CREATE_STDINT_H macro file", "status": "stale — superseded by #95"},
+    "60": {"title": "build: remove deprecated AC_C_INLINE macro", "status": "stale — superseded by #94"},
+    "80": {"title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros", "status": "stale — superseded by #94"},
+    "94": {"title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac", "status": "open — supersedes #46, #60, #80"},
+    "95": {"title": "build: remove unused AX_CREATE_STDINT_H macro file", "status": "open — supersedes #54"},
+    "96": {"title": "build: include z80/coretest in make check", "status": "open"},
+    "TBD_task9_20260617": {"title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage", "status": "queued — number TBD after run 27673331964"},
+    "TBD_task4_20260617": {"title": "ci: pre-install build tools and libspectrum in copilot-setup-steps", "status": "queued — number TBD after run 27673331964"}
   },
-  "notes": "Maintainer has bumped version to 1.9.0, added hacking/releasing.md, and is preparing a release. Three new PRs queued this run: rebased AC_C_CONST/AC_C_INLINE removal, rebased AX_CREATE_STDINT_H removal, and z80/coretest added to make check. Old PRs #46/#60/#54/#80 should be closed by maintainer. PR numbers will be confirmed next run."
+  "checked_off_by_maintainer": [],
+  "fix_attempts": {},
+  "notes": "PR numbers for Task9/Task4 PRs created in run 27673331964 are TBD — confirm next run by listing open PRs. Stale PRs #46/#54/#60/#80 still open; maintainer should close them. Three recent PRs #94/#95/#96 awaiting maintainer review."
 }
