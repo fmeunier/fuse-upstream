@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-17T07:00:00Z",
-  "last_run_id": "27673331964",
+  "last_run": "2026-06-18T07:40:00Z",
+  "last_run_id": "27743587654",
   "monthly_activity_issue": 71,
   "comments_made": {},
   "open_repo_assist_prs": {
@@ -11,10 +11,12 @@
     "94": {"title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac", "status": "open — supersedes #46, #60, #80"},
     "95": {"title": "build: remove unused AX_CREATE_STDINT_H macro file", "status": "open — supersedes #54"},
     "96": {"title": "build: include z80/coretest in make check", "status": "open"},
-    "TBD_task9_20260617": {"title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage", "status": "queued — number TBD after run 27673331964"},
-    "TBD_task4_20260617": {"title": "ci: pre-install build tools and libspectrum in copilot-setup-steps", "status": "queued — number TBD after run 27673331964"}
+    "97": {"title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps", "status": "issue (not PR) — blocked by workflow file permission; manual apply instructions in issue body"},
+    "98": {"title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage", "status": "open"},
+    "TBD_task5_20260618": {"title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants", "status": "queued — number TBD after run 27743587654"},
+    "TBD_task10_20260618": {"title": "debugger: add CB prefix rotate/shift test coverage for register A and (HL)", "status": "queued — number TBD after run 27743587654"}
   },
   "checked_off_by_maintainer": [],
   "fix_attempts": {},
-  "notes": "PR numbers for Task9/Task4 PRs created in run 27673331964 are TBD — confirm next run by listing open PRs. Stale PRs #46/#54/#60/#80 still open; maintainer should close them. Three recent PRs #94/#95/#96 awaiting maintainer review."
+  "notes": "PR numbers for Task5/Task10 PRs created in run 27743587654 are TBD — confirm next run by listing open PRs. Stale PRs #46/#54/#60/#80 still open; maintainer should close them. PRs #94/#95/#96/#98 awaiting maintainer review. Issue #97 requires manual PR creation by maintainer (workflow file blocked). Next run: check PR numbers and verify no CI failures."
 }
