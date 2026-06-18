@@ -171,7 +171,7 @@ display_init( int *argc, char ***argv )
 	  32 * ( (64*i) + j + (k*8) );
 
   for(y=0;y<DISPLAY_HEIGHT;y++) {
-    display_attr_start[y]=6144 + (32*(y/8));
+    display_attr_start[y]=DISPLAY_PIXEL_BYTES + (DISPLAY_WIDTH_COLS*(y/8));
   }
 
   for(y=0;y<DISPLAY_HEIGHT;y++)
@@ -182,8 +182,8 @@ display_init( int *argc, char ***argv )
 
   for(y=0;y<DISPLAY_HEIGHT_ROWS;y++)
     for(x=0;x<DISPLAY_WIDTH_COLS;x++) {
-      display_dirty_ytable2[ (32*y) + x ] = y * 8;
-      display_dirty_xtable2[ (32*y) + x ] = x;
+      display_dirty_ytable2[ (DISPLAY_WIDTH_COLS*y) + x ] = y * 8;
+      display_dirty_xtable2[ (DISPLAY_WIDTH_COLS*y) + x ] = x;
     }
 
   display_frame_count=0; display_flash_reversed=0;
@@ -231,8 +231,8 @@ display_dirty_timex( libspectrum_word offset )
 
     case STANDARD: /* standard Speccy screen */
     case HIRESATTR: /* strange mode */
-      if( offset >= 0x1b00 ) break;
-      if( offset <  0x1800 ) {		/* 0x1800 = first attributes byte */
+      if( offset >= DISPLAY_FILE_SIZE ) break;
+      if( offset <  DISPLAY_PIXEL_BYTES ) {
         display_dirty8( offset );
       } else {
         display_dirty64( offset );
@@ -241,8 +241,8 @@ display_dirty_timex( libspectrum_word offset )
 
     case ALTDFILE: /* second screen */
     case HIRESATTRALTD: /* strange mode using second screen */      
-      if( offset < 0x2000 || offset >= 0x3b00 ) break;
-      if( offset < 0x3800 ) {		/* 0x3800 = first attributes byte */
+      if( offset < ALTDFILE_OFFSET || offset >= ALTDFILE_OFFSET + DISPLAY_FILE_SIZE ) break;
+      if( offset < ALTDFILE_OFFSET + DISPLAY_PIXEL_BYTES ) {
         display_dirty8( offset - ALTDFILE_OFFSET );
       } else {
         display_dirty64( offset - ALTDFILE_OFFSET );
@@ -251,9 +251,9 @@ display_dirty_timex( libspectrum_word offset )
 
     case EXTCOLOUR: /* extended colours */
     case HIRES: /* hires mode */
-      if( offset >= 0x3800 ) break;
-      if( offset >= 0x1800 && offset < 0x2000 ) break;
-      if( offset >= 0x2000 ) offset -= ALTDFILE_OFFSET;
+      if( offset >= ALTDFILE_OFFSET + DISPLAY_PIXEL_BYTES ) break;
+      if( offset >= DISPLAY_PIXEL_BYTES && offset < ALTDFILE_OFFSET ) break;
+      if( offset >= ALTDFILE_OFFSET ) offset -= ALTDFILE_OFFSET;
       display_dirty8( offset );
       break;
 
@@ -262,7 +262,7 @@ display_dirty_timex( libspectrum_word offset )
        taken from second screen */
     /* case HIRESDOUBLECOL: hires mode, but data taken only from
        second screen */
-      if( offset >= 0x2000 && offset < 0x3800 )
+      if( offset >= ALTDFILE_OFFSET && offset < ALTDFILE_OFFSET + DISPLAY_PIXEL_BYTES )
 	display_dirty8( offset - ALTDFILE_OFFSET );
       break;
   }
@@ -271,11 +271,11 @@ display_dirty_timex( libspectrum_word offset )
 void
 display_dirty_pentagon_16_col( libspectrum_word offset )
 {
-  /* The only relevant sections of the page will be the two 6144 byte sections
-     separated by ALTDFILE_OFFSET, which have the same display offset */
-  if( offset >= 0x2000 ) offset -= ALTDFILE_OFFSET;
+  /* The only relevant sections of the page will be the two DISPLAY_PIXEL_BYTES
+     sections separated by ALTDFILE_OFFSET, which have the same display offset */
+  if( offset >= ALTDFILE_OFFSET ) offset -= ALTDFILE_OFFSET;
   /* No attributes are relevent in this mode */
-  if( offset <  0x1800 ) {		/* 0x1800 = first attributes byte */
+  if( offset <  DISPLAY_PIXEL_BYTES ) {
     display_dirty8( offset );
   }
 }
@@ -283,8 +283,8 @@ display_dirty_pentagon_16_col( libspectrum_word offset )
 void
 display_dirty_sinclair( libspectrum_word offset )
 {
-  if( offset >= 0x1b00 ) return;
-  if( offset <  0x1800 ) {		/* 0x1800 = first attributes byte */
+  if( offset >= DISPLAY_FILE_SIZE ) return;
+  if( offset <  DISPLAY_PIXEL_BYTES ) {
     display_dirty8( offset );
   } else {
     display_dirty64( offset );
@@ -717,8 +717,8 @@ display_dirty64( libspectrum_word offset )
 {
   int i, x, y;
 
-  x=display_dirty_xtable2[ offset - 0x1800 ];
-  y=display_dirty_ytable2[ offset - 0x1800 ];
+  x=display_dirty_xtable2[ offset - DISPLAY_PIXEL_BYTES ];
+  y=display_dirty_ytable2[ offset - DISPLAY_PIXEL_BYTES ];
 
   for( i = 0; i < 8; i++ ) display_dirty_chunk( x, y + i );
 }
@@ -991,14 +991,14 @@ display_dirty_flashing_timex(void)
   if( !scld_last_dec.name.hires ) {
     if( scld_last_dec.name.b1 ) {
 
-      for( offset = ALTDFILE_OFFSET; offset < 0x3800; offset++ ) {
+      for( offset = ALTDFILE_OFFSET; offset < ALTDFILE_OFFSET + DISPLAY_PIXEL_BYTES; offset++ ) {
         attr = screen[ offset ];
         if( attr & 0x80 ) display_dirty8( offset - ALTDFILE_OFFSET );
       }
 
     } else if( scld_last_dec.name.altdfile ) {
 
-      for( offset= 0x3800; offset < 0x3b00; offset++ ) {
+      for( offset= ALTDFILE_OFFSET + DISPLAY_PIXEL_BYTES; offset < ALTDFILE_OFFSET + DISPLAY_FILE_SIZE; offset++ ) {
         attr = screen[ offset ];
         if( attr & 0x80 ) display_dirty64( offset - ALTDFILE_OFFSET );
       }
@@ -1026,7 +1026,7 @@ display_dirty_flashing_sinclair(void)
   screen = RAM[ memory_current_screen ];
   
   /* Standard Speccy screen */
-  for( offset = 0x1800; offset < 0x1b00; offset++ ) {
+  for( offset = DISPLAY_PIXEL_BYTES; offset < DISPLAY_FILE_SIZE; offset++ ) {
     attr = screen[ offset ];
     if( attr & 0x80 ) display_dirty64( offset );
   }
