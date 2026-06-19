@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-18T07:40:00Z",
-  "last_run_id": "27743587654",
+  "last_run": "2026-06-19T07:59:00Z",
+  "last_run_id": "27812343885",
   "monthly_activity_issue": 71,
   "comments_made": {},
   "open_repo_assist_prs": {
@@ -13,10 +13,11 @@
     "96": {"title": "build: include z80/coretest in make check", "status": "open"},
     "97": {"title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps", "status": "issue (not PR) — blocked by workflow file permission; manual apply instructions in issue body"},
     "98": {"title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage", "status": "open"},
-    "TBD_task5_20260618": {"title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants", "status": "queued — number TBD after run 27743587654"},
-    "TBD_task10_20260618": {"title": "debugger: add CB prefix rotate/shift test coverage for register A and (HL)", "status": "queued — number TBD after run 27743587654"}
+    "99": {"title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants", "status": "open"},
+    "100": {"title": "debugger: add CB prefix rotate/shift test coverage for register A and (HL)", "status": "open"},
+    "TBD_task5_20260619": {"title": "z80: replace R register magic numbers with named constants", "status": "queued — number TBD after run 27812343885"}
   },
   "checked_off_by_maintainer": [],
   "fix_attempts": {},
-  "notes": "PR numbers for Task5/Task10 PRs created in run 27743587654 are TBD — confirm next run by listing open PRs. Stale PRs #46/#54/#60/#80 still open; maintainer should close them. PRs #94/#95/#96/#98 awaiting maintainer review. Issue #97 requires manual PR creation by maintainer (workflow file blocked). Next run: check PR numbers and verify no CI failures."
+  "notes": "PR for Z80 R register masks (Task 5, run 27812343885) is TBD — confirm next run by listing open PRs. Stale PRs #46/#54/#60/#80 still open; maintainer should close them. PRs #94/#95/#96/#98/#99/#100 awaiting maintainer review. Issue #97 requires manual PR creation by maintainer. Task 3 investigation found no bugs after thorough code review of debugger/disassembler."
 }
