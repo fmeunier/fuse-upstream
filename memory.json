@@ -1,24 +1,63 @@
 {
-  "last_run": "2026-06-20T07:00:00Z",
-  "last_run_id": "27863841376",
+  "last_run": "2026-06-21T07:25:00Z",
+  "last_run_id": "27897156706",
   "monthly_activity_issue": 71,
   "comments_made": {},
   "open_repo_assist_prs": {
-    "46": {"title": "build: remove deprecated AC_C_CONST macro", "status": "stale — superseded by #94"},
-    "54": {"title": "build: remove unused AX_CREATE_STDINT_H macro file", "status": "stale — superseded by #95"},
-    "60": {"title": "build: remove deprecated AC_C_INLINE macro", "status": "stale — superseded by #94"},
-    "80": {"title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros", "status": "stale — superseded by #94"},
-    "94": {"title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac", "status": "open — supersedes #46, #60, #80"},
-    "95": {"title": "build: remove unused AX_CREATE_STDINT_H macro file", "status": "open — supersedes #54"},
-    "96": {"title": "build: include z80/coretest in make check", "status": "open"},
-    "97": {"title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps", "status": "issue (not PR) — blocked by workflow file permission; manual apply instructions in issue body"},
-    "98": {"title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage", "status": "open"},
-    "99": {"title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants", "status": "open"},
-    "100": {"title": "debugger: add CB prefix rotate/shift test coverage for register A and (HL)", "status": "open"},
-    "101": {"title": "z80: replace R register magic numbers with named constants", "status": "open"},
-    "TBD_task8_20260620": {"title": "display: cache beam position in display_update_critical", "status": "queued — number TBD after run 27863841376"}
+    "46": {
+      "title": "build: remove deprecated AC_C_CONST macro",
+      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
+    },
+    "54": {
+      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
+      "status": "stale \u2014 superseded by #95; supersession comment posted 2026-06-21"
+    },
+    "60": {
+      "title": "build: remove deprecated AC_C_INLINE macro",
+      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
+    },
+    "80": {
+      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros",
+      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
+    },
+    "94": {
+      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
+      "status": "open \u2014 supersedes #46, #60, #80"
+    },
+    "95": {
+      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
+      "status": "open \u2014 supersedes #54"
+    },
+    "96": {
+      "title": "build: include z80/coretest in make check",
+      "status": "open"
+    },
+    "97": {
+      "title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps",
+      "status": "issue (not PR) \u2014 blocked by workflow file permission; manual apply instructions in issue body"
+    },
+    "98": {
+      "title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage",
+      "status": "open"
+    },
+    "99": {
+      "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
+      "status": "open"
+    },
+    "100": {
+      "title": "debugger: add CB prefix rotate/shift test coverage for register A and (HL)",
+      "status": "open"
+    },
+    "101": {
+      "title": "z80: replace R register magic numbers with named constants",
+      "status": "open"
+    },
+    "102": {
+      "title": "display: cache beam position in display_update_critical",
+      "status": "open"
+    }
   },
   "checked_off_by_maintainer": [],
   "fix_attempts": {},
-  "notes": "PR for display beam cache (Task 8, run 27863841376) is TBD — confirm next run by listing open PRs. Stale PRs #46/#54/#60/#80 still open; maintainer should close them. PRs #94/#95/#96/#98/#99/#100/#101 awaiting maintainer review. Issue #97 requires manual PR creation by maintainer. Task 2 this run: all 5 open issues are automated tracking issues — no user-filed bugs or questions."
+  "notes": "All 12 open Repo Assist PRs are clean (no CI failures, no merge conflicts). Stale PRs #46/#54/#60/#80 now have supersession comments (posted 2026-06-21). PRs #94/#95/#96/#98/#99/#100/#101/#102 awaiting maintainer review. Issue #97 requires manual PR creation by maintainer. Task 2: all 5 open issues are automated tracking issues \u2014 no user-filed bugs or questions. Next run candidates: Task 5/8/9/10 for further code improvements or test coverage."
 }
