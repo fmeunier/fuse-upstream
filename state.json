@@ -1,44 +1,67 @@
 {
-  "last_run": "2026-05-08",
-  "last_run_id": "25581082591",
-  "monthly_activity_issue": 32,
-  "comments_made": {
-    "30": "2026-05-07"
-  },
-  "fix_attempts": {
-    "repo-assist/test-disasm-main-opcodes-2026-05-08": {
-      "status": "open",
-      "description": "54 new tests (test129-test182) for main unprefixed Z80 opcodes",
-      "created": "2026-05-08"
+  "last_run": "2026-06-22T07:44:00Z",
+  "last_run_id": "27937324425",
+  "monthly_activity_issue": 71,
+  "comments_made": {},
+  "open_repo_assist_prs": {
+    "46": {
+      "title": "build: remove deprecated AC_C_CONST macro",
+      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
     },
-    "repo-assist/test-disasm-ixiy-instrs-2026-05-06": {
-      "pr": 41,
-      "status": "open",
-      "description": "DD/FD IX/IY disassembler coverage tests 93-128",
-      "created": "2026-05-06"
+    "54": {
+      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
+      "status": "stale — superseded by #95; supersession comment posted 2026-06-21"
     },
-    "repo-assist/test-disasm-cb-regpairs-2026-05-05": {
-      "pr": 39,
-      "status": "open",
-      "description": "CB rotations and SBC/ADC HL reg-pair variants tests 72-92",
-      "created": "2026-05-05"
+    "60": {
+      "title": "build: remove deprecated AC_C_INLINE macro",
+      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
     },
-    "repo-assist/test-disasm-ed-remaining-2026-05-05": {
-      "pr": 38,
-      "status": "open",
-      "description": "Remaining ED-prefix disassembler tests 56-71",
-      "created": "2026-05-05"
+    "80": {
+      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros",
+      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
+    },
+    "94": {
+      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
+      "status": "open — supersedes #46, #60, #80"
+    },
+    "95": {
+      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
+      "status": "open — supersedes #54"
+    },
+    "96": {
+      "title": "build: include z80/coretest in make check",
+      "status": "open"
+    },
+    "97": {
+      "title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps",
+      "status": "issue (not PR) — blocked by workflow file permission; manual apply instructions in issue body"
+    },
+    "98": {
+      "title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage",
+      "status": "open"
+    },
+    "99": {
+      "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
+      "status": "open"
+    },
+    "100": {
+      "title": "debugger: add CB prefix rotate/shift test coverage for register A and (HL)",
+      "status": "open"
+    },
+    "101": {
+      "title": "z80: replace R register magic numbers with named constants",
+      "status": "open"
+    },
+    "102": {
+      "title": "display: cache beam position in display_update_critical",
+      "status": "open"
+    },
+    "new-expr-negate": {
+      "title": "debugger: add unary negation and binary subtraction non-associativity tests",
+      "status": "open — branch repo-assist/test-expr-negate-and-sub-assoc-20260622-327cdcb3; PR number TBD"
     }
   },
-  "backlog_cursor": {
-    "issues": 42,
-    "note": "Only 2 issues open: #32 (monthly activity) and #42 (blocked CI fix info). No user-filed issues."
-  },
-  "checked_off_by_maintainer": ["close_issue_30", "close_pr_40"],
-  "notes": [
-    "PRs #38, #39, #41 are all open and clean (no CI failures, no merge conflicts). Pending review.",
-    "Issue #42 is a blocked CI fix (workflows permission denied); contains manual apply instructions for maintainer.",
-    "PR for main opcode tests (branch repo-assist/test-disasm-main-opcodes-2026-05-08) was submitted this run - PR number TBD.",
-    "Next task: check if new PR number is assigned, update monthly activity with it. Also 0xED NOP-equivalent range (0x00-0x3F) remains untested."
-  ]
+  "checked_off_by_maintainer": [],
+  "fix_attempts": {},
+  "notes": "All 13 open Repo Assist PRs are clean (no CI failures, no merge conflicts). Stale PRs #46/#54/#60/#80 have supersession comments. PRs #94/#95/#96/#98/#99/#100/#101/#102 awaiting maintainer review. Issue #97 requires manual PR creation by maintainer. New PR created this run for expression evaluator tests (unary negation + sub non-associativity deparse); PR number TBD — update monthly issue once confirmed. Next run candidates: CB BIT/RES/SET tests with more registers (natural next test coverage step after CB rotate/shift tests in #100)."
 }

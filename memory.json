@@ -1,32 +1,32 @@
 {
-  "last_run": "2026-06-21T07:25:00Z",
-  "last_run_id": "27897156706",
+  "last_run": "2026-06-22T08:00:00Z",
+  "last_run_id": "27937324425",
   "monthly_activity_issue": 71,
   "comments_made": {},
   "open_repo_assist_prs": {
     "46": {
       "title": "build: remove deprecated AC_C_CONST macro",
-      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
+      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
     },
     "54": {
       "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "stale \u2014 superseded by #95; supersession comment posted 2026-06-21"
+      "status": "stale — superseded by #95; supersession comment posted 2026-06-21"
     },
     "60": {
       "title": "build: remove deprecated AC_C_INLINE macro",
-      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
+      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
     },
     "80": {
       "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros",
-      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
+      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
     },
     "94": {
       "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
-      "status": "open \u2014 supersedes #46, #60, #80"
+      "status": "open — supersedes #46, #60, #80"
     },
     "95": {
       "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "open \u2014 supersedes #54"
+      "status": "open — supersedes #54"
     },
     "96": {
       "title": "build: include z80/coretest in make check",
@@ -34,7 +34,7 @@
     },
     "97": {
       "title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps",
-      "status": "issue (not PR) \u2014 blocked by workflow file permission; manual apply instructions in issue body"
+      "status": "issue (not PR) — blocked by workflow file permission; manual apply instructions in issue body"
     },
     "98": {
       "title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage",
@@ -55,9 +55,17 @@
     "102": {
       "title": "display: cache beam position in display_update_critical",
       "status": "open"
+    },
+    "pending-expr-negate": {
+      "title": "debugger: add unary negation and binary subtraction non-associativity tests",
+      "status": "open — branch: repo-assist/test-expr-negate-and-sub-assoc-20260622-327cdcb3; created 2026-06-22"
+    },
+    "pending-expr-deparse": {
+      "title": "debugger: add deparse tests for unary !, ~, and non-assoc /, <<",
+      "status": "open — branch: repo-assist/test-expr-deparse-unary-and-nonassoc-20260622; created 2026-06-22"
     }
   },
   "checked_off_by_maintainer": [],
   "fix_attempts": {},
-  "notes": "All 12 open Repo Assist PRs are clean (no CI failures, no merge conflicts). Stale PRs #46/#54/#60/#80 now have supersession comments (posted 2026-06-21). PRs #94/#95/#96/#98/#99/#100/#101/#102 awaiting maintainer review. Issue #97 requires manual PR creation by maintainer. Task 2: all 5 open issues are automated tracking issues \u2014 no user-filed bugs or questions. Next run candidates: Task 5/8/9/10 for further code improvements or test coverage."
+  "notes": "Run 27937324425 (2026-06-22): Two PR submissions for expression evaluator deparse test coverage. All 5 open issues remain automated tracking issues. 12 existing Repo Assist PRs clean; 2 new expression test PRs pending assignment of PR numbers. Next run: check PR numbers for pending-expr-negate and pending-expr-deparse; consider Task 5/6/9/10 for further improvements. Possible next areas: CB BIT/RES/SET with more bit numbers and registers, or comparison/logical operator deparse tests."
 }
