@@ -1224,6 +1224,24 @@ libspectrum_byte test253_data[] = { 0xfd, 0xcb, 0x55, 0x07 };  /* LD A,RLC (IY+5
 /* DD CB undocumented: non-RLC rotation op to verify rotate_op() selection */
 libspectrum_byte test254_data[] = { 0xdd, 0xcb, 0x55, 0x38 };  /* LD B,SRL (IX+55) */
 
+/* CB prefix BIT/RES/SET: cover all non-A, non-(HL) register names.
+   The existing tests (test16-18) cover register A; the pending PR adds (HL).
+   These six tests exercise source_reg() for B(0), C(1), D(2), E(3), H(4), L(5)
+   and bit_op_bit() for several mid-range bit numbers. */
+
+/* BIT 3,B: opcode CB 0x58 (bits 7:6=01→BIT, 5:3=011→bit3, 2:0=000→B) */
+static libspectrum_byte test255_data[] = { 0xcb, 0x58 };
+/* BIT 5,C: opcode CB 0x69 (01 101 001) */
+static libspectrum_byte test256_data[] = { 0xcb, 0x69 };
+/* RES 4,D: opcode CB 0xA2 (10 100 010) */
+static libspectrum_byte test257_data[] = { 0xcb, 0xa2 };
+/* RES 2,H: opcode CB 0x94 (10 010 100) */
+static libspectrum_byte test258_data[] = { 0xcb, 0x94 };
+/* SET 6,L: opcode CB 0xF5 (11 110 101) */
+static libspectrum_byte test259_data[] = { 0xcb, 0xf5 };
+/* SET 3,E: opcode CB 0xDB (11 011 011) */
+static libspectrum_byte test260_data[] = { 0xcb, 0xdb };
+
 static int
 run_test( libspectrum_byte *data, size_t data_length, const char *expected )
 {
@@ -1289,6 +1307,14 @@ debugger_disassemble_unittest( void )
   r += run_test( test16_data, sizeof( test16_data ), "BIT 0,A" );
   r += run_test( test17_data, sizeof( test17_data ), "RES 0,A" );
   r += run_test( test18_data, sizeof( test18_data ), "SET 1,A" );
+
+  /* CB prefix BIT/RES/SET — remaining registers B, C, D, E, H, L */
+  r += run_test( test255_data, sizeof( test255_data ), "BIT 3,B" );
+  r += run_test( test256_data, sizeof( test256_data ), "BIT 5,C" );
+  r += run_test( test257_data, sizeof( test257_data ), "RES 4,D" );
+  r += run_test( test258_data, sizeof( test258_data ), "RES 2,H" );
+  r += run_test( test259_data, sizeof( test259_data ), "SET 6,L" );
+  r += run_test( test260_data, sizeof( test260_data ), "SET 3,E" );
 
   /* DD CB prefix BIT/RES/SET on (IX+d) */
   r += run_test( test19_data, sizeof( test19_data ), "BIT 0,(IX+55)" );
