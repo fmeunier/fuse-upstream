@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-22T08:00:00Z",
-  "last_run_id": "27937324425",
+  "last_run": "2026-06-23T07:06:00Z",
+  "last_run_id": "28008568916",
   "monthly_activity_issue": 71,
   "comments_made": {},
   "open_repo_assist_prs": {
@@ -56,16 +56,20 @@
       "title": "display: cache beam position in display_update_critical",
       "status": "open"
     },
-    "pending-expr-negate": {
+    "103": {
       "title": "debugger: add unary negation and binary subtraction non-associativity tests",
-      "status": "open — branch: repo-assist/test-expr-negate-and-sub-assoc-20260622-327cdcb3; created 2026-06-22"
+      "status": "open — branch: repo-assist/test-expr-negate-and-sub-assoc-20260622-327cdcb3"
     },
-    "pending-expr-deparse": {
+    "104": {
       "title": "debugger: add deparse tests for unary !, ~, and non-assoc /, <<",
-      "status": "open — branch: repo-assist/test-expr-deparse-unary-and-nonassoc-20260622; created 2026-06-22"
+      "status": "open — branch: repo-assist/test-expr-deparse-unary-and-nonassoc-20260622"
+    },
+    "pending-cb-bit-res-set": {
+      "title": "debugger: add CB BIT/RES/SET disassembler tests for all registers",
+      "status": "open — branch: repo-assist/test-disasm-cb-bit-res-set-registers-20260623; created 2026-06-23; PR number TBD"
     }
   },
   "checked_off_by_maintainer": [],
   "fix_attempts": {},
-  "notes": "Run 27937324425 (2026-06-22): Two PR submissions for expression evaluator deparse test coverage. All 5 open issues remain automated tracking issues. 12 existing Repo Assist PRs clean; 2 new expression test PRs pending assignment of PR numbers. Next run: check PR numbers for pending-expr-negate and pending-expr-deparse; consider Task 5/6/9/10 for further improvements. Possible next areas: CB BIT/RES/SET with more bit numbers and registers, or comparison/logical operator deparse tests."
+  "notes": "Run 28008568916 (2026-06-23): Task 6 — all 14 Repo Assist PRs clean (no conflicts, no build failures; action_required CI is workflow approval policy not build fail). Task 3 — created CB BIT/RES/SET disassembler tests PR covering registers B/C/D/E/H/L with bit numbers 2-6 (test255-260); make check passed. PR #103 confirmed = unary negation/sub non-assoc; PR #104 confirmed = deparse unary !,~,/,<<. Next run: check PR number for pending-cb-bit-res-set; consider CB BIT/RES/SET for (HL) after PR #100 merges, or comparison operator tests, or logical AND/OR/XOR deparse tests."
 }
