@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-23T07:06:00Z",
-  "last_run_id": "28008568916",
+  "last_run": "2026-06-24T07:03:46Z",
+  "last_run_id": "28081220996",
   "monthly_activity_issue": 71,
   "comments_made": {},
   "open_repo_assist_prs": {
@@ -64,12 +64,16 @@
       "title": "debugger: add deparse tests for unary !, ~, and non-assoc /, <<",
       "status": "open — branch: repo-assist/test-expr-deparse-unary-and-nonassoc-20260622"
     },
-    "pending-cb-bit-res-set": {
+    "105": {
       "title": "debugger: add CB BIT/RES/SET disassembler tests for all registers",
-      "status": "open — branch: repo-assist/test-disasm-cb-bit-res-set-registers-20260623; created 2026-06-23; PR number TBD"
+      "status": "open — branch: repo-assist/test-disasm-cb-bit-res-set-registers-20260623"
+    },
+    "106": {
+      "title": "debugger: add deparse tests for all remaining binary operators",
+      "status": "open (TBD - created 2026-06-24) — branch: repo-assist/test-expr-deparse-remaining-ops-20260624; 16 tests for -, *, /, ==, !=, <, >, <=, >=, &, ^, |, &&, || + 2 cross-precedence tests"
     }
   },
   "checked_off_by_maintainer": [],
   "fix_attempts": {},
-  "notes": "Run 28008568916 (2026-06-23): Task 6 — all 14 Repo Assist PRs clean (no conflicts, no build failures; action_required CI is workflow approval policy not build fail). Task 3 — created CB BIT/RES/SET disassembler tests PR covering registers B/C/D/E/H/L with bit numbers 2-6 (test255-260); make check passed. PR #103 confirmed = unary negation/sub non-assoc; PR #104 confirmed = deparse unary !,~,/,<<. Next run: check PR number for pending-cb-bit-res-set; consider CB BIT/RES/SET for (HL) after PR #100 merges, or comparison operator tests, or logical AND/OR/XOR deparse tests."
+  "notes": "Run 28081220996 (2026-06-24): Task 3 — created PR #106 (TBD) with deparse tests for all 14 remaining binary operators plus 2 cross-precedence tests (make check passed). Task 2 — all 5 open issues are automated tracking; no user-filed bugs. PR #105 confirmed = CB BIT/RES/SET register tests. Next run: check PR #106 number; consider CB BIT/RES/SET for (HL) once PR #100 merges, or dereference operator deparse tests, or DDCB/FDCB BIT/RES/SET test coverage."
 }
