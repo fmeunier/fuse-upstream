@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-24T07:03:46Z",
-  "last_run_id": "28081220996",
+  "last_run": "2026-06-25T07:19:00Z",
+  "last_run_id": "28152850112",
   "monthly_activity_issue": 71,
   "comments_made": {},
   "open_repo_assist_prs": {
@@ -58,22 +58,30 @@
     },
     "103": {
       "title": "debugger: add unary negation and binary subtraction non-associativity tests",
-      "status": "open — branch: repo-assist/test-expr-negate-and-sub-assoc-20260622-327cdcb3"
+      "status": "open"
     },
     "104": {
       "title": "debugger: add deparse tests for unary !, ~, and non-assoc /, <<",
-      "status": "open — branch: repo-assist/test-expr-deparse-unary-and-nonassoc-20260622"
+      "status": "open"
     },
     "105": {
       "title": "debugger: add CB BIT/RES/SET disassembler tests for all registers",
-      "status": "open — branch: repo-assist/test-disasm-cb-bit-res-set-registers-20260623"
+      "status": "open"
     },
     "106": {
       "title": "debugger: add deparse tests for all remaining binary operators",
-      "status": "open (TBD - created 2026-06-24) — branch: repo-assist/test-expr-deparse-remaining-ops-20260624; 16 tests for -, *, /, ==, !=, <, >, <=, >=, &, ^, |, &&, || + 2 cross-precedence tests"
+      "status": "open — branch: repo-assist/test-expr-deparse-remaining-ops-20260624"
+    },
+    "107": {
+      "title": "debugger: remove duplicate find_breakpoint_by_id forward declaration",
+      "status": "open (TBD - created 2026-06-25) — branch: repo-assist/improve-debugger-remove-dup-decl-20260625"
+    },
+    "108": {
+      "title": "ci: use GitHub mirror URL for libspectrum clone",
+      "status": "open (TBD - created 2026-06-25) — branch: repo-assist/eng-use-github-libspectrum-20260625"
     }
   },
   "checked_off_by_maintainer": [],
   "fix_attempts": {},
-  "notes": "Run 28081220996 (2026-06-24): Task 3 — created PR #106 (TBD) with deparse tests for all 14 remaining binary operators plus 2 cross-precedence tests (make check passed). Task 2 — all 5 open issues are automated tracking; no user-filed bugs. PR #105 confirmed = CB BIT/RES/SET register tests. Next run: check PR #106 number; consider CB BIT/RES/SET for (HL) once PR #100 merges, or dereference operator deparse tests, or DDCB/FDCB BIT/RES/SET test coverage."
+  "notes": "Run 28152850112 (2026-06-25): Task 5 — created PR #107 (TBD) removing duplicate find_breakpoint_by_id forward declaration in debugger/breakpoint.c (no functional change). Task 4 — created PR #108 (TBD) switching LIBSPECTRUM_GIT_URL from SourceForge to GitHub in all 3 libspectrum build sub-workflows. Next run: confirm PR #107 and #108 actual numbers; consider DDCB/FDCB BIT/RES/SET test coverage or other debugger test gaps."
 }
