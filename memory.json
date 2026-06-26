@@ -1,32 +1,32 @@
 {
-  "last_run": "2026-06-25T07:19:00Z",
-  "last_run_id": "28152850112",
+  "last_run": "2026-06-26T07:32:00Z",
+  "last_run_id": "28222920642",
   "monthly_activity_issue": 71,
   "comments_made": {},
   "open_repo_assist_prs": {
     "46": {
       "title": "build: remove deprecated AC_C_CONST macro",
-      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
+      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
     },
     "54": {
       "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "stale — superseded by #95; supersession comment posted 2026-06-21"
+      "status": "stale \u2014 superseded by #95; supersession comment posted 2026-06-21"
     },
     "60": {
       "title": "build: remove deprecated AC_C_INLINE macro",
-      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
+      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
     },
     "80": {
       "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros",
-      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
+      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
     },
     "94": {
       "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
-      "status": "open — supersedes #46, #60, #80"
+      "status": "open \u2014 supersedes #46, #60, #80"
     },
     "95": {
       "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "open — supersedes #54"
+      "status": "open \u2014 supersedes #54"
     },
     "96": {
       "title": "build: include z80/coretest in make check",
@@ -34,7 +34,7 @@
     },
     "97": {
       "title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps",
-      "status": "issue (not PR) — blocked by workflow file permission; manual apply instructions in issue body"
+      "status": "issue (not PR) \u2014 blocked by workflow file permission; manual apply instructions in issue body"
     },
     "98": {
       "title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage",
@@ -70,18 +70,18 @@
     },
     "106": {
       "title": "debugger: add deparse tests for all remaining binary operators",
-      "status": "open — branch: repo-assist/test-expr-deparse-remaining-ops-20260624"
+      "status": "open \u2014 branch: repo-assist/test-expr-deparse-remaining-ops-20260624"
     },
     "107": {
       "title": "debugger: remove duplicate find_breakpoint_by_id forward declaration",
-      "status": "open (TBD - created 2026-06-25) — branch: repo-assist/improve-debugger-remove-dup-decl-20260625"
+      "status": "open \u2014 confirmed real PR; branch: repo-assist/improve-debugger-remove-dup-decl-20260625"
     },
-    "108": {
-      "title": "ci: use GitHub mirror URL for libspectrum clone",
-      "status": "open (TBD - created 2026-06-25) — branch: repo-assist/eng-use-github-libspectrum-20260625"
+    "TBD-disasm-buf-len": {
+      "title": "debugger: replace magic number 40 with DISASM_BUF_LEN constant",
+      "status": "created this run 2026-06-26 \u2014 branch: repo-assist/improve-disasm-buf-len-constant-20260626; PR number TBD"
     }
   },
   "checked_off_by_maintainer": [],
   "fix_attempts": {},
-  "notes": "Run 28152850112 (2026-06-25): Task 5 — created PR #107 (TBD) removing duplicate find_breakpoint_by_id forward declaration in debugger/breakpoint.c (no functional change). Task 4 — created PR #108 (TBD) switching LIBSPECTRUM_GIT_URL from SourceForge to GitHub in all 3 libspectrum build sub-workflows. Next run: confirm PR #107 and #108 actual numbers; consider DDCB/FDCB BIT/RES/SET test coverage or other debugger test gaps."
+  "notes": "Run 28222920642 (2026-06-26): Task 6 \u2014 audited 17 open Repo Assist PRs; no merge conflicts; CI shows action_required (needs maintainer approval to run); PR #107 confirmed real; PR #108 NEVER created (branch never pushed \u2014 memory was wrong). Task 5 \u2014 created PR (TBD number) for DISASM_BUF_LEN constant in disassemble.c: 50 buffer-size literals replaced with named constant, no functional change. Next run: confirm DISASM_BUF_LEN PR number; attempt PR #108 (libspectrum GitHub URL change) in a Task 4 run; consider CB BIT/RES/SET deparse/eval tests or DDCB/FDCB coverage once earlier test PRs merge."
 }
