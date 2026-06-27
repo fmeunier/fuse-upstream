@@ -1,21 +1,23 @@
 {
-  "last_run": "2026-06-27T07:08:00Z",
-  "last_run_id": "28281707952",
+  "last_run": "2026-06-27T13:14:00Z",
+  "last_run_id": "28289856691",
   "monthly_activity_issue": 71,
   "comments_made": {},
-  "open_repo_assist_prs": [54, 99, 100, 104, 105, 106, "aw_pr_tape", "aw_pr_disp"],
-  "checked_off_by_maintainer": [46, 60, 80, 94, 95, 96, 97, 98, 101, 102, 103, 107, 109],
+  "open_repo_assist_prs": [99, 100, 104, 105, 106, "aw_pr_deparse", "aw_pr_cache"],
+  "checked_off_by_maintainer": [46, 54, 60, 80, 94, 95, 96, 97, 98, 101, 102, 103, 107, 109, "aw_pr_tape", "aw_pr_disp"],
   "fix_attempts": {
-    "aw_pr_tape": {
-      "desc": "tape: replace magic numbers with named constants",
+    "aw_pr_deparse": {
+      "desc": "debugger: fix decimal deparse of libspectrum_dword values > INT_MAX (%d -> %u)",
       "date": "2026-06-27",
-      "status": "open"
+      "status": "open",
+      "branch": "repo-assist/fix-expr-deparse-decimal-base-20260627"
     },
-    "aw_pr_disp": {
-      "desc": "display: cache adjusted/clamped beam coords in display_update_critical",
+    "aw_pr_cache": {
+      "desc": "ci: cache libspectrum Linux and macOS builds to speed up CI",
       "date": "2026-06-27",
-      "status": "open"
+      "status": "open",
+      "branch": "repo-assist/eng-cache-libspectrum-linux-20260627"
     }
   },
-  "notes": "PR #54 still open (superseded by #95 applied). Open PRs: #99 #100 #104 #105 #106 aw_pr_tape aw_pr_disp. Monthly activity: #71. Next: CB deparse/eval tests or Task4 #108 libspectrum URL."
+  "notes": "Open PRs: #99 #100 #104 #105 #106 aw_pr_deparse aw_pr_cache. PR #105 needs rebase: test255-260 conflicts with master test255-277 (LD r,(IX/IY+d) from PR #98). Monthly activity: #71. Future: libspectrum GitHub URL change (#108 idea), CB BIT/RES/SET deparse tests."
 }
