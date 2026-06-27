@@ -20,7 +20,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+
       - name: Install gh-aw extension
         uses: github/gh-aw-actions/setup-cli@2fe53acc038ba01c3bbdc767d4b25df31ca5bdfc # v0.68.1
         with:
           version: v0.68.1
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y autoconf automake libtool
+
+      - name: Build and install libspectrum
+        continue-on-error: true
+        run: |
+          git clone --depth 1 https://git.code.sf.net/p/fuse-emulator/libspectrum libs/libspectrum
+          cd libs/libspectrum
+          ./autogen.sh
+          ./configure --prefix=/usr/local --with-fake-glib --quiet
+          make -j$(nproc) --quiet
+          sudo make install --quiet
+          sudo ldconfig
