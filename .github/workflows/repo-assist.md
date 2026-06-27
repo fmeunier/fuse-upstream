@@ -90,6 +90,31 @@ safe-outputs:
     target: "*" 
 
 steps:
+  - name: Prepare build environment for Fuse
+    run: |
+      sudo apt-get update
+      sudo apt-get install -y \
+        autoconf \
+        automake \
+        gcc \
+        libaudiofile-dev \
+        libbz2-dev \
+        libgcrypt-dev \
+        libpng-dev \
+        libtool \
+        libxml2-dev \
+        make \
+        pkg-config \
+        xorg-dev \
+        zlib1g-dev
+
+      cd "$GITHUB_WORKSPACE/libs/libspectrum"
+      ./autogen.sh
+      ./configure --prefix=/usr/local --with-fake-glib --quiet
+      make -j"$(nproc)" --quiet
+      sudo make install --quiet
+      sudo ldconfig
+
   - name: Fetch repo data for task weighting
     env:
       GH_TOKEN: ${{ github.token }}
@@ -390,6 +415,7 @@ Maintain a single open issue titled `[Repo Assist] Monthly Activity {YYYY}-{MM}`
 - **Small, focused PRs**  -  one concern per PR.
 - **Read AGENTS.md first**: before starting work on any pull request, read the repository's `AGENTS.md` file (if present) to understand project-specific conventions, coding standards, and contribution requirements.
 - **Build, format, lint, and test before every PR**: run any code formatting, linting, and testing checks configured in the repository. Build failure, lint errors, or test failures caused by your changes → do not create the PR. Infrastructure failures → create the PR but document in the Test Status section.
+- **Use the prepared Fuse environment**: this workflow installs Ubuntu build tools and builds/installs `libspectrum` from `./libs/libspectrum` before you act. For build verification, prefer the repository's documented commands and use focused checks when the project instructions allow them.
 - **Respect existing style**  -  match code formatting and naming conventions.
 - **AI transparency**: every comment, PR, and issue must include a Repo Assist disclosure with 🤖.
 - **Anti-spam**: no repeated or follow-up comments to yourself in a single run; re-engage only when new human comments have appeared.
