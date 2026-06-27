@@ -1,87 +1,21 @@
 {
-  "last_run": "2026-06-26T07:32:00Z",
-  "last_run_id": "28222920642",
+  "last_run": "2026-06-27T07:08:00Z",
+  "last_run_id": "28281707952",
   "monthly_activity_issue": 71,
   "comments_made": {},
-  "open_repo_assist_prs": {
-    "46": {
-      "title": "build: remove deprecated AC_C_CONST macro",
-      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
-    },
-    "54": {
-      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "stale \u2014 superseded by #95; supersession comment posted 2026-06-21"
-    },
-    "60": {
-      "title": "build: remove deprecated AC_C_INLINE macro",
-      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
-    },
-    "80": {
-      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros",
-      "status": "stale \u2014 superseded by #94; supersession comment posted 2026-06-21"
-    },
-    "94": {
-      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
-      "status": "open \u2014 supersedes #46, #60, #80"
-    },
-    "95": {
-      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "open \u2014 supersedes #54"
-    },
-    "96": {
-      "title": "build: include z80/coretest in make check",
+  "open_repo_assist_prs": [54, 99, 100, 104, 105, 106, "aw_pr_tape", "aw_pr_disp"],
+  "checked_off_by_maintainer": [46, 60, 80, 94, 95, 96, 97, 98, 101, 102, 103, 107, 109],
+  "fix_attempts": {
+    "aw_pr_tape": {
+      "desc": "tape: replace magic numbers with named constants",
+      "date": "2026-06-27",
       "status": "open"
     },
-    "97": {
-      "title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps",
-      "status": "issue (not PR) \u2014 blocked by workflow file permission; manual apply instructions in issue body"
-    },
-    "98": {
-      "title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage",
+    "aw_pr_disp": {
+      "desc": "display: cache adjusted/clamped beam coords in display_update_critical",
+      "date": "2026-06-27",
       "status": "open"
-    },
-    "99": {
-      "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
-      "status": "open"
-    },
-    "100": {
-      "title": "debugger: add CB prefix rotate/shift test coverage for register A and (HL)",
-      "status": "open"
-    },
-    "101": {
-      "title": "z80: replace R register magic numbers with named constants",
-      "status": "open"
-    },
-    "102": {
-      "title": "display: cache beam position in display_update_critical",
-      "status": "open"
-    },
-    "103": {
-      "title": "debugger: add unary negation and binary subtraction non-associativity tests",
-      "status": "open"
-    },
-    "104": {
-      "title": "debugger: add deparse tests for unary !, ~, and non-assoc /, <<",
-      "status": "open"
-    },
-    "105": {
-      "title": "debugger: add CB BIT/RES/SET disassembler tests for all registers",
-      "status": "open"
-    },
-    "106": {
-      "title": "debugger: add deparse tests for all remaining binary operators",
-      "status": "open \u2014 branch: repo-assist/test-expr-deparse-remaining-ops-20260624"
-    },
-    "107": {
-      "title": "debugger: remove duplicate find_breakpoint_by_id forward declaration",
-      "status": "open \u2014 confirmed real PR; branch: repo-assist/improve-debugger-remove-dup-decl-20260625"
-    },
-    "TBD-disasm-buf-len": {
-      "title": "debugger: replace magic number 40 with DISASM_BUF_LEN constant",
-      "status": "created this run 2026-06-26 \u2014 branch: repo-assist/improve-disasm-buf-len-constant-20260626; PR number TBD"
     }
   },
-  "checked_off_by_maintainer": [],
-  "fix_attempts": {},
-  "notes": "Run 28222920642 (2026-06-26): Task 6 \u2014 audited 17 open Repo Assist PRs; no merge conflicts; CI shows action_required (needs maintainer approval to run); PR #107 confirmed real; PR #108 NEVER created (branch never pushed \u2014 memory was wrong). Task 5 \u2014 created PR (TBD number) for DISASM_BUF_LEN constant in disassemble.c: 50 buffer-size literals replaced with named constant, no functional change. Next run: confirm DISASM_BUF_LEN PR number; attempt PR #108 (libspectrum GitHub URL change) in a Task 4 run; consider CB BIT/RES/SET deparse/eval tests or DDCB/FDCB coverage once earlier test PRs merge."
+  "notes": "PR #54 still open (superseded by #95 applied). Open PRs: #99 #100 #104 #105 #106 aw_pr_tape aw_pr_disp. Monthly activity: #71. Next: CB deparse/eval tests or Task4 #108 libspectrum URL."
 }
