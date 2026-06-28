@@ -75,7 +75,7 @@ static int sound_channels;
 static unsigned int ay_tone_levels[AY_ENV_STEPS];
 
 static unsigned int ay_tone_tick[AY_CHANNELS], ay_tone_high[AY_CHANNELS], ay_noise_tick;
-static unsigned int ay_tone_cycles, ay_env_cycles;
+static unsigned int ay_tone_cycles;
 static unsigned int ay_env_internal_tick, ay_env_tick;
 static unsigned int ay_tone_period[AY_CHANNELS], ay_noise_period, ay_env_period;
 
@@ -179,7 +179,7 @@ sound_ay_init( void )
 
   ay_noise_tick = ay_noise_period = 0;
   ay_env_internal_tick = ay_env_tick = ay_env_period = 0;
-  ay_tone_cycles = ay_env_cycles = 0;
+  ay_tone_cycles = 0;
   for( f = 0; f < AY_CHANNELS; f++ )
     ay_tone_tick[f] = ay_tone_high[f] = 0, ay_tone_period[f] = 1;
 
@@ -457,7 +457,7 @@ sound_ay_overlay( void )
   int reg, r, ch_vol;
   int chan1, chan2, chan3;
   int last_chan1 = 0, last_chan2 = 0, last_chan3 = 0;
-  unsigned int tone_count, noise_count;
+  unsigned int tone_count;
 
   /* If no AY chip, don't produce any AY sound (!) */
   if( !( periph_is_active( PERIPH_TYPE_FULLER) ||
@@ -498,7 +498,7 @@ sound_ay_overlay( void )
           sound_ay_registers[11] | ( sound_ay_registers[12] << 8 );
         break;
       case 13:
-        ay_env_internal_tick = ay_env_tick = ay_env_cycles = 0;
+        ay_env_internal_tick = ay_env_tick = 0;
         env_first = 1;
         env_rev = 0;
         env_counter = ( sound_ay_registers[13] & AY_ENV_ATTACK ) ? 0 : AY_ENV_STEPS - 1;
@@ -517,55 +517,49 @@ sound_ay_overlay( void )
     }
 
     /* envelope output counter gets incr'd every 16 AY cycles. */
-    ay_env_cycles += AY_CLOCK_DIVISOR;
-    noise_count = 0;
-    while( ay_env_cycles >= AY_CLOCK_DIVISOR ) {
-      ay_env_cycles -= AY_CLOCK_DIVISOR;
-      noise_count++;
-      ay_env_tick++;
-      while( ay_env_tick >= ay_env_period ) {
-        ay_env_tick -= ay_env_period;
+    ay_env_tick++;
+    while( ay_env_tick >= ay_env_period ) {
+      ay_env_tick -= ay_env_period;
 
-        /* do a 1/16th-of-period incr/decr if needed */
-        if( env_first ||
-            ( ( envshape & AY_ENV_CONT ) && !( envshape & AY_ENV_HOLD ) ) ) {
-          if( env_rev )
-            env_counter -= ( envshape & AY_ENV_ATTACK ) ? 1 : -1;
-          else
-            env_counter += ( envshape & AY_ENV_ATTACK ) ? 1 : -1;
-          if( env_counter < 0 )
-            env_counter = 0;
-          if( env_counter > AY_ENV_STEPS - 1 )
-            env_counter = AY_ENV_STEPS - 1;
-        }
-
-        ay_env_internal_tick++;
-        while( ay_env_internal_tick >= AY_ENV_STEPS ) {
-          ay_env_internal_tick -= AY_ENV_STEPS;
-
-          /* end of cycle */
-          if( !( envshape & AY_ENV_CONT ) )
-            env_counter = 0;
-          else {
-            if( envshape & AY_ENV_HOLD ) {
-              if( env_first && ( envshape & AY_ENV_ALT ) )
-                env_counter = ( env_counter ? 0 : AY_ENV_STEPS - 1 );
-            } else {
-              /* non-hold */
-              if( envshape & AY_ENV_ALT )
-                env_rev = !env_rev;
-              else
-                env_counter = ( envshape & AY_ENV_ATTACK ) ? 0 : AY_ENV_STEPS - 1;
-            }
-          }
-
-          env_first = 0;
-        }
-
-        /* don't keep trying if period is zero */
-        if( !ay_env_period )
-          break;
+      /* do a 1/16th-of-period incr/decr if needed */
+      if( env_first ||
+          ( ( envshape & AY_ENV_CONT ) && !( envshape & AY_ENV_HOLD ) ) ) {
+        if( env_rev )
+          env_counter -= ( envshape & AY_ENV_ATTACK ) ? 1 : -1;
+        else
+          env_counter += ( envshape & AY_ENV_ATTACK ) ? 1 : -1;
+        if( env_counter < 0 )
+          env_counter = 0;
+        if( env_counter > AY_ENV_STEPS - 1 )
+          env_counter = AY_ENV_STEPS - 1;
       }
+
+      ay_env_internal_tick++;
+      while( ay_env_internal_tick >= AY_ENV_STEPS ) {
+        ay_env_internal_tick -= AY_ENV_STEPS;
+
+        /* end of cycle */
+        if( !( envshape & AY_ENV_CONT ) )
+          env_counter = 0;
+        else {
+          if( envshape & AY_ENV_HOLD ) {
+            if( env_first && ( envshape & AY_ENV_ALT ) )
+              env_counter = ( env_counter ? 0 : AY_ENV_STEPS - 1 );
+          } else {
+            /* non-hold */
+            if( envshape & AY_ENV_ALT )
+              env_rev = !env_rev;
+            else
+              env_counter = ( envshape & AY_ENV_ATTACK ) ? 0 : AY_ENV_STEPS - 1;
+          }
+        }
+
+        env_first = 0;
+      }
+
+      /* don't keep trying if period is zero */
+      if( !ay_env_period )
+        break;
     }
 
     /* generate tone+noise... or neither.
@@ -620,7 +614,7 @@ sound_ay_overlay( void )
     }
 
     /* update noise RNG/filter */
-    ay_noise_tick += noise_count;
+    ay_noise_tick++;
     while( ay_noise_tick >= ay_noise_period ) {
       ay_noise_tick -= ay_noise_period;
 
@@ -672,7 +666,7 @@ sound_ay_reset( void )
     sound_ay_write( f, 0, 0 );
   for( f = 0; f < AY_CHANNELS; f++ )
     ay_tone_high[f] = 0;
-  ay_tone_cycles = ay_env_cycles = 0;
+  ay_tone_cycles = 0;
 }
 
 /*
