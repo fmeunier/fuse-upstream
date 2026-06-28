@@ -1,23 +1,32 @@
 {
-  "last_run": "2026-06-27T13:14:00Z",
-  "last_run_id": "28289856691",
+  "last_run": "2026-06-28",
   "monthly_activity_issue": 71,
+  "backlog_cursor": {
+    "issues": 0,
+    "prs": 0
+  },
   "comments_made": {},
-  "open_repo_assist_prs": [99, 100, 104, 105, 106, "aw_pr_deparse", "aw_pr_cache"],
-  "checked_off_by_maintainer": [46, 54, 60, 80, 94, 95, 96, 97, 98, 101, 102, 103, 107, 109, "aw_pr_tape", "aw_pr_disp"],
+  "checked_off_by_maintainer": [
+    46, 54, 60, 80,
+    94, 95, 96, 97, 98,
+    101, 102, 103, 107, 109,
+    "aw_pr_tape", "aw_pr_disp",
+    "aw_pr_deparse", "aw_pr_cache"
+  ],
+  "open_repo_assist_prs": [99, 100, 104, 105, 106, "aw_ula_const", "aw_ay_perf"],
   "fix_attempts": {
-    "aw_pr_deparse": {
-      "desc": "debugger: fix decimal deparse of libspectrum_dword values > INT_MAX (%d -> %u)",
-      "date": "2026-06-27",
+    "aw_ula_const": {
+      "desc": "peripherals/ula: replace magic bit masks with named constants",
+      "date": "2026-06-28",
       "status": "open",
-      "branch": "repo-assist/fix-expr-deparse-decimal-base-20260627"
+      "branch": "repo-assist/improve-ula-port-constants-20260628"
     },
-    "aw_pr_cache": {
-      "desc": "ci: cache libspectrum Linux and macOS builds to speed up CI",
-      "date": "2026-06-27",
+    "aw_ay_perf": {
+      "desc": "sound: remove redundant ay_env_cycles tracking in AY renderer",
+      "date": "2026-06-28",
       "status": "open",
-      "branch": "repo-assist/eng-cache-libspectrum-linux-20260627"
+      "branch": "repo-assist/perf-ay-env-cycles-20260628"
     }
   },
-  "notes": "Open PRs: #99 #100 #104 #105 #106 aw_pr_deparse aw_pr_cache. PR #105 needs rebase: test255-260 conflicts with master test255-277 (LD r,(IX/IY+d) from PR #98). Monthly activity: #71. Future: libspectrum GitHub URL change (#108 idea), CB BIT/RES/SET deparse tests."
+  "notes": "PR #105 likely needs rebase (test 255-260 conflict with master 255-277 from PR #98). PRs #99,#100,#104,#105,#106 on old master base 327cdcb3. Two new PRs created this run (aw_ula_const + aw_ay_perf) — numbers TBD."
 }
