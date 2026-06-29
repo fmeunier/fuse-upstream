@@ -1,5 +1,6 @@
 {
-  "last_run": "2026-06-28",
+  "last_run": "2026-06-29",
+  "last_run_id": "28355521712",
   "monthly_activity_issue": 71,
   "backlog_cursor": {
     "issues": 0,
@@ -11,22 +12,17 @@
     94, 95, 96, 97, 98,
     101, 102, 103, 107, 109,
     "aw_pr_tape", "aw_pr_disp",
-    "aw_pr_deparse", "aw_pr_cache"
+    "aw_pr_deparse", "aw_pr_cache",
+    "aw_ula_const"
   ],
-  "open_repo_assist_prs": [99, 100, 104, 105, 106, "aw_ula_const", "aw_ay_perf"],
+  "open_repo_assist_prs": [99, 100, 104, 105, 106, 114],
   "fix_attempts": {
-    "aw_ula_const": {
-      "desc": "peripherals/ula: replace magic bit masks with named constants",
-      "date": "2026-06-28",
-      "status": "open",
-      "branch": "repo-assist/improve-ula-port-constants-20260628"
-    },
-    "aw_ay_perf": {
+    "pr114": {
       "desc": "sound: remove redundant ay_env_cycles tracking in AY renderer",
       "date": "2026-06-28",
       "status": "open",
-      "branch": "repo-assist/perf-ay-env-cycles-20260628"
+      "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef"
     }
   },
-  "notes": "PR #105 likely needs rebase (test 255-260 conflict with master 255-277 from PR #98). PRs #99,#100,#104,#105,#106 on old master base 327cdcb3. Two new PRs created this run (aw_ula_const + aw_ay_perf) — numbers TBD."
+  "notes": "Run 28355521712 (2026-06-29): Task 6 done. Rebased PRs #99/#100/#105/#106 onto master 22791234 — all conflict-free, all tests pass. PR #105 tests renumbered 255-260 → 278-283 (master took those numbers for LD r,IX/IY+d tests via commit 04c03b23). PR #104 rebased locally but NOT pushed (4 push slot limit hit) — push next run. Task 2 had no user issues to engage with (only automated [aw] issues open). Next run: push PR #104 first."
 }
