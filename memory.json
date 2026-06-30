@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-06-29",
-  "last_run_id": "28355521712",
+  "last_run": "2026-06-30",
+  "last_run_id": "28426701930",
   "monthly_activity_issue": 71,
   "backlog_cursor": {
     "issues": 0,
@@ -10,12 +10,13 @@
   "checked_off_by_maintainer": [
     46, 54, 60, 80,
     94, 95, 96, 97, 98,
+    100,
     101, 102, 103, 107, 109,
     "aw_pr_tape", "aw_pr_disp",
     "aw_pr_deparse", "aw_pr_cache",
     "aw_ula_const"
   ],
-  "open_repo_assist_prs": [99, 100, 104, 105, 106, 114],
+  "open_repo_assist_prs": [99, 104, 105, 106, 114],
   "fix_attempts": {
     "pr114": {
       "desc": "sound: remove redundant ay_env_cycles tracking in AY renderer",
@@ -24,5 +25,12 @@
       "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef"
     }
   },
-  "notes": "Run 28355521712 (2026-06-29): Task 6 done. Rebased PRs #99/#100/#105/#106 onto master 22791234 — all conflict-free, all tests pass. PR #105 tests renumbered 255-260 → 278-283 (master took those numbers for LD r,IX/IY+d tests via commit 04c03b23). PR #104 rebased locally but NOT pushed (4 push slot limit hit) — push next run. Task 2 had no user issues to engage with (only automated [aw] issues open). Next run: push PR #104 first."
+  "new_pr_this_run": {
+    "desc": "debugger: add CB prefix rotation/shift tests for registers C, D, E, H, L",
+    "date": "2026-06-30",
+    "branch": "repo-assist/test-disasm-cb-rotations-c-d-e-h-l-20260630",
+    "tests": "test296-test307 (12 tests)",
+    "status": "submitted"
+  },
+  "notes": "Run 28426701930 (2026-06-30): Task 9 — created CB rotations C/D/E/H/L PR (test296-307); make check passed. Task 2 — no user issues (all 7 open issues are automated). PR #100 merged as 4b036d76 (CB rotate/shift A+(HL)). PRs #99/#104/#105/#106 still open and need rebase onto 4b036d76. Next run: Task 6 — push PR #104 and rebase all open PRs onto 4b036d76."
 }
