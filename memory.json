@@ -1,36 +1,25 @@
 {
-  "last_run": "2026-06-30",
-  "last_run_id": "28426701930",
+  "last_run": "2026-07-01",
+  "last_run_id": "28500530147",
   "monthly_activity_issue": 71,
-  "backlog_cursor": {
-    "issues": 0,
-    "prs": 0
-  },
-  "comments_made": {},
-  "checked_off_by_maintainer": [
-    46, 54, 60, 80,
-    94, 95, 96, 97, 98,
-    100,
-    101, 102, 103, 107, 109,
-    "aw_pr_tape", "aw_pr_disp",
-    "aw_pr_deparse", "aw_pr_cache",
-    "aw_ula_const"
+  "open_repo_assist_prs": [99, 114],
+  "pending_pr_branches": [
+    "repo-assist/test-disasm-cb-rotations-d-e-h-l-20260701",
+    "repo-assist/test-expression-deparse-dereference-20260701"
   ],
-  "open_repo_assist_prs": [99, 104, 105, 106, 114],
-  "fix_attempts": {
-    "pr114": {
-      "desc": "sound: remove redundant ay_env_cycles tracking in AY renderer",
-      "date": "2026-06-28",
-      "status": "open",
-      "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef"
-    }
+  "comments_made": {
+    "issues": [],
+    "prs": []
   },
-  "new_pr_this_run": {
-    "desc": "debugger: add CB prefix rotation/shift tests for registers C, D, E, H, L",
-    "date": "2026-06-30",
-    "branch": "repo-assist/test-disasm-cb-rotations-c-d-e-h-l-20260630",
-    "tests": "test296-test307 (12 tests)",
-    "status": "submitted"
+  "backlog_cursor": {
+    "task1": null,
+    "task2": null
   },
-  "notes": "Run 28426701930 (2026-06-30): Task 9 — created CB rotations C/D/E/H/L PR (test296-307); make check passed. Task 2 — no user issues (all 7 open issues are automated). PR #100 merged as 4b036d76 (CB rotate/shift A+(HL)). PRs #99/#104/#105/#106 still open and need rebase onto 4b036d76. Next run: Task 6 — push PR #104 and rebase all open PRs onto 4b036d76."
+  "notes": "PR #99 (display constants) needs rebase onto master — do Task 6 next run. Maintainer applies PRs directly to master (no GitHub merge button used). CB rotation/shift deparse coverage for D/E/H/L now complete pending new PR. DEBUGGER_TOKEN_DEREFERENCE deparse now covered pending new PR. After those two PRs land, consider expression evaluator variable/system-variable tests or breakpoint integration tests.",
+  "fix_attempts": [],
+  "checked_off_by_maintainer": [104, 105, 106, "cb-rotations-c-d-e-h-l-jun30"],
+  "engineering_checks": {
+    "ci_checked": "2026-06-17",
+    "deps_checked": "2026-06-13"
+  }
 }
