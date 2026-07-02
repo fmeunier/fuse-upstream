@@ -1,11 +1,10 @@
 {
-  "last_run": "2026-07-01",
-  "last_run_id": "28500530147",
-  "monthly_activity_issue": 71,
-  "open_repo_assist_prs": [99, 114],
+  "last_run": "2026-07-02",
+  "last_run_id": "28571498555",
+  "monthly_activity_issue": "aw_july2026",
+  "open_repo_assist_prs": [99, 114, "pending-variable-expr-20260702"],
   "pending_pr_branches": [
-    "repo-assist/test-disasm-cb-rotations-d-e-h-l-20260701",
-    "repo-assist/test-expression-deparse-dereference-20260701"
+    "repo-assist/test-expression-variable-20260702"
   ],
   "comments_made": {
     "issues": [],
@@ -15,7 +14,7 @@
     "task1": null,
     "task2": null
   },
-  "notes": "PR #99 (display constants) needs rebase onto master — do Task 6 next run. Maintainer applies PRs directly to master (no GitHub merge button used). CB rotation/shift deparse coverage for D/E/H/L now complete pending new PR. DEBUGGER_TOKEN_DEREFERENCE deparse now covered pending new PR. After those two PRs land, consider expression evaluator variable/system-variable tests or breakpoint integration tests.",
+  "notes": "PR #99 (display constants) still needs rebase onto master — very stale (master at 45588eb3, PR based on 327cdcb3). PR #114 (sound AY cleanup) open. New PR this run: variable expression tests (DEBUGGER_EXPRESSION_TYPE_VARIABLE deparse + eval). July 2026 monthly activity issue created (temp id aw_july2026, need to confirm number). After open PRs land, consider: expression system-variable tests, breakpoint integration tests, or disassembler coverage gaps.",
   "fix_attempts": [],
   "checked_off_by_maintainer": [104, 105, 106, "cb-rotations-c-d-e-h-l-jun30"],
   "engineering_checks": {
