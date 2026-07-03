@@ -1,24 +1,54 @@
 {
-  "last_run": "2026-07-02",
-  "last_run_id": "28571498555",
-  "monthly_activity_issue": "aw_july2026",
-  "open_repo_assist_prs": [99, 114, "pending-variable-expr-20260702"],
-  "pending_pr_branches": [
-    "repo-assist/test-expression-variable-20260702"
+  "last_run": "2026-07-03",
+  "last_run_id": "28649031056",
+  "monthly_activity_issue": 124,
+  "monthly_activity_month": "2026-07",
+  "open_prs": [
+    {
+      "number": 99,
+      "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
+      "branch": "repo-assist/improve-display-layout-constants-20260618-...",
+      "status": "open",
+      "needs_rebase": true
+    },
+    {
+      "number": 114,
+      "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
+      "branch": "repo-assist/improve-ay-env-cycles-20260701",
+      "status": "open-draft"
+    },
+    {
+      "title": "debugger: add const to expression evaluate/copy functions",
+      "branch": "repo-assist/improve-expr-const-correctness-20260703",
+      "status": "pr-created-this-run",
+      "run_id": "28649031056"
+    },
+    {
+      "title": "debugger/expression: add copy() tests and deparse-rshift-non-assoc test",
+      "branch": "repo-assist/test-expression-copy-20260703",
+      "status": "pr-created-this-run",
+      "run_id": "28649031056"
+    }
   ],
-  "comments_made": {
-    "issues": [],
-    "prs": []
-  },
+  "merged_prs": [
+    {
+      "title": "debugger: add unit tests for user-defined variable expressions",
+      "branch": "repo-assist/test-expression-variable-20260702",
+      "merge_commit": "d9e23429",
+      "merged_at": "2026-07-02"
+    },
+    {
+      "title": "z80: replace magic R-register constants",
+      "pr_number": 101,
+      "merge_commit": "8360df4a",
+      "merged_at": "~2026-07-01"
+    }
+  ],
+  "comments_made": {},
+  "checked_off_by_user": [],
   "backlog_cursor": {
-    "task1": null,
-    "task2": null
+    "issues": 0,
+    "prs": 0
   },
-  "notes": "PR #99 (display constants) still needs rebase onto master — very stale (master at 45588eb3, PR based on 327cdcb3). PR #114 (sound AY cleanup) open. New PR this run: variable expression tests (DEBUGGER_EXPRESSION_TYPE_VARIABLE deparse + eval). July 2026 monthly activity issue created (temp id aw_july2026, need to confirm number). After open PRs land, consider: expression system-variable tests, breakpoint integration tests, or disassembler coverage gaps.",
-  "fix_attempts": [],
-  "checked_off_by_maintainer": [104, 105, 106, "cb-rotations-c-d-e-h-l-jun30"],
-  "engineering_checks": {
-    "ci_checked": "2026-06-17",
-    "deps_checked": "2026-06-13"
-  }
+  "notes": "PR #99 needs rebase onto current master. PR #114 is a draft. Two new PRs created this run (const-correctness and copy-tests). Monthly activity issue is #124."
 }
