@@ -1,47 +1,47 @@
 {
-  "last_run": "2026-07-03",
-  "last_run_id": "28649031056",
+  "last_run": "2026-07-04",
+  "last_run_id": "28700198217",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
     {
       "number": 99,
       "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
-      "branch": "repo-assist/improve-display-layout-constants-20260618-...",
+      "branch": "repo-assist/improve-display-layout-constants-20260618-d7448ea11491e4f4",
       "status": "open",
-      "needs_rebase": true
+      "needs_rebase": false,
+      "note": "Rebased onto master this run (2026-07-04)"
     },
     {
       "number": 114,
       "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
-      "branch": "repo-assist/improve-ay-env-cycles-20260701",
+      "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
       "status": "open-draft"
     },
     {
-      "title": "debugger: add const to expression evaluate/copy functions",
-      "branch": "repo-assist/improve-expr-const-correctness-20260703",
+      "title": "debugger: add unit tests for DEBUGGER_EXPRESSION_TYPE_SYSVAR expressions",
+      "branch": "repo-assist/improve-sysvar-tests",
       "status": "pr-created-this-run",
-      "run_id": "28649031056"
-    },
-    {
-      "title": "debugger/expression: add copy() tests and deparse-rshift-non-assoc test",
-      "branch": "repo-assist/test-expression-copy-20260703",
-      "status": "pr-created-this-run",
-      "run_id": "28649031056"
+      "run_id": "28700198217"
     }
   ],
   "merged_prs": [
     {
-      "title": "debugger: add unit tests for user-defined variable expressions",
-      "branch": "repo-assist/test-expression-variable-20260702",
-      "merge_commit": "d9e23429",
-      "merged_at": "2026-07-02"
+      "number": 126,
+      "title": "debugger: add const to expression evaluate/copy functions",
+      "merge_commit": "34343e0a",
+      "merged_at": "~2026-07-03"
     },
     {
-      "title": "z80: replace magic R-register constants",
-      "pr_number": 101,
-      "merge_commit": "8360df4a",
-      "merged_at": "~2026-07-01"
+      "number": 125,
+      "title": "debugger/expression: add copy() tests and deparse-rshift-non-assoc test",
+      "merge_commit": "c39ee383",
+      "merged_at": "~2026-07-03"
+    },
+    {
+      "title": "debugger: add unit tests for user-defined variable expressions",
+      "merge_commit": "d9e23429",
+      "merged_at": "2026-07-02"
     }
   ],
   "comments_made": {},
@@ -50,5 +50,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "PR #99 needs rebase onto current master. PR #114 is a draft. Two new PRs created this run (const-correctness and copy-tests). Monthly activity issue is #124."
+  "notes": "PR #99 rebased onto master this run. PR #114 is still a draft. New sysvar tests PR created this run."
 }
