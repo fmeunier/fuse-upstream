@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-04",
-  "last_run_id": "28700198217",
+  "last_run": "2026-07-06",
+  "last_run_id": "28782655556",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -8,9 +8,7 @@
       "number": 99,
       "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
       "branch": "repo-assist/improve-display-layout-constants-20260618-d7448ea11491e4f4",
-      "status": "open",
-      "needs_rebase": false,
-      "note": "Rebased onto master this run (2026-07-04)"
+      "status": "open"
     },
     {
       "number": 114,
@@ -19,10 +17,22 @@
       "status": "open-draft"
     },
     {
-      "title": "debugger: add unit tests for DEBUGGER_EXPRESSION_TYPE_SYSVAR expressions",
+      "number": 128,
+      "title": "Add unit tests for DEBUGGER_EXPRESSION_TYPE_SYSVAR expressions",
       "branch": "repo-assist/improve-sysvar-tests",
+      "status": "open-draft"
+    },
+    {
+      "title": "ci: replace |& with 2>&1 | and drop brew install bash on macOS",
+      "branch": "repo-assist/eng-posix-configure-redirect-20260706",
       "status": "pr-created-this-run",
-      "run_id": "28700198217"
+      "run_id": "28782655556"
+    },
+    {
+      "title": "unittests: add scaler_for_size unit tests",
+      "branch": "repo-assist/test-scaler-for-size-20260706",
+      "status": "pr-created-this-run",
+      "run_id": "28782655556"
     }
   ],
   "merged_prs": [
@@ -39,6 +49,7 @@
       "merged_at": "~2026-07-03"
     },
     {
+      "number": 123,
       "title": "debugger: add unit tests for user-defined variable expressions",
       "merge_commit": "d9e23429",
       "merged_at": "2026-07-02"
@@ -50,5 +61,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "PR #99 rebased onto master this run. PR #114 is still a draft. New sysvar tests PR created this run."
+  "notes": "Two new PRs created this run: CI POSIX fix (drop brew install bash) and scaler_for_size unit tests. PR #128 (sysvar tests) was merged as 01c7fd7b. PRs #99 and #114 still open."
 }
