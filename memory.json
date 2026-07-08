@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-07",
-  "last_run_id": "28854089875",
+  "last_run": "2026-07-08",
+  "last_run_id": "28927142538",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -23,16 +23,28 @@
       "status": "open-draft"
     },
     {
+      "number": 132,
       "title": "svg: fix off-by-one in svg_startcapture allocation",
-      "branch": "repo-assist/fix-svg-startcapture-alloc-20260707",
-      "status": "pr-created-this-run",
-      "run_id": "28854089875"
+      "branch": "repo-assist/fix-svg-startcapture-alloc-20260707-25538f2e79b9a2e5",
+      "status": "open-draft"
     },
     {
+      "number": 133,
       "title": "debugger/expression: add comparison non-associativity deparse tests",
-      "branch": "repo-assist/test-expr-comparison-non-assoc-20260707",
+      "branch": "repo-assist/test-expr-comparison-non-assoc-20260707-b07ad6b559a6895c",
+      "status": "open-draft"
+    },
+    {
+      "title": "sound: remove redundant ay_tone_cycles accumulator",
+      "branch": "repo-assist/perf-ay-tone-cycles-20260708",
       "status": "pr-created-this-run",
-      "run_id": "28854089875"
+      "run_id": "28927142538"
+    },
+    {
+      "title": "display: eliminate redundant attr lookup in display_write_if_dirty_timex",
+      "branch": "repo-assist/improve-display-timex-attr-20260708",
+      "status": "pr-created-this-run",
+      "run_id": "28927142538"
     }
   ],
   "merged_prs": [
@@ -75,5 +87,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "This run: svg.c off-by-one bug fix PR (strlen without +1 in svg_startcapture) and comparison non-associativity deparse tests PR. PR #128 (sysvar tests) was closed by maintainer who added tests themselves. PRs #99 and #114 still open. PR #131 (scaler tests) still open. Issue #130 (CI POSIX fix) needs manual PR creation."
+  "notes": "Run 28927142538: Task 8 PR (sound: remove redundant ay_tone_cycles accumulator; conflicts with #114 on lines 78/182/675) and Task 5 PR (display: eliminate redundant attr lookup in display_write_if_dirty_timex; removes display_get_attr wrapper). Previous run PRs confirmed as #132 (svg fix) and #133 (comparison deparse). Issue #130 (CI POSIX fix) needs manual PR creation. PR #99 and #114 still open."
 }
