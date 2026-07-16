@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-09",
-  "last_run_id": "29006390264",
+  "last_run": "2026-07-16",
+  "last_run_id": "29489371416",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -14,46 +14,55 @@
       "number": 114,
       "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
       "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
+      "status": "open-draft",
+      "note": "Old base (f1d91eb), may have merge conflicts with recent sound.c changes"
+    },
+    {
+      "number": 135,
+      "title": "sound: remove redundant ay_tone_cycles accumulator",
+      "branch": "repo-assist/perf-ay-tone-cycles-20260708",
       "status": "open-draft"
     },
     {
-      "number": 131,
-      "title": "unittests: add scaler_for_size unit tests",
-      "branch": "repo-assist/test-scaler-for-size-20260706-d66d695fb5be9af8",
-      "status": "open-draft"
+      "title": "sound: replace AY noise RNG conditionals with branch-free bit operations",
+      "branch": "repo-assist/perf-ay-noise-branchfree-20260716",
+      "status": "pr-created-this-run",
+      "run_id": "29489371416"
     },
     {
-      "number": 132,
-      "title": "svg: fix off-by-one in svg_startcapture allocation",
-      "branch": "repo-assist/fix-svg-startcapture-alloc-20260707-25538f2e79b9a2e5",
-      "status": "open-draft"
+      "title": "display: replace attribute dirty-tracking lookup tables with arithmetic",
+      "branch": "repo-assist/eng-display-attr-table-removal-20260716",
+      "status": "pr-created-this-run",
+      "run_id": "29489371416"
+    }
+  ],
+  "closed_prs": [
+    {
+      "number": 136,
+      "title": "hacking: update unittests.txt to reflect current test suite",
+      "status": "closed-not-merged",
+      "note": "Closed by maintainer without merge"
+    },
+    {
+      "number": 134,
+      "title": "display: eliminate redundant attr lookup in display_write_if_dirty_timex",
+      "status": "merged"
     },
     {
       "number": 133,
       "title": "debugger/expression: add comparison non-associativity deparse tests",
-      "branch": "repo-assist/test-expr-comparison-non-assoc-20260707-b07ad6b559a6895c",
-      "status": "open-draft"
+      "status": "merged"
     },
     {
-      "title": "sound: remove redundant ay_tone_cycles accumulator",
-      "branch": "repo-assist/perf-ay-tone-cycles-20260708",
-      "status": "open-draft",
-      "number": 135
+      "number": 132,
+      "title": "svg: fix off-by-one in svg_startcapture allocation",
+      "status": "merged"
     },
     {
-      "title": "display: eliminate redundant attr lookup in display_write_if_dirty_timex",
-      "branch": "repo-assist/improve-display-timex-attr-20260708",
-      "status": "open-draft",
-      "number": 134
+      "number": 131,
+      "title": "unittests: add scaler_for_size unit tests",
+      "status": "merged"
     },
-    {
-      "title": "hacking: update unittests.txt to reflect current test suite",
-      "branch": "repo-assist/eng-unittests-docs-20260709",
-      "status": "pr-created-this-run",
-      "run_id": "29006390264"
-    }
-  ],
-  "merged_prs": [
     {
       "number": 128,
       "title": "Add unit tests for DEBUGGER_EXPRESSION_TYPE_SYSVAR expressions",
@@ -93,5 +102,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Run 29006390264: Task 4 \u2014 updated hacking/unittests.txt to document all 7 test steps that make check runs (was outdated, only mentioned fuse --unittests). Task 1: 0 unlabelled issues, nothing to do. Confirmed PR #134 (display timex attr) and #135 (sound ay_tone_cycles). PR #99 and #114 still open with stale bases (verified clean rebase, but push_to_pull_request_branch is append-only, can't force-push). Issue #130 (CI POSIX fix) still needs manual PR."
+  "notes": "Run 29489371416 (Task 4+8): Created two new PRs — sound AY noise RNG branch-free optimization (perf-ay-noise-branchfree-20260716) and display attribute dirty-table removal (eng-display-attr-table-removal-20260716). Both builds and tests passed. PR #99 and #114 still open; PR #114 has old base and may have merge conflicts. Issue #130 (CI POSIX fix) still needs manual PR. PR #136 (unittests.txt docs) was closed without merge by maintainer."
 }
