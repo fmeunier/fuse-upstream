@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-16",
-  "last_run_id": "29489371416",
+  "last_run": "2026-07-17",
+  "last_run_id": "29564129265",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -26,14 +26,20 @@
     {
       "title": "sound: replace AY noise RNG conditionals with branch-free bit operations",
       "branch": "repo-assist/perf-ay-noise-branchfree-20260716",
-      "status": "pr-created-this-run",
-      "run_id": "29489371416"
+      "status": "open-draft",
+      "number": 138
     },
     {
       "title": "display: replace attribute dirty-tracking lookup tables with arithmetic",
       "branch": "repo-assist/eng-display-attr-table-removal-20260716",
+      "status": "open-draft",
+      "number": 139
+    },
+    {
+      "title": "debugger: add const to event/sysvar helper functions and deparse tests for logical operator precedence",
+      "branch": "repo-assist/improve-const-event-sysvar-lookups-20260717",
       "status": "pr-created-this-run",
-      "run_id": "29489371416"
+      "run_id": "29564129265"
     }
   ],
   "closed_prs": [
@@ -102,5 +108,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Run 29489371416 (Task 4+8): Created two new PRs — sound AY noise RNG branch-free optimization (perf-ay-noise-branchfree-20260716) and display attribute dirty-table removal (eng-display-attr-table-removal-20260716). Both builds and tests passed. PR #99 and #114 still open; PR #114 has old base and may have merge conflicts. Issue #130 (CI POSIX fix) still needs manual PR. PR #136 (unittests.txt docs) was closed without merge by maintainer."
+  "notes": "Run 29564129265 (Task 5+9): const improvements to event_matches/system_variable_matches (avoid struct copies); 5 new deparse tests for logical AND/OR precedence interactions. PRs #99,#114,#135,#138,#139 still open. Issue #130 (CI POSIX fix) still needs manual PR."
 }
