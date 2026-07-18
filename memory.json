@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-17",
-  "last_run_id": "29564129265",
+  "last_run": "2026-07-18",
+  "last_run_id": "29635555185",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -24,30 +24,35 @@
       "status": "open-draft"
     },
     {
-      "title": "sound: replace AY noise RNG conditionals with branch-free bit operations",
-      "branch": "repo-assist/perf-ay-noise-branchfree-20260716",
+      "title": "sound: fix use-after-free in SDL audio device setup",
+      "branch": "repo-assist/fix-sdlsound-putenv-use-after-free",
       "status": "open-draft",
-      "number": 138
-    },
-    {
-      "title": "display: replace attribute dirty-tracking lookup tables with arithmetic",
-      "branch": "repo-assist/eng-display-attr-table-removal-20260716",
-      "status": "open-draft",
-      "number": 139
-    },
-    {
-      "title": "debugger: add const to event/sysvar helper functions and deparse tests for logical operator precedence",
-      "branch": "repo-assist/improve-const-event-sysvar-lookups-20260717",
-      "status": "pr-created-this-run",
-      "run_id": "29564129265"
+      "note": "putenv/free bug in sound/sdlsound.c; POSIX use-after-free fix"
     }
   ],
   "closed_prs": [
     {
+      "number": 140,
+      "title": "debugger: add const to event/sysvar helpers and deparse tests",
+      "status": "closed-not-merged",
+      "note": "Maintainer applied changes directly to master (2124326d)"
+    },
+    {
+      "number": 139,
+      "title": "display: replace attribute dirty-tracking lookup tables with arithmetic",
+      "status": "closed-not-merged",
+      "note": "Maintainer applied changes directly to master (20446e73)"
+    },
+    {
+      "number": 138,
+      "title": "sound: replace AY noise RNG conditionals with branch-free bit operations",
+      "status": "closed-not-merged",
+      "note": "Maintainer applied changes directly to master (96f55df1)"
+    },
+    {
       "number": 136,
       "title": "hacking: update unittests.txt to reflect current test suite",
-      "status": "closed-not-merged",
-      "note": "Closed by maintainer without merge"
+      "status": "closed-not-merged"
     },
     {
       "number": 134,
@@ -70,28 +75,9 @@
       "status": "merged"
     },
     {
-      "number": 128,
-      "title": "Add unit tests for DEBUGGER_EXPRESSION_TYPE_SYSVAR expressions",
-      "status": "closed",
-      "note": "Maintainer closed after adding equivalent tests directly to master (01c7fd7b)"
-    },
-    {
       "number": 126,
       "title": "debugger: add const to expression evaluate/copy functions",
-      "merge_commit": "34343e0a",
-      "merged_at": "~2026-07-03"
-    },
-    {
-      "number": 125,
-      "title": "debugger/expression: add copy() tests and deparse-rshift-non-assoc test",
-      "merge_commit": "c39ee383",
-      "merged_at": "~2026-07-03"
-    },
-    {
-      "number": 123,
-      "title": "debugger: add unit tests for user-defined variable expressions",
-      "merge_commit": "d9e23429",
-      "merged_at": "2026-07-02"
+      "status": "merged"
     }
   ],
   "issues_created": [
@@ -99,7 +85,7 @@
       "number": 130,
       "title": "ci: replace |& with 2>&1 | and drop brew install bash on macOS",
       "status": "open",
-      "note": "Was intended as PR but protected files blocked push; manual creation required"
+      "note": "Protected files block PR push; manual creation required"
     }
   ],
   "comments_made": {},
@@ -108,5 +94,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Run 29564129265 (Task 5+9): const improvements to event_matches/system_variable_matches (avoid struct copies); 5 new deparse tests for logical AND/OR precedence interactions. PRs #99,#114,#135,#138,#139 still open. Issue #130 (CI POSIX fix) still needs manual PR."
+  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. PRs #99,#114,#135 still open awaiting review. New PR this run: putenv use-after-free fix in sound/sdlsound.c. Task 2 had no real user issues to comment on."
 }
