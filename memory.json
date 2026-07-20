@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-19",
-  "last_run_id": "29678807886",
+  "last_run": "2026-07-20",
+  "last_run_id": "29728061070",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -9,14 +9,14 @@
       "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
       "branch": "repo-assist/improve-display-layout-constants-20260618-d7448ea11491e4f4",
       "status": "open-draft",
-      "note": "Rebased onto master 2026-07-19, resolved display_dirty_ytable2 conflict"
+      "note": "Rebased onto master 2026-07-20, resolved dirty64/dirty_ytable2 conflicts from arithmetic refactor"
     },
     {
       "number": 114,
       "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
       "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
       "status": "open-draft",
-      "note": "Old base (f1d91eb), no actual merge conflicts"
+      "note": "Rebased onto master (96f55df1) 2026-07-20, clean rebase"
     },
     {
       "number": 135,
@@ -32,10 +32,11 @@
       "note": "putenv/free bug in sound/sdlsound.c; POSIX use-after-free fix"
     },
     {
+      "number": 143,
       "title": "display: simplify display_all_dirty initialisation to a bitmask expression",
-      "branch": "repo-assist/improve-display-all-dirty-bitmask-20260719",
+      "branch": "repo-assist/improve-display-all-dirty-bitmask-20260719-6ae6b6682ff03f55",
       "status": "open-draft",
-      "note": "Created 2026-07-19; replaces loop with single arithmetic expression"
+      "note": "Created 2026-07-19"
     }
   ],
   "closed_prs": [
@@ -102,5 +103,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 5 PRs open. PR #99 rebased 2026-07-19. Task 2 had no real user issues to comment on."
+  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 5 PRs open. PRs #99 and #114 rebased 2026-07-20. Task 2 has no real user issues - all open issues are automation-framework tracking issues."
 }
