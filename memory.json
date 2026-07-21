@@ -1,45 +1,50 @@
 {
-  "last_run": "2026-07-20",
-  "last_run_id": "29728061070",
+  "last_run": "2026-07-21",
+  "last_run_id": "29812533399",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
-    {
-      "number": 99,
-      "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
-      "branch": "repo-assist/improve-display-layout-constants-20260618-d7448ea11491e4f4",
-      "status": "open-draft",
-      "note": "Rebased onto master 2026-07-20, resolved dirty64/dirty_ytable2 conflicts from arithmetic refactor"
-    },
     {
       "number": 114,
       "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
       "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
       "status": "open-draft",
-      "note": "Rebased onto master (96f55df1) 2026-07-20, clean rebase"
+      "note": "Rebased onto master (fc0360bd) 2026-07-21, clean rebase"
     },
     {
       "number": 135,
       "title": "sound: remove redundant ay_tone_cycles accumulator",
       "branch": "repo-assist/perf-ay-tone-cycles-20260708-6ee2f623e9b65716",
-      "status": "open-draft"
+      "status": "open-draft",
+      "note": "Rebased onto master (fc0360bd) 2026-07-21, clean rebase"
     },
     {
-      "number": 141,
-      "title": "sound: fix use-after-free in SDL audio device setup",
-      "branch": "repo-assist/fix-sdlsound-putenv-use-after-free-9950abffc88f950b",
+      "number": "TBD",
+      "title": "display: replace magic screen size literals with named constants",
+      "branch": "repo-assist/improve-display-constants-usage-20260721",
       "status": "open-draft",
-      "note": "putenv/free bug in sound/sdlsound.c; POSIX use-after-free fix"
+      "note": "Created 2026-07-21; PR number pending"
+    }
+  ],
+  "closed_prs": [
+    {
+      "number": 99,
+      "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
+      "status": "closed-not-merged",
+      "note": "Maintainer applied changes directly to master (bebefef0) 2026-07-20"
     },
     {
       "number": 143,
       "title": "display: simplify display_all_dirty initialisation to a bitmask expression",
-      "branch": "repo-assist/improve-display-all-dirty-bitmask-20260719-6ae6b6682ff03f55",
-      "status": "open-draft",
-      "note": "Created 2026-07-19"
-    }
-  ],
-  "closed_prs": [
+      "status": "closed-not-merged",
+      "note": "Maintainer applied changes directly to master (db267ab8) 2026-07-20"
+    },
+    {
+      "number": 141,
+      "title": "sound: fix use-after-free in SDL audio device setup",
+      "status": "closed-not-merged",
+      "note": "Maintainer applied changes directly to master (2faeab2d)"
+    },
     {
       "number": 140,
       "title": "debugger: add const to event/sysvar helpers and deparse tests",
@@ -93,8 +98,8 @@
     {
       "number": 130,
       "title": "ci: replace |& with 2>&1 | and drop brew install bash on macOS",
-      "status": "open",
-      "note": "Protected files block PR push; manual creation required"
+      "status": "resolved",
+      "note": "Maintainer applied fix directly to master (fc0360bd)"
     }
   ],
   "comments_made": {},
@@ -103,5 +108,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 5 PRs open. PRs #99 and #114 rebased 2026-07-20. Task 2 has no real user issues - all open issues are automation-framework tracking issues."
+  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 2 open PRs (#114, #135) + 1 new PR (display constants usage cleanup). Task 2 has no real user issues - all open issues are automation-framework tracking issues. After PRs #114 and #135 land, ay_do_tone() redundant else branch can be simplified."
 }
