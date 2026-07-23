@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-22",
-  "last_run_id": "29902256362",
+  "last_run": "2026-07-23",
+  "last_run_id": "29990023514",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -26,18 +26,32 @@
       "note": "Created 2026-07-21"
     },
     {
-      "number": "TBD",
+      "number": 149,
       "title": "compat: fix strerror( -errno ) to strerror( errno ) in relative_paths",
-      "branch": "repo-assist/fix-strerror-errno-20260722",
+      "branch": "repo-assist/fix-strerror-errno-20260722-a965a2da97bafa89",
       "status": "open-draft",
       "note": "Created 2026-07-22; fixes wrong error messages in getcwd/readlink failure paths"
     },
     {
-      "number": "TBD",
+      "number": 150,
       "title": "sound: simplify ay_do_tone() by removing redundant else branch",
-      "branch": "repo-assist/improve-ay-do-tone-20260722",
+      "branch": "repo-assist/improve-ay-do-tone-20260722-9d350cd6a5cde9f3",
       "status": "open-draft",
       "note": "Created 2026-07-22; removes dead else { *var = 0; } since *var=0 already set at top"
+    },
+    {
+      "number": "TBD",
+      "title": "unittests: extend scalerexpandtest to cover all four expander types",
+      "branch": "repo-assist/test-scaler-expanders-20260723",
+      "status": "open-draft",
+      "note": "Created 2026-07-23; Task 9 - adds tests for expand_1 (AdvMAME), expand_sai (2xSaI), expand_dotmatrix, and NTSC TV full-refresh flag"
+    },
+    {
+      "number": "TBD",
+      "title": "sound: fix strerror() calls with wrong arguments in sdlsound.c",
+      "branch": "repo-assist/fix-strerror-sdlsound-20260723",
+      "status": "open-draft",
+      "note": "Created 2026-07-23; fixes putenv/sfifo error paths showing wrong error strings"
     }
   ],
   "closed_prs": [
@@ -84,5 +98,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 5 open PRs (#114, #135, #148, strerror fix, ay_do_tone simplification). PRs #114 and #135 may need rebasing - master is at fc0360bd but their base is older. No real user issues - all open issues are automation-framework tracking issues."
+  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 7 open PRs now (#114, #135, #148, #149, #150, scaler test PR, sdlsound strerror PR). No real user issues - all open issues are automation-framework tracking issues."
 }
