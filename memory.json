@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-24",
-  "last_run_id": "30077300714",
+  "last_run": "2026-07-25",
+  "last_run_id": "30149845312",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -9,21 +9,28 @@
       "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
       "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
       "status": "open-draft",
-      "note": "Rebased onto master (33a3869f) 2026-07-24, clean rebase"
+      "note": "38 commits behind master as of 2026-07-25; clean rebase possible"
     },
     {
       "number": 135,
       "title": "sound: remove redundant ay_tone_cycles accumulator",
       "branch": "repo-assist/perf-ay-tone-cycles-20260708-6ee2f623e9b65716",
       "status": "open-draft",
-      "note": "Rebased onto master (33a3869f) 2026-07-24, clean rebase"
+      "note": "22 commits behind master as of 2026-07-25; clean rebase possible"
     },
     {
-      "number": "TBD",
+      "number": 155,
       "title": "unittests: fix -Wstringop-overflow warning in check_partial_redraw_32",
-      "branch": "repo-assist/fix-palcompositetest-warning-20260724",
+      "branch": "repo-assist/fix-palcompositetest-warning-20260724-c0fded90a234ddd5",
       "status": "open-draft",
-      "note": "Created 2026-07-24; fixes build_32_source(&old_source[1]) false-positive overflow warning"
+      "note": "Created 2026-07-24"
+    },
+    {
+      "number": 156,
+      "title": "display: inline attr lookup in sinclair path; use DISPLAY_PIXEL_BYTES",
+      "branch": "repo-assist/improve-display-sinclair-attr-20260725",
+      "status": "open-draft",
+      "note": "Created 2026-07-25; eliminates 3 Timex branches per call in display_write_if_dirty_sinclair"
     }
   ],
   "closed_prs": [
@@ -64,5 +71,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 3 open PRs now (#114, #135, new palcompositetest warning PR). No real user issues - all open issues are automation-framework tracking issues. Latest maintainer commit: 33a3869f (Decode tape header names with libspectrum_zx_string_to_utf8)."
+  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 4 open PRs now (#114, #135, #155, #156). No real user issues - all open issues are automation-framework tracking issues. Latest master: cbff5928 (Updates for a '1.9.1' version). PRs #114 and #135 are many commits behind master but should still rebase cleanly (can't force-push, so they stay stale)."
 }
