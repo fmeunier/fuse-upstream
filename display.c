@@ -526,10 +526,13 @@ display_write_if_dirty_sinclair( int x, int y )
   beam_y = y + DISPLAY_BORDER_HEIGHT;
   offset = display_get_addr( x, y );
 
-  /* Read byte, atrr/byte, and screen mode */
+  /* Read pixel byte and attribute byte. For Sinclair machines scld_last_dec
+     is always zero (no hires, no altdfile, no b1), so the attribute address
+     is always display_attr_start[y] + x — inline it directly to avoid the
+     three Timex-specific branches inside display_get_attr_byte(). */
   screen = RAM[ memory_current_screen ];
   data = screen[ offset ];
-  data2 = display_get_attr_byte( x, y );
+  data2 = screen[ display_attr_start[y] + x ];
 
   last_chunk_detail = (display_flash_reversed << 24) | (data2 << 8) | data;
   /* And draw it if it is different to what was there last time */
@@ -717,7 +720,7 @@ static void
 display_dirty64( libspectrum_word offset )
 {
   int i, x, y;
-  int idx = offset - ( DISPLAY_HEIGHT * DISPLAY_WIDTH_COLS );
+  int idx = offset - DISPLAY_PIXEL_BYTES;
 
   /* The attribute area is laid out linearly: column x, row y, so:
      x = idx % DISPLAY_WIDTH_COLS
