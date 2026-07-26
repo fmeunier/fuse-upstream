@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-25",
-  "last_run_id": "30149845312",
+  "last_run": "2026-07-26",
+  "last_run_id": "30193735560",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -9,14 +9,14 @@
       "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
       "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
       "status": "open-draft",
-      "note": "38 commits behind master as of 2026-07-25; clean rebase possible"
+      "note": "Many commits behind master; can't rebase (force-push disabled)"
     },
     {
       "number": 135,
       "title": "sound: remove redundant ay_tone_cycles accumulator",
       "branch": "repo-assist/perf-ay-tone-cycles-20260708-6ee2f623e9b65716",
       "status": "open-draft",
-      "note": "22 commits behind master as of 2026-07-25; clean rebase possible"
+      "note": "Many commits behind master; can't rebase (force-push disabled)"
     },
     {
       "number": 155,
@@ -30,7 +30,14 @@
       "title": "display: inline attr lookup in sinclair path; use DISPLAY_PIXEL_BYTES",
       "branch": "repo-assist/improve-display-sinclair-attr-20260725",
       "status": "open-draft",
-      "note": "Created 2026-07-25; eliminates 3 Timex branches per call in display_write_if_dirty_sinclair"
+      "note": "Created 2026-07-25"
+    },
+    {
+      "number": "TBD",
+      "title": "display/screenshot: replace remaining display-size literals with named constants",
+      "branch": "repo-assist/improve-screenshot-attr-bytes-20260726",
+      "status": "open-draft",
+      "note": "Created 2026-07-26; DISPLAY_PIXEL_BYTES in display_dirty64; DISPLAY_ATTR_BYTES in screenshot.c attr loop"
     }
   ],
   "closed_prs": [
@@ -45,24 +52,6 @@
       "title": "unittests: extend scalerexpandtest to cover all four expander types",
       "status": "closed-not-merged",
       "note": "Maintainer applied changes directly to master (04f2fb00) 2026-07-23"
-    },
-    {
-      "number": 150,
-      "title": "sound: simplify ay_do_tone() by removing redundant else branch",
-      "status": "closed-not-merged",
-      "note": "Maintainer applied changes directly to master (6aad61dc)"
-    },
-    {
-      "number": 149,
-      "title": "compat: fix strerror( -errno ) to strerror( errno ) in relative_paths",
-      "status": "closed-not-merged",
-      "note": "Maintainer applied changes directly to master (af97ffa2)"
-    },
-    {
-      "number": 148,
-      "title": "display: replace magic screen size literals with named constants",
-      "status": "closed-not-merged",
-      "note": "Maintainer applied changes directly to master (8bd201a8)"
     }
   ],
   "comments_made": {},
@@ -71,5 +60,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 4 open PRs now (#114, #135, #155, #156). No real user issues - all open issues are automation-framework tracking issues. Latest master: cbff5928 (Updates for a '1.9.1' version). PRs #114 and #135 are many commits behind master but should still rebase cleanly (can't force-push, so they stay stale)."
+  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 5 open PRs now (#114, #135, #155, #156, TBD). No real user issues - all open issues are automation-framework tracking issues. Latest master: 396d9dd3 (Don't redefine main on Windows for scalerexpandtest)."
 }
