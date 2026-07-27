@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-26",
-  "last_run_id": "30193735560",
+  "last_run": "2026-07-27",
+  "last_run_id": "30251985661",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -28,16 +28,23 @@
     {
       "number": 156,
       "title": "display: inline attr lookup in sinclair path; use DISPLAY_PIXEL_BYTES",
-      "branch": "repo-assist/improve-display-sinclair-attr-20260725",
+      "branch": "repo-assist/improve-display-sinclair-attr-20260725-73eb02ec0eb4c0a5",
       "status": "open-draft",
       "note": "Created 2026-07-25"
     },
     {
-      "number": "TBD",
+      "number": 157,
       "title": "display/screenshot: replace remaining display-size literals with named constants",
-      "branch": "repo-assist/improve-screenshot-attr-bytes-20260726",
+      "branch": "repo-assist/improve-screenshot-attr-bytes-20260726-d9a82db2016fbb0b",
       "status": "open-draft",
-      "note": "Created 2026-07-26; DISPLAY_PIXEL_BYTES in display_dirty64; DISPLAY_ATTR_BYTES in screenshot.c attr loop"
+      "note": "Created 2026-07-26"
+    },
+    {
+      "number": "TBD",
+      "title": "ui/xlib: initialise new_scaler/new_timex_scaler to silence -Wmaybe-uninitialized",
+      "branch": "repo-assist/fix-xdisplay-uninit-20260727",
+      "status": "open-draft",
+      "note": "Created 2026-07-27; fixes -Wmaybe-uninitialized in register_scalers()"
     }
   ],
   "closed_prs": [
@@ -60,5 +67,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 5 open PRs now (#114, #135, #155, #156, TBD). No real user issues - all open issues are automation-framework tracking issues. Latest master: 396d9dd3 (Don't redefine main on Windows for scalerexpandtest)."
+  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 6 open PRs now (#114, #135, #155, #156, #157, TBD-xdisplay). No real user issues - all open issues are automation-framework tracking issues. Latest master: 396d9dd3 (Don't redefine main on Windows for scalerexpandtest)."
 }
