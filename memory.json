@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-07-30",
-  "last_run_id": "30524768190",
+  "last_run": "2026-07-31",
+  "last_run_id": "30616067965",
   "monthly_activity_issue": 124,
   "monthly_activity_month": "2026-07",
   "open_prs": [
@@ -61,9 +61,9 @@
       "note": "Created 2026-07-29; 6 tests for display_parse_attr; exports display_set_flash_reversed in display.h"
     },
     {
-      "number": "pending",
+      "number": 162,
       "title": "hacking: document palcompositetest and scalerexpandtest in unittests.txt",
-      "branch": "repo-assist/docs-unittests-20260730",
+      "branch": "repo-assist/docs-unittests-20260730-400add6ebbff2a4a",
       "status": "open-draft",
       "note": "Created 2026-07-30; documentation-only; adds entries for two test binaries missing from hacking/unittests.txt"
     }
@@ -94,5 +94,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 9 open PRs now (#114, #135, #155, #156, #157, #158, #159, #161, pending #162). All have action_required CI status (maintainer approval needed). No real user issues - all open issues are automation-framework tracking issues. Latest master: 313893dc (Updates for a 1.9.1 version). Version 1.9.1 released 2026-07-25. PR #136 for unittests.txt was closed without merge; new PR created 2026-07-30 for palcompositetest/scalerexpandtest docs gap."
+  "notes": "Maintainer pattern: closes Repo Assist PRs but applies changes directly to master. 9 open PRs (#114, #135, #155, #156, #157, #158, #159, #161, #162). All have action_required CI status (maintainer approval needed). No real user issues - all open issues are automation-framework tracking issues. Latest master: 313893dc (Updates for a 1.9.1 version). Version 1.9.1 released 2026-07-25. 2026-07-31: Paused new PR creation - too many open PRs; waiting for maintainer to review backlog."
 }
