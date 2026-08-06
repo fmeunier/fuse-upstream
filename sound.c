@@ -75,7 +75,7 @@ static int sound_channels;
 static unsigned int ay_tone_levels[AY_ENV_STEPS];
 
 static unsigned int ay_tone_tick[AY_CHANNELS], ay_tone_high[AY_CHANNELS], ay_noise_tick;
-static unsigned int ay_tone_cycles, ay_env_cycles;
+static unsigned int ay_env_cycles;
 static unsigned int ay_env_internal_tick, ay_env_tick;
 static unsigned int ay_tone_period[AY_CHANNELS], ay_noise_period, ay_env_period;
 
@@ -179,7 +179,7 @@ sound_ay_init( void )
 
   ay_noise_tick = ay_noise_period = 0;
   ay_env_internal_tick = ay_env_tick = ay_env_period = 0;
-  ay_tone_cycles = ay_env_cycles = 0;
+  ay_env_cycles = 0;
   for( f = 0; f < AY_CHANNELS; f++ )
     ay_tone_tick[f] = ay_tone_high[f] = 0, ay_tone_period[f] = 1;
 
@@ -573,9 +573,9 @@ sound_ay_overlay( void )
     chan3 = tone_level[2];
     mixer = sound_ay_registers[7];
 
-    ay_tone_cycles += AY_CLOCK_DIVISOR;
-    tone_count = ay_tone_cycles >> 3;
-    ay_tone_cycles &= 7;
+    /* AY_CLOCK_DIVISOR (16) is exactly divisible by 8, so tone_count is
+       always the compile-time constant AY_CLOCK_DIVISOR / 8 = 2. */
+    tone_count = AY_CLOCK_DIVISOR / 8;
 
     if( ( mixer & 1 ) == 0 ) {
       level = chan1;
@@ -665,7 +665,7 @@ sound_ay_reset( void )
     sound_ay_write( f, 0, 0 );
   for( f = 0; f < AY_CHANNELS; f++ )
     ay_tone_high[f] = 0;
-  ay_tone_cycles = ay_env_cycles = 0;
+  ay_env_cycles = 0;
 }
 
 /*
