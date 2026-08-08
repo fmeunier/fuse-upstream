@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-08-07",
-  "last_run_id": "31153321899",
+  "last_run": "2026-08-08",
+  "last_run_id": "31243160467",
   "monthly_activity_issue": 163,
   "monthly_activity_month": "2026-08",
   "open_prs": [
@@ -30,17 +30,23 @@
       "title": "ui/fb/fbmouse: suppress -Wunused-result for intentional PS/2 probe write",
       "branch": "repo-assist/fix-fbmouse-write-warning-20260805-981ca04d9bb631ca",
       "status": "open-draft",
-      "note": "Created 2026-08-05; 1 commit behind master (c3ba35cc). Warning still present in master."
+      "note": "Created 2026-08-05; warning still present in master."
     },
     {
       "number": null,
-      "title": "unittests: add boundary-case tests for display_dirty64() attribute decoder",
-      "branch": "repo-assist/test-display-dirty64-20260807",
+      "title": "unittests: add HQ, AdvMAME, and NTSC4X scaler family coverage",
+      "branch": "repo-assist/test-scaler-families-20260808",
       "status": "open-draft",
-      "note": "Created 2026-08-07; adds attribute_write_marks_correct_cells() with 6 boundary cases"
+      "note": "Created 2026-08-08; adds HQ and AdvMAME scaler_for_size tests plus NTSC4X scalerexpandtest assertion"
     }
   ],
   "closed_prs": [
+    {
+      "number": null,
+      "title": "unittests: add boundary-case tests for display_dirty64() attribute decoder",
+      "status": "applied-to-master",
+      "note": "Applied as dc009f9d 2026-08-07 (same day it was created)"
+    },
     {
       "number": 155,
       "title": "unittests: fix -Wstringop-overflow warning in check_partial_redraw_32",
@@ -76,30 +82,6 @@
       "title": "hacking: document palcompositetest and scalerexpandtest in unittests.txt",
       "status": "applied-to-master",
       "note": "Applied as a0f49cce 2026-08-06"
-    },
-    {
-      "number": null,
-      "title": "sound: fix strerror() calls with negated sfifo error codes in sdl2sound and coreaudiosound",
-      "status": "applied-to-master",
-      "note": "Applied as c3ba35cc 2026-08-06"
-    },
-    {
-      "number": 152,
-      "title": "sound: fix strerror() calls with wrong arguments in sdlsound.c",
-      "status": "closed-not-merged",
-      "note": "Maintainer applied changes directly to master (166cfdf6) 2026-07-23"
-    },
-    {
-      "number": 151,
-      "title": "unittests: extend scalerexpandtest to cover all four expander types",
-      "status": "closed-not-merged",
-      "note": "Maintainer applied changes directly to master (04f2fb00) 2026-07-23"
-    },
-    {
-      "number": 136,
-      "title": "hacking: update unittests.txt to reflect current test suite",
-      "status": "closed-not-merged",
-      "note": "Closed 2026-07-09 without merge"
     }
   ],
   "comments_made": {},
@@ -108,5 +90,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: closes/applies Repo Assist PRs but applies changes directly to master. 4 open PRs (#114, #135, #156, #166). New PR being created for display_dirty64 boundary tests (2026-08-07). All open PRs have action_required CI status (maintainer approval needed). PR #156 has overlap with master (DISPLAY_PIXEL_BYTES already applied) - Sinclair inline part still pending. fbmouse warning (#166) still not applied - warning still present in master."
+  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. Maintainer is actively working on bug #133 (lazy peripheral RAM allocation) - Didaktik, Opus, TTX2000S, Multiface, Pokefinder all done today. 5 open PRs (#114, #135, #156, #166, new scaler test PR). All open PRs have action_required CI status."
 }
