@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-08-09",
-  "last_run_id": "31298149572",
+  "last_run": "2026-08-10",
+  "last_run_id": "31361441471",
   "monthly_activity_issue": 163,
   "monthly_activity_month": "2026-08",
   "open_prs": [
@@ -40,11 +40,18 @@
       "note": "Created 2026-08-08; adds HQ and AdvMAME scaler_for_size tests plus NTSC4X scalerexpandtest assertion"
     },
     {
-      "number": null,
+      "number": 170,
       "title": "pokefinder: extend unittest to cover incremented(), decremented(), and is_allocated()",
-      "branch": "repo-assist/test-pokefinder-incremented-20260809",
+      "branch": "repo-assist/test-pokefinder-incremented-20260809-aa102b2b36f2d02a",
       "status": "open-draft",
       "note": "Created 2026-08-09; extends pokefinder_unittest() to cover is_allocated(), incremented(), decremented()"
+    },
+    {
+      "number": null,
+      "title": "debugger: add IY+d decimal-mode disassembler tests",
+      "branch": "repo-assist/improve-disasm-iy-decimal-20260810",
+      "status": "open-draft",
+      "note": "Created 2026-08-10; adds testd7 (IY positive) and testd8 (IY negative) to debugger_disassemble_decimal_unittest()"
     }
   ],
   "closed_prs": [
@@ -97,5 +104,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 6 open PRs (#114, #135, #156, #166, #169, new pokefinder test PR). All open PRs have action_required CI status."
+  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 7 open PRs (#114, #135, #156, #166, #169, #170, new IY decimal test PR). All open PRs have action_required CI status."
 }
