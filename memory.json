@@ -1,6 +1,6 @@
 {
-  "last_run": "2026-08-10",
-  "last_run_id": "31361441471",
+  "last_run": "2026-08-11",
+  "last_run_id": "31464071838",
   "monthly_activity_issue": 163,
   "monthly_activity_month": "2026-08",
   "open_prs": [
@@ -37,21 +37,28 @@
       "title": "unittests: add HQ, AdvMAME, and NTSC4X scaler family coverage",
       "branch": "repo-assist/test-scaler-families-20260808-01e1fceddba772ff",
       "status": "open-draft",
-      "note": "Created 2026-08-08; adds HQ and AdvMAME scaler_for_size tests plus NTSC4X scalerexpandtest assertion"
+      "note": "Created 2026-08-08"
     },
     {
       "number": 170,
       "title": "pokefinder: extend unittest to cover incremented(), decremented(), and is_allocated()",
       "branch": "repo-assist/test-pokefinder-incremented-20260809-aa102b2b36f2d02a",
       "status": "open-draft",
-      "note": "Created 2026-08-09; extends pokefinder_unittest() to cover is_allocated(), incremented(), decremented()"
+      "note": "Created 2026-08-09"
+    },
+    {
+      "number": 171,
+      "title": "debugger: add IY+d decimal-mode disassembler tests",
+      "branch": "repo-assist/improve-disasm-iy-decimal-20260810-c9913ac5bce278d9",
+      "status": "open-draft",
+      "note": "Created 2026-08-10"
     },
     {
       "number": null,
-      "title": "debugger: add IY+d decimal-mode disassembler tests",
-      "branch": "repo-assist/improve-disasm-iy-decimal-20260810",
+      "title": "unittests/displaytest: replace magic display addresses with named constants",
+      "branch": "repo-assist/improve-displaytest-named-constants-20260811",
       "status": "open-draft",
-      "note": "Created 2026-08-10; adds testd7 (IY positive) and testd8 (IY negative) to debugger_disassemble_decimal_unittest()"
+      "note": "Created 2026-08-11; replaces 0x1800/0x3800/etc with DISPLAY_PIXEL_BYTES etc in displaytest.c"
     }
   ],
   "closed_prs": [
@@ -104,5 +111,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 7 open PRs (#114, #135, #156, #166, #169, #170, new IY decimal test PR). All open PRs have action_required CI status."
+  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 8 open PRs (#114, #135, #156, #166, #169, #170, #171, new displaytest constants PR). All open PRs have action_required CI status."
 }
