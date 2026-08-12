@@ -1,64 +1,64 @@
 {
-  "last_run": "2026-08-11",
-  "last_run_id": "31464071838",
+  "last_run": "2026-08-12",
+  "last_run_id": "31569592497",
   "monthly_activity_issue": 163,
   "monthly_activity_month": "2026-08",
   "open_prs": [
     {
-      "number": 114,
-      "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
-      "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
+      "number": 172,
+      "title": "unittests/displaytest: replace magic display addresses with named constants",
+      "branch": "repo-assist/improve-displaytest-named-constants-20260811-fc0be96dc4ca461b",
       "status": "open-draft",
-      "note": "Many commits behind master; can't rebase (force-push disabled)"
-    },
-    {
-      "number": 135,
-      "title": "sound: remove redundant ay_tone_cycles accumulator",
-      "branch": "repo-assist/perf-ay-tone-cycles-20260708-6ee2f623e9b65716",
-      "status": "open-draft",
-      "note": "Many commits behind master; can't rebase (force-push disabled)"
-    },
-    {
-      "number": 156,
-      "title": "display: inline attr lookup in sinclair path; use DISPLAY_PIXEL_BYTES",
-      "branch": "repo-assist/improve-display-sinclair-attr-20260725-73eb02ec0eb4c0a5",
-      "status": "open-draft",
-      "note": "Partially applied to master: DISPLAY_PIXEL_BYTES part was applied (9749877c), Sinclair inline part still pending."
-    },
-    {
-      "number": 166,
-      "title": "ui/fb/fbmouse: suppress -Wunused-result for intentional PS/2 probe write",
-      "branch": "repo-assist/fix-fbmouse-write-warning-20260805-981ca04d9bb631ca",
-      "status": "open-draft",
-      "note": "Created 2026-08-05; warning still present in master."
-    },
-    {
-      "number": 169,
-      "title": "unittests: add HQ, AdvMAME, and NTSC4X scaler family coverage",
-      "branch": "repo-assist/test-scaler-families-20260808-01e1fceddba772ff",
-      "status": "open-draft",
-      "note": "Created 2026-08-08"
-    },
-    {
-      "number": 170,
-      "title": "pokefinder: extend unittest to cover incremented(), decremented(), and is_allocated()",
-      "branch": "repo-assist/test-pokefinder-incremented-20260809-aa102b2b36f2d02a",
-      "status": "open-draft",
-      "note": "Created 2026-08-09"
+      "note": "Created 2026-08-11; at master HEAD, no conflicts"
     },
     {
       "number": 171,
       "title": "debugger: add IY+d decimal-mode disassembler tests",
       "branch": "repo-assist/improve-disasm-iy-decimal-20260810-c9913ac5bce278d9",
       "status": "open-draft",
-      "note": "Created 2026-08-10"
+      "note": "Created 2026-08-10; at master HEAD, no conflicts"
     },
     {
-      "number": null,
-      "title": "unittests/displaytest: replace magic display addresses with named constants",
-      "branch": "repo-assist/improve-displaytest-named-constants-20260811",
+      "number": 170,
+      "title": "pokefinder: extend unittest to cover incremented(), decremented(), and is_allocated()",
+      "branch": "repo-assist/test-pokefinder-incremented-20260809-aa102b2b36f2d02a",
       "status": "open-draft",
-      "note": "Created 2026-08-11; replaces 0x1800/0x3800/etc with DISPLAY_PIXEL_BYTES etc in displaytest.c"
+      "note": "Created 2026-08-09; at master HEAD, no conflicts"
+    },
+    {
+      "number": 169,
+      "title": "unittests: add HQ, AdvMAME, and NTSC4X scaler family coverage",
+      "branch": "repo-assist/test-scaler-families-20260808-01e1fceddba772ff",
+      "status": "open-draft",
+      "note": "Created 2026-08-08; at master HEAD, no conflicts"
+    },
+    {
+      "number": 166,
+      "title": "ui/fb/fbmouse: suppress -Wunused-result for intentional PS/2 probe write",
+      "branch": "repo-assist/fix-fbmouse-write-warning-20260805-981ca04d9bb631ca",
+      "status": "open-draft",
+      "note": "19 commits behind master; merges cleanly (2026-08-12 verified)"
+    },
+    {
+      "number": 156,
+      "title": "display: inline attr lookup in sinclair path; use DISPLAY_PIXEL_BYTES",
+      "branch": "repo-assist/improve-display-sinclair-attr-20260725-73eb02ec0eb4c0a5",
+      "status": "open-draft",
+      "note": "22 commits behind master; merges cleanly (2026-08-12 verified). Sinclair inline part still pending."
+    },
+    {
+      "number": 135,
+      "title": "sound: remove redundant ay_tone_cycles accumulator",
+      "branch": "repo-assist/perf-ay-tone-cycles-20260708-6ee2f623e9b65716",
+      "status": "open-draft",
+      "note": "44 commits behind master; merges cleanly (2026-08-12 verified)"
+    },
+    {
+      "number": 114,
+      "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
+      "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
+      "status": "open-draft",
+      "note": "60 commits behind master; merges cleanly (2026-08-12 verified)"
     }
   ],
   "closed_prs": [
@@ -111,5 +111,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 8 open PRs (#114, #135, #156, #166, #169, #170, #171, new displaytest constants PR). All open PRs have action_required CI status."
+  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 8 open PRs (#114, #135, #156, #166, #169, #170, #171, #172). All open PRs have action_required CI status. Older PRs are behind master but merge cleanly (verified 2026-08-12)."
 }
