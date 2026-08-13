@@ -1,75 +1,92 @@
 {
-  "last_run": "2026-06-23T07:06:00Z",
-  "last_run_id": "28008568916",
-  "monthly_activity_issue": 71,
-  "comments_made": {},
-  "open_repo_assist_prs": {
-    "46": {
-      "title": "build: remove deprecated AC_C_CONST macro",
-      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
+  "last_run": "2026-08-13",
+  "last_run_id": "31673446238",
+  "monthly_activity_issue": 163,
+  "monthly_activity_month": "2026-08",
+  "open_prs": [
+    {
+      "number": 173,
+      "title": "debugger/expression: add mixed-associativity deparse tests",
+      "branch": "repo-assist/improve-expr-deparse-mixed-assoc-20260813-b874989b",
+      "status": "open-draft",
+      "note": "Created 2026-08-13; at master HEAD, no conflicts"
     },
-    "54": {
-      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "stale — superseded by #95; supersession comment posted 2026-06-21"
+    {
+      "number": 172,
+      "title": "unittests/displaytest: replace magic display addresses with named constants",
+      "branch": "repo-assist/improve-displaytest-named-constants-20260811-fc0be96dc4ca461b",
+      "status": "open-draft",
+      "note": "Created 2026-08-11; at master HEAD, no conflicts"
     },
-    "60": {
-      "title": "build: remove deprecated AC_C_INLINE macro",
-      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
+    {
+      "number": 171,
+      "title": "debugger: add IY+d decimal-mode disassembler tests",
+      "branch": "repo-assist/improve-disasm-iy-decimal-20260810-c9913ac5bce278d9",
+      "status": "open-draft",
+      "note": "Created 2026-08-10; at master HEAD, no conflicts"
     },
-    "80": {
-      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros",
-      "status": "stale — superseded by #94; supersession comment posted 2026-06-21"
+    {
+      "number": 170,
+      "title": "pokefinder: extend unittest to cover incremented(), decremented(), and is_allocated()",
+      "branch": "repo-assist/test-pokefinder-incremented-20260809-aa102b2b36f2d02a",
+      "status": "open-draft",
+      "note": "Created 2026-08-09; at master HEAD, no conflicts"
     },
-    "94": {
-      "title": "build: remove deprecated AC_C_CONST and AC_C_INLINE macros from configure.ac",
-      "status": "open — supersedes #46, #60, #80"
+    {
+      "number": 169,
+      "title": "unittests: add HQ, AdvMAME, and NTSC4X scaler family coverage",
+      "branch": "repo-assist/test-scaler-families-20260808-01e1fceddba772ff",
+      "status": "open-draft",
+      "note": "Created 2026-08-08; at master HEAD, no conflicts"
     },
-    "95": {
-      "title": "build: remove unused AX_CREATE_STDINT_H macro file",
-      "status": "open — supersedes #54"
+    {
+      "number": 166,
+      "title": "ui/fb/fbmouse: suppress -Wunused-result for intentional PS/2 probe write",
+      "branch": "repo-assist/fix-fbmouse-write-warning-20260805-981ca04d9bb631ca",
+      "status": "open-draft",
+      "note": "19 commits behind master; merges cleanly (2026-08-13 verified)"
     },
-    "96": {
-      "title": "build: include z80/coretest in make check",
-      "status": "open"
+    {
+      "number": 156,
+      "title": "display: inline attr lookup in sinclair path; use DISPLAY_PIXEL_BYTES",
+      "branch": "repo-assist/improve-display-sinclair-attr-20260725-73eb02ec0eb4c0a5",
+      "status": "open-draft",
+      "note": "22 commits behind master; merges cleanly (2026-08-13 verified). Sinclair inline part still pending."
     },
-    "97": {
-      "title": "[Issue] ci: pre-install build tools and libspectrum in copilot-setup-steps",
-      "status": "issue (not PR) — blocked by workflow file permission; manual apply instructions in issue body"
+    {
+      "number": 135,
+      "title": "sound: remove redundant ay_tone_cycles accumulator",
+      "branch": "repo-assist/perf-ay-tone-cycles-20260708-6ee2f623e9b65716",
+      "status": "open-draft",
+      "note": "44 commits behind master; merges cleanly (2026-08-13 verified)"
     },
-    "98": {
-      "title": "debugger: complete LD r,(IX/IY+d) and LD (IX/IY+d),r disassembler test coverage",
-      "status": "open"
-    },
-    "99": {
-      "title": "display: add DISPLAY_PIXEL_BYTES, DISPLAY_ATTR_BYTES, and DISPLAY_FILE_SIZE constants",
-      "status": "open"
-    },
-    "100": {
-      "title": "debugger: add CB prefix rotate/shift test coverage for register A and (HL)",
-      "status": "open"
-    },
-    "101": {
-      "title": "z80: replace R register magic numbers with named constants",
-      "status": "open"
-    },
-    "102": {
-      "title": "display: cache beam position in display_update_critical",
-      "status": "open"
-    },
-    "103": {
-      "title": "debugger: add unary negation and binary subtraction non-associativity tests",
-      "status": "open — branch: repo-assist/test-expr-negate-and-sub-assoc-20260622-327cdcb3"
-    },
-    "104": {
-      "title": "debugger: add deparse tests for unary !, ~, and non-assoc /, <<",
-      "status": "open — branch: repo-assist/test-expr-deparse-unary-and-nonassoc-20260622"
-    },
-    "pending-cb-bit-res-set": {
-      "title": "debugger: add CB BIT/RES/SET disassembler tests for all registers",
-      "status": "open — branch: repo-assist/test-disasm-cb-bit-res-set-registers-20260623; created 2026-06-23; PR number TBD"
+    {
+      "number": 114,
+      "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
+      "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
+      "status": "open-draft",
+      "note": "60 commits behind master; merges cleanly (2026-08-13 verified)"
     }
+  ],
+  "closed_prs": [
+    {
+      "number": null,
+      "title": "unittests: add boundary-case tests for display_dirty64() attribute decoder",
+      "status": "applied-to-master",
+      "note": "Applied as dc009f9d 2026-08-07"
+    },
+    {
+      "number": 155,
+      "title": "unittests: fix -Wstringop-overflow warning in check_partial_redraw_32",
+      "status": "applied-to-master",
+      "note": "Applied as e8c0985e 2026-08-06"
+    }
+  ],
+  "comments_made": {},
+  "checked_off_by_user": [],
+  "backlog_cursor": {
+    "issues": 0,
+    "prs": 0
   },
-  "checked_off_by_maintainer": [],
-  "fix_attempts": {},
-  "notes": "Run 28008568916 (2026-06-23): Task 6 — all 14 Repo Assist PRs clean (no conflicts, no build failures; action_required CI is workflow approval policy not build fail). Task 3 — created CB BIT/RES/SET disassembler tests PR covering registers B/C/D/E/H/L with bit numbers 2-6 (test255-260); make check passed. PR #103 confirmed = unary negation/sub non-assoc; PR #104 confirmed = deparse unary !,~,/,<<. Next run: check PR number for pending-cb-bit-res-set; consider CB BIT/RES/SET for (HL) after PR #100 merges, or comparison operator tests, or logical AND/OR/XOR deparse tests."
+  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 9 open PRs (#114, #135, #156, #166, #169, #170, #171, #172, #173). All open PRs have action_required CI status. Older PRs are behind master but merge cleanly (verified 2026-08-13). Task 4 (Engineering Investments): CI is clean, build has no warnings, configure.ac well-maintained. No engineering investments needed this run. Task 5 (Coding Improvements): added two expression deparse tests for mixed-associativity at equal precedence in PR #173."
 }
