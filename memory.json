@@ -1,9 +1,23 @@
 {
-  "last_run": "2026-08-12",
-  "last_run_id": "31569592497",
+  "last_run": "2026-08-14",
+  "last_run_id": "31775892214",
   "monthly_activity_issue": 163,
   "monthly_activity_month": "2026-08",
   "open_prs": [
+    {
+      "number": null,
+      "title": "ci: also trigger Linux/macOS/Windows builds on push to master",
+      "branch": "repo-assist/eng-ci-push-trigger-20260814",
+      "status": "open-draft",
+      "note": "Created 2026-08-14; adds push trigger for master branch to all 3 main CI workflows"
+    },
+    {
+      "number": 173,
+      "title": "debugger/expression: add mixed-associativity deparse tests",
+      "branch": "repo-assist/improve-expr-deparse-mixed-assoc-20260813-b874989b-4a813699f1f56f34",
+      "status": "open-draft",
+      "note": "Created 2026-08-13; at master HEAD, no conflicts"
+    },
     {
       "number": 172,
       "title": "unittests/displaytest: replace magic display addresses with named constants",
@@ -16,49 +30,49 @@
       "title": "debugger: add IY+d decimal-mode disassembler tests",
       "branch": "repo-assist/improve-disasm-iy-decimal-20260810-c9913ac5bce278d9",
       "status": "open-draft",
-      "note": "Created 2026-08-10; at master HEAD, no conflicts"
+      "note": "Created 2026-08-10; no conflicts"
     },
     {
       "number": 170,
       "title": "pokefinder: extend unittest to cover incremented(), decremented(), and is_allocated()",
       "branch": "repo-assist/test-pokefinder-incremented-20260809-aa102b2b36f2d02a",
       "status": "open-draft",
-      "note": "Created 2026-08-09; at master HEAD, no conflicts"
+      "note": "Created 2026-08-09; no conflicts"
     },
     {
       "number": 169,
       "title": "unittests: add HQ, AdvMAME, and NTSC4X scaler family coverage",
       "branch": "repo-assist/test-scaler-families-20260808-01e1fceddba772ff",
       "status": "open-draft",
-      "note": "Created 2026-08-08; at master HEAD, no conflicts"
+      "note": "Created 2026-08-08; no conflicts"
     },
     {
       "number": 166,
       "title": "ui/fb/fbmouse: suppress -Wunused-result for intentional PS/2 probe write",
       "branch": "repo-assist/fix-fbmouse-write-warning-20260805-981ca04d9bb631ca",
       "status": "open-draft",
-      "note": "19 commits behind master; merges cleanly (2026-08-12 verified)"
+      "note": "21 commits behind master; merges cleanly (2026-08-14 verified)"
     },
     {
       "number": 156,
       "title": "display: inline attr lookup in sinclair path; use DISPLAY_PIXEL_BYTES",
       "branch": "repo-assist/improve-display-sinclair-attr-20260725-73eb02ec0eb4c0a5",
       "status": "open-draft",
-      "note": "22 commits behind master; merges cleanly (2026-08-12 verified). Sinclair inline part still pending."
+      "note": "24 commits behind master; merges cleanly (2026-08-14 verified)"
     },
     {
       "number": 135,
       "title": "sound: remove redundant ay_tone_cycles accumulator",
       "branch": "repo-assist/perf-ay-tone-cycles-20260708-6ee2f623e9b65716",
       "status": "open-draft",
-      "note": "44 commits behind master; merges cleanly (2026-08-12 verified)"
+      "note": "46 commits behind master; merges cleanly (2026-08-14 verified)"
     },
     {
       "number": 114,
       "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
       "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
       "status": "open-draft",
-      "note": "60 commits behind master; merges cleanly (2026-08-12 verified)"
+      "note": "62 commits behind master; merges cleanly (2026-08-14 verified)"
     }
   ],
   "closed_prs": [
@@ -73,36 +87,6 @@
       "title": "unittests: fix -Wstringop-overflow warning in check_partial_redraw_32",
       "status": "applied-to-master",
       "note": "Applied as e8c0985e 2026-08-06"
-    },
-    {
-      "number": 157,
-      "title": "display/screenshot: replace remaining display-size literals with named constants",
-      "status": "applied-to-master",
-      "note": "Applied as 0cc179a3 2026-08-06"
-    },
-    {
-      "number": 158,
-      "title": "ui/xlib: initialise new_scaler/new_timex_scaler to silence -Wmaybe-uninitialized",
-      "status": "applied-to-master",
-      "note": "Applied as 0a614d0b 2026-08-06"
-    },
-    {
-      "number": 159,
-      "title": "display: replace pixel dirty-tracking tables with address arithmetic",
-      "status": "applied-to-master",
-      "note": "Applied as 014dc46a 2026-08-06"
-    },
-    {
-      "number": 161,
-      "title": "unittests: add display_parse_attr tests to displaytest",
-      "status": "applied-to-master",
-      "note": "Applied as 547280af 2026-08-06"
-    },
-    {
-      "number": 162,
-      "title": "hacking: document palcompositetest and scalerexpandtest in unittests.txt",
-      "status": "applied-to-master",
-      "note": "Applied as a0f49cce 2026-08-06"
     }
   ],
   "comments_made": {},
@@ -111,5 +95,5 @@
     "issues": 0,
     "prs": 0
   },
-  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 8 open PRs (#114, #135, #156, #166, #169, #170, #171, #172). All open PRs have action_required CI status. Older PRs are behind master but merge cleanly (verified 2026-08-12)."
+  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 10 open PRs. All open PRs have action_required CI status (infrastructure). Older PRs are behind master but merge cleanly (verified 2026-08-14). New CI PR adds push trigger for master branch."
 }
