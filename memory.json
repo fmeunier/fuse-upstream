@@ -1,13 +1,20 @@
 {
-  "last_run": "2026-08-18",
-  "last_run_id": "32105051534",
+  "last_run": "2026-08-19",
+  "last_run_id": "32221607090",
   "monthly_activity_issue": 163,
   "monthly_activity_month": "2026-08",
   "open_prs": [
     {
-      "number": "new-bit7",
+      "number": "new-arith",
+      "title": "[Repo Assist] debugger/disassemble: add ADC/SBC register, arith-(HL), ADD HL/INC/DEC rr tests",
+      "branch": "repo-assist/test-disasm-arith-hl-addhl-rr-20260819",
+      "status": "open-draft",
+      "note": "Created 2026-08-19 run 32221607090"
+    },
+    {
+      "number": 176,
       "title": "[Repo Assist] debugger/disassemble: add BIT 7/RES 7/SET 7 tests for (IX+d) and (IY+d)",
-      "branch": "repo-assist/improve-disasm-bit7-ix-iy-20260818",
+      "branch": "repo-assist/improve-disasm-bit7-ix-iy-20260818-ec0e9bfcc69bb402",
       "status": "open-draft",
       "note": "Created 2026-08-18 run 32105051534"
     },
@@ -86,5 +93,5 @@
     }
   ],
   "comments_made": {},
-  "notes": "Issue #174 (CI push trigger) needs maintainer to create PR manually. 5 open PRs + 1 newly created (#114, #135, #156, #166, #175, new-bit7). Task 2: No open user issues to comment on. Disassembler bit coverage extended to bit 7 for IX/IY."
+  "notes": "Issue #174 (CI push trigger) needs maintainer to create PR manually. 7 open PRs (#114, #135, #156, #166, #175, #176, new-arith). Task 2: No open user issues to comment on. Last two runs: disassembler tests extended to bit 7 IX/IY and now ADC/SBC register forms + arith-(HL) + ADD HL/INC/DEC rr completeness."
 }
