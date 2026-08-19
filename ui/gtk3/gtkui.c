@@ -52,6 +52,7 @@
 #include "snapshot.h"
 #include "timer/timer.h"
 #include "ui/gtk3/resources.h"
+#include "ui/display_timing.h"
 #include "ui/ui.h"
 #include "utils.h"
 
@@ -326,8 +327,10 @@ g_signal_connect( G_OBJECT( *menu_bar ), "deactivate",
 int
 ui_event(void)
 {
+  display_timing_input_begin();
   while(gtk_events_pending())
     gtk_main_iteration();
+  display_timing_input_end();
   return 0;
 }
 
