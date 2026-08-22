@@ -1,50 +1,57 @@
 {
-  "last_run": "2026-08-21",
-  "last_run_id": "32452751118",
+  "last_run": "2026-08-22",
+  "last_run_id": "32555775005",
   "monthly_activity_issue": 163,
   "monthly_activity_month": "2026-08",
   "open_prs": [
     {
       "number": "pending",
-      "title": "[Repo Assist] ui/sdl2: add display_timing instrumentation",
-      "branch": "repo-assist/improve-sdl2-display-timing-20260821",
+      "title": "[Repo Assist] ui/sdl2: coalesce dirty areas per frame before scaling",
+      "branch": "repo-assist/perf-sdl2-coalesce-dirty-areas-20260822",
       "status": "open-draft",
-      "note": "Created 2026-08-21 run 32452751118"
+      "note": "Created 2026-08-22 run 32555775005. Mirrors GTK3/Win32 coalescing."
+    },
+    {
+      "number": 180,
+      "title": "[Repo Assist] ui/sdl2: add display_timing instrumentation",
+      "branch": "repo-assist/improve-sdl2-display-timing-20260821-46da4c852e4534e7",
+      "status": "open-draft",
+      "note": "Created 2026-08-21 run 32452751118. Merges cleanly (2026-08-22 verified)"
     },
     {
       "number": 179,
       "title": "[Repo Assist] debugger/unittests: add CB BIT/RES/SET 0,(HL) tests and SLT screen reset test",
       "branch": "repo-assist/test-disasm-cb-bit0-hl-slt-screen-20260820-14dec7173d44a54c",
       "status": "open-draft",
-      "note": "5 commits behind master; merges cleanly (2026-08-21 verified)"
+      "note": "Merges cleanly (2026-08-22 verified)"
     },
     {
       "number": 166,
       "title": "[Repo Assist] ui/fb/fbmouse: suppress -Wunused-result for intentional PS/2 probe write",
       "branch": "repo-assist/fix-fbmouse-write-warning-20260805-981ca04d9bb631ca",
       "status": "open-draft",
-      "note": "38 commits behind master; merges cleanly (2026-08-21 verified)"
+      "note": "Merges cleanly (2026-08-22 verified)"
     },
     {
       "number": 156,
       "title": "display: inline attr lookup in sinclair path; use DISPLAY_PIXEL_BYTES",
       "branch": "repo-assist/improve-display-sinclair-attr-20260725-73eb02ec0eb4c0a5",
       "status": "open-draft",
-      "note": "41 commits behind master; merges cleanly (2026-08-21 verified)"
+      "note": "Merges cleanly (2026-08-22 verified)"
     },
     {
       "number": 135,
       "title": "sound: remove redundant ay_tone_cycles accumulator",
       "branch": "repo-assist/perf-ay-tone-cycles-20260708-6ee2f623e9b65716",
       "status": "open-draft",
-      "note": "63 commits behind master; merges cleanly (2026-08-21 verified)"
+      "note": "Merges cleanly (2026-08-22 verified)"
     },
     {
       "number": 114,
       "title": "sound: remove redundant ay_env_cycles tracking in AY renderer",
       "branch": "repo-assist/perf-ay-env-cycles-20260628-dfd5b5fa3893bdef",
       "status": "open-draft",
-      "note": "79 commits behind master; merges cleanly (2026-08-21 verified)"
+      "note": "Merges cleanly (2026-08-22 verified)"
     }
   ],
   "closed_prs": [
@@ -59,26 +66,8 @@
       "title": "debugger/disassemble: add BIT 7/RES 7/SET 7 tests for (IX+d) and (IY+d)",
       "status": "applied-to-master",
       "note": "Applied 2026-08-18"
-    },
-    {
-      "number": 175,
-      "title": "unittests/displaytest: add middle/bottom third and cache tests",
-      "status": "applied-to-master",
-      "note": "Applied 2026-08-15"
-    },
-    {
-      "number": 173,
-      "title": "debugger/expression: add mixed-associativity deparse tests",
-      "status": "applied-to-master",
-      "note": "Applied 2026-08-15"
-    },
-    {
-      "number": 174,
-      "title": "ci: also trigger Linux/macOS/Windows builds on push to master",
-      "status": "closed",
-      "note": "Closed — protected .github/workflows/ files, bot cannot push"
     }
   ],
   "comments_made": {},
-  "notes": "Issue #174 (CI push trigger) needs maintainer to create PR manually. 6 open PRs (#114, #135, #156, #166, #179, plus new SDL2 timing PR). Task 5: Added display_timing to SDL2 display backend (sdl2_display.c + sdl2_ui.c). Task 6: Verified all 5 existing PRs rebase cleanly. CI PR for standalone tests was not persisted in 2026-08-20 run."
+  "notes": "Maintainer pattern: applies Repo Assist PRs directly to master without merging. 7 open PRs. Task 8 2026-08-22: SDL2 dirty area coalescing - mirrors GTK3/Win32 approach. Task 6: All 6 PRs verified clean. Maintainer recently added Coalesce display presentation by frame to GTK3 (3b20e52) and Win32 (1e5b3c3)."
 }
