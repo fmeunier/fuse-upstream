@@ -98,7 +98,7 @@ fbmouse_init(void)
    * Ignore any error.
    */
   i = -1; /* account for big-endian */
-  write( mouse_fd, &i, 1 );
+  if( write( mouse_fd, &i, 1 ) == -1 ) { /* ignore: PS/2 probe byte; errors are benign */ }
 
   /* Try to set the mouse mode. We prefer ExPS/2 but will accept ImPS/2.
    * The main reason is so that the side buttons don't appear as duplicate
